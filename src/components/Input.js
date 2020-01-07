@@ -1,20 +1,19 @@
 import React from 'react'
-import { getNdexId, getPokemonName, getSpriteImgUrl } from './utils/pokedex'
 
 export default function Input(props) {
-  return (
-    <input {...props} name="pokemonId" type="number" value={props.value}/>
-  )
+  return <input {...props} />
 }
 
 Input.defaultProps = {
-  min: 1,
-  max: 890,
-  maxlength: "3",
-  type:'number',
-  style: {
+  // min: 1,
+  // max: 401,
+  // maxLength: '3',
 
+  type: 'number',
+  style: {
     margin: 0,
-    padding:0
+    padding: '.5rem',
+    fontSize: 'inherit',
+    width: '50px'
   }
 }

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import Name from './Name'
-import Input from './Input'
-import Sprite from './Sprite'
-import { getpokedata } from '../data/pokedata'
 
+import Input from './Input'
+import Button from './Button'
+import Sprite from './Sprite'
+import IV from './IV'
+
+import { getGalarDataById } from '../data/galar-data'
 
 export default function Card(props) {
   const [value, setValue] = React.useState(props.id)
@@ -25,28 +27,42 @@ export default function Card(props) {
     event.target.parentElement.remove()
   }
 
+  const getPokemon = value => {
+    return getGalarDataById(value)
+  }
+
   return (
-    <div {...props} className="pokecard">
-      <button className="delete" onClick={e => handleDelete(e)}>
-        X
-      </button>
+    <div {...props} className="pokecard" key={value}>
+      <Button className="delete" onClick={e => handleDelete(e)} text="X" />
       <div className="flex flex-wrap space-between">
-        <Name id={value} />
-        <div className="flex column w50">
-          <Input
-            name="pokemonId"
-            onChange={e => handleChange(e)}
-            value={newValue}
-            disabled={lock}
-          />
-          <button class={`lock ${lock}`} onClick={() => handleLock()}>
-            {lock ? 'lock' : 'unlock'}
+        <h1 className="name">{getPokemon(value).name}</h1>
+        <div className="flex w50">
+          <Input onChange={e => handleChange(e)} value={newValue} disabled={lock} />
+          <button className={`lock ${lock}`} onClick={() => handleLock()}>
+            {lock ? 'unlock' : 'lock'}
           </button>
         </div>
+        <div className="types">
+          {getPokemon(value).types.map(type => (
+            <span className={`type ${type.toLowerCase()}`}>{type}</span>
+          ))}
+        </div>
       </div>
-      <Sprite id={value} />
-     
-      <div className="white-space">{JSON.stringify(getpokedata(parseInt(value))).replace(/\"\]\,/g,'"],\n')}</div>
+
+      <div className="flex space-between flex-wrap">
+        <Sprite id={value} />
+        <div class="moveset">moveset</div>
+        <div className="flex column">
+          <div>Nature</div>
+          <IV base={getPokemon(value).base_stats}></IV>
+          <div className="total">
+            <strong>Total: </strong>
+            <span> {getPokemon(value).base_stats.reduce((a, b) => a + b, 0)}</span>
+          </div>
+        </div>
+      </div>
+
+      <details>{JSON.stringify(getGalarDataById(props.id))}</details>
     </div>
   )
 }
@@ -58,6 +74,6 @@ Card.defaultProps = {
     border: '1px solid #ddd',
     borderRadius: '5px',
     padding: '1rem',
-    position:'relative'
+    position: 'relative'
   }
 }

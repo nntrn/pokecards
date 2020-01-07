@@ -1,10 +1,12 @@
 import React from 'react'
-import { getNdexId, getPokemonName, getSpriteImgUrl } from './utils/pokedex'
+import { getGalarDataById, getSpriteImgUrl } from '../data/galar-data'
 
 export default function Sprite(props) {
+  const pokedat = getGalarDataById(props.id)
+
   return (
-    <div>
-      <img {...props} src={getSpriteImgUrl(props.id)} />
+    <div title={pokedat.name}>
+      <img {...props} src={getSpriteImgUrl(pokedat.id)} alt={pokedat.name} />
     </div>
   )
 }
@@ -12,8 +14,9 @@ export default function Sprite(props) {
 Sprite.defaultProps = {
   style: {
     width: '160px',
-    minHeight:'160px',
+    minHeight: '160px',
+    marginTop: '.5rem',
     opacity: '.9',
-    filter:'saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
+    filter: 'saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
   }
 }
