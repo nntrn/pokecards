@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import logo from './logo.svg'
+import Card from './components/Card'
+import './App.css'
+
+import {randomNum} from './components/utils/util'
 
 function App() {
+  const [cards, setCards] = React.useState([<Card id={randomNum(1,890)}></Card>])
+
+  const handleAdd = event => {
+    const newCard = <Card id="1"></Card>
+    setCards([...cards, newCard])
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {cards}
+      <button onClick={e => handleAdd()}>add</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
