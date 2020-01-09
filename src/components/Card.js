@@ -5,9 +5,9 @@ import Button from './Button'
 import Sprite from './Sprite'
 import Type from './Type'
 import Moveset from './Moveset'
+import Abilities from './Abilities'
 import StatCalculator from './StatCalculator'
 
-import { natures } from '../data/pokemon'
 import { getGalarDataById } from '../data/galar-data'
 import { CardStyle, LevelStyle } from './style'
 
@@ -16,14 +16,12 @@ export default function Card(props) {
   const [value, setValue] = React.useState(props.id)
   const [newValue, setNewValue] = React.useState(props.id)
   const [lock, setLock] = React.useState(false)
-
   const [level, setLevel] = React.useState(props.level)
-
-  // const [nature, setNature] = React.useState(props.nature)
 
   const handleChange = event => {
     if (event.target.value && Number.isInteger(parseInt(event.target.value))) {
-      setValue(event.target.value)
+      if (parseInt(event.target.value) > 0 && parseInt(event.target.value) < 401)
+        setValue(event.target.value)
     }
     setNewValue(event.target.value)
   }
@@ -45,7 +43,7 @@ export default function Card(props) {
       <Button className="delete" onClick={e => handleDelete(e)} text="X" active={!lock} />
       <div className="flex flex-wrap space-between">
         <h1>{getPokemon(value).name}</h1>
-        <div className="flex w50">
+        <div className="flex">
           <Input onChange={e => handleChange(e)} value={newValue} disabled={lock} />
           <button className={`lock ${lock}`} onClick={() => handleLock()}>
             {lock ? 'unlock' : 'lock'}
@@ -56,13 +54,14 @@ export default function Card(props) {
             <Type key={type} type={type} />
           ))}
         </div>
+        <Abilities abilities={getPokemon(value).abilities} />
       </div>
 
-      <div className="flex space-between flex-wrap">
-        <div className="flex column">
+      <div className="flex space-between flex-wrap box">
+        <div className="flex column no-select" style={{ flexGrow: 0 }}>
           <Sprite id={value} />
-          <div className="flex">
-            <span>Lvl. </span>
+          <div className="level">
+            <label>Lvl. &nbsp;</label>
             <input
               type="number"
               min="1"
@@ -82,7 +81,7 @@ export default function Card(props) {
           level={level}
         />
 
-        <Moveset />
+        <Moveset pokemon={getPokemon(value).name} />
       </div>
 
       <details>{JSON.stringify(getGalarDataById(value))}</details>

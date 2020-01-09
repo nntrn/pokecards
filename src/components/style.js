@@ -1,3 +1,23 @@
+export const BarStyle = {
+  container: {
+    position: 'relative',
+    height: '100%',
+    width: '100%'
+  },
+  bar: {
+    background: 'orange',
+    width: '100%',
+    bottom: 0,
+    position: 'absolute',
+    fontSize: '.8em'
+  },
+  nature: {
+    normal: 'orange',
+    decrease: '#39cccc',
+    increase: '#ff4136'
+  }
+}
+
 export const ButtonStyle = {
   border: 0,
   borderRadius: '100%',
@@ -6,7 +26,8 @@ export const ButtonStyle = {
   display: 'flex',
   alignContent: 'flex-start',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  userSelect: 'none'
 }
 
 export const CardStyle = {
@@ -18,7 +39,22 @@ export const CardStyle = {
   border: '1px solid #ddd',
   borderRadius: '8px',
   padding: '1rem',
-  position: 'relative'
+  position: 'relative',
+  boxSizing: 'border-box'
+}
+
+export const StatStyle = {
+  margin: '.15rem',
+  position: 'relative',
+  display: 'flex',
+  alignItems: 'flex-start',
+  alignContent: 'center',
+  width: 'calc(85% / 6)',
+  height: '100px',
+  flexDirection: 'column',
+  justifyContent: 'flex-end',
+  fontSize: '.9rem',
+  overflow: 'hidden'
 }
 
 export const TypeStyle = {
@@ -30,12 +66,12 @@ export const TypeStyle = {
   position: 'relative',
   fontFamily: 'sans-serif',
   whiteSpace: 'pre',
-  color: 'black',
-  filter: 'opacity(.9) saturate(1.25) contrast(1.2)'
+  color: 'rgba(0,0,0,1)',
+  filter: 'opacity(.6) saturate(1.25) contrast(1.2)'
 }
 
 export const LevelStyle = {
-  background: '#000',
-  color: '#fff',
+  // background: '#fff',
+  // color: '#fff',
   border: 0
 }

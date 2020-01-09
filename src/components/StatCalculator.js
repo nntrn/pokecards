@@ -1,50 +1,24 @@
 import React from 'react'
 import Stat from './Stat'
+
 import { natures } from '../data/pokemon'
-
-function calculateHP(base = 25, level = 100, EV = 0, IV = 31) {
-  base = parseInt(base)
-  level = parseInt(level)
-  EV = parseInt(EV)
-  IV = parseInt(IV)
-  return parseInt(((base * 2 + IV + EV / 4) * level) / 100 + 10 + level)
-}
-
-function calculateStat(base = 25, level = 100, nmod = 1, EV = 0, IV = 31) {
-  base = parseInt(base)
-  level = parseInt(level)
-  EV = parseInt(EV)
-  IV = parseInt(IV)
-  nmod = parseFloat(nmod)
-  return parseInt((((base * 2 + IV + EV / 4) * level) / 100 + 5) * nmod)
-}
+import { calculateHP, calculateStat } from './utils/calculate'
 
 export default function StatCalculator(props) {
   const [nature, setNature] = React.useState(props.nature)
 
-  var level = props.level > 0 && props.level < 101 ? props.level : 100
-
   let stat = {}
   let statNames = ['hp', 'atk', 'def', 'spa', 'spd', 'spe']
+  var level = props.level > 0 && props.level < 101 ? props.level : 100
 
   statNames.forEach((e, i) => {
-    let nmod = 1
-    if (e === natures[nature].plus) {
-      nmod = 1.1
-    }
-    if (e === natures[nature].minus) {
-      nmod = 0.9
-    }
     if (i === 0) {
       stat[e] = calculateHP(props.base[i], level)
     } else {
+      let nmod = e === natures[nature].plus ? 1.1 : e === natures[nature].minus ? 0.9 : 1
       stat[e] = calculateStat(props.base[i], level, nmod)
     }
   })
-
-  const handleNature = nature => {
-    setNature(nature)
-  }
 
   const max = Math.max(...Object.values(stat)) + 50
 
@@ -52,7 +26,7 @@ export default function StatCalculator(props) {
     <div>
       <select
         value={nature}
-        onChange={e => handleNature(e.target.value)}
+        onChange={e => setNature(e.target.value)}
         disabled={props.disabled}
       >
         {Object.keys(natures).map(e => (
@@ -61,14 +35,13 @@ export default function StatCalculator(props) {
           </option>
         ))}
       </select>
-      <div {...props} className="ivs">
+      <div {...props}>
         {Object.keys(stat).map((e, i) => (
           <Stat
             key={e}
             type={e}
             base={props.base[i]}
             value={stat[e]}
-            bar={stat[e] / max}
             max={max}
             nature={
               e === natures[nature].plus
@@ -81,10 +54,10 @@ export default function StatCalculator(props) {
         ))}
       </div>
 
-      <div className="small">
+      <p>
         <strong>Base total: </strong>
         <span> {props.base.reduce((a, b) => a + b, 0)}</span>
-      </div>
+      </p>
     </div>
   )
 }
@@ -95,6 +68,7 @@ StatCalculator.defaultProps = {
   style: {
     margin: 0,
     padding: 0,
-    display: 'flex'
+    display: 'flex',
+    width: '90%'
   }
 }

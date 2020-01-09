@@ -12,8 +12,6 @@ Input.defaultProps = {
   type: 'number',
   style: {
     margin: 0,
-    padding: '.5rem',
-    fontSize: 'inherit',
-    width: '50px'
+    fontSize: 'inherit'
   }
 }

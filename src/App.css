@@ -1,11 +1,7 @@
-[data-active="false"]{
-  display:none!important
+* {
+  box-sizing: border-box;
 }
 
-[nature="decrease"] .bar div {
-  background: #03A9F4 !important
-}
-
-[nature="increase"] .bar div {
-  background: #2ecc40 !important
+[data-active='false'] {
+  display: none !important;
 }
