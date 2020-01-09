@@ -1,25 +1,44 @@
 import React from 'react'
 
-export default function Stat(props) {
-  const props2 = {
-    dataLabel: props.type,
-    title: props.type,
-    value: 0,
-    ...props
-  }
-  const barStyle = {
-    style: {
-      background: 'red',
-      height: `${props.bar.toFixed(2) * 100}px`,
-      width: '25px'
-    }
+function Bar(props) {
+  const style = {
+    ...props.style,
+    background: 'orange',
+    width: '100%',
+    height: `calc(${props.height}% + 6px)`,
+    bottom: 0,
+    position: 'absolute'
   }
   return (
-    <div {...props} className="stat">
-      <div className="value">{props2.value}</div>
-      <div style={barStyle.style}></div>
-      <div style={{ textTransform: 'uppercase', color: '#777', fontSize: '.8em' }}>
+    <div className="bar" style={{ position: 'relative', height: '100%', width: '100%' }}>
+      <div style={style} before={props.value} className="small"></div>
+    </div>
+  )
+}
+
+export default function Stat(props) {
+  const props2 = {
+    'data-label': props.type,
+    title: props.type,
+    ...props
+  }
+
+  const typeStyle = {
+    textTransform: 'uppercase',
+    color: '#777',
+    fontSize: '.8em',
+    bottom: 0
+  }
+
+  return (
+    <div {...props2} className="stat">
+      <Bar height={(props.value / props.max) * 100} value={props.value} />
+
+      <div style={typeStyle} className="type">
         {props.type}
+      </div>
+      <div style={typeStyle} className="base">
+        {props.base}
       </div>
     </div>
   )
@@ -27,12 +46,15 @@ export default function Stat(props) {
 
 Stat.defaultProps = {
   style: {
-    margin: 0,
-    padding: '.15rem',
+    margin: '.15rem',
     position: 'relative',
     display: 'flex',
     alignItems: 'flex-start',
+    width: '23px',
+    height: '100px',
     flexDirection: 'column',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    fontSize: '.9rem',
+    overflow: 'hidden'
   }
 }

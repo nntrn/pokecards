@@ -1,21 +1,20 @@
 import React from 'react'
+import { ButtonStyle } from './style'
 
 export default function Button(props) {
+  const defaultStyle = {
+    ...ButtonStyle,
+    ...props.style
+  }
+
   return (
-    <button {...props} name="pokemonId" type="number" value={props.value}>
+    <button {...props} style={defaultStyle} data-active={props.active}>
       {props.children}
-      <span>{props.text}</span>
+      {props.text}
     </button>
   )
 }
 
 Button.defaultProps = {
-  min: 1,
-  max: 400,
-  maxLength: '3',
-  type: 'number',
-  style: {
-    margin: 0,
-    padding: 0
-  }
+  active: 'true'
 }
