@@ -7,8 +7,7 @@ export default function Input(props) {
 Input.defaultProps = {
   min: 1,
   max: 401,
-  maxLength: '3',
-
+  maxLength: 3,
   type: 'number',
   style: {
     margin: 0,

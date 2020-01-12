@@ -53,7 +53,6 @@ export default function StatCalculator(props) {
           />
         ))}
       </div>
-
       <p>
         <strong>Base total: </strong>
         <span> {props.base.reduce((a, b) => a + b, 0)}</span>

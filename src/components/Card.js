@@ -33,31 +33,45 @@ export default function Card(props) {
   const handleDelete = event => {
     event.target.parentElement.remove()
   }
-
+  
   const getPokemon = value => {
     return getGalarDataById(value)
   }
 
   return (
-    <div {...props} id={value} style={{ ...CardStyle, ...props.style }}>
+    <div
+      {...props}
+      id={props['data-id']}
+      style={{ ...CardStyle, ...props.style }}
+      data-locked={lock}
+    >
       <Button className="delete" onClick={e => handleDelete(e)} text="X" active={!lock} />
-      <div className="flex flex-wrap space-between">
-        <h1>{getPokemon(value).name}</h1>
-        <div className="flex">
-          <Input onChange={e => handleChange(e)} value={newValue} disabled={lock} />
-          <button className={`lock ${lock}`} onClick={() => handleLock()}>
-            {lock ? 'unlock' : 'lock'}
-          </button>
+
+      <div className="flex flex-wrap">
+        <div className="flex column flex-grow-1">
+          <h1>{getPokemon(value).name}</h1>
+
+          <div className="types">
+            {getPokemon(value).types.map(type => (
+              <Type key={type} type={type} />
+            ))}
+          </div>
         </div>
-        <div className="types">
-          {getPokemon(value).types.map(type => (
-            <Type key={type} type={type} />
-          ))}
-        </div>
-        <Abilities abilities={getPokemon(value).abilities} />
+        <Abilities
+          abilities={getPokemon(value).abilities}
+          id={props['data-id']}
+          disabled={lock}
+        />
       </div>
 
-      <div className="flex space-between flex-wrap box">
+      <div className="flex absolute bottom right" style={{ margin: '5px' }}>
+        <Input onChange={e => handleChange(e)} value={newValue} disabled={lock} />
+        <button className={`lock ${lock}`} onClick={() => handleLock()}>
+          {lock ? 'unlock' : 'lock'}
+        </button>
+      </div>
+
+      <div className="flex space-between flex-wrap box" style={{ margin: '.5rem 0' }}>
         <div className="flex column no-select" style={{ flexGrow: 0 }}>
           <Sprite id={value} />
           <div className="level">
@@ -83,13 +97,13 @@ export default function Card(props) {
 
         <Moveset pokemon={getPokemon(value).name} />
       </div>
-
       <details>{JSON.stringify(getGalarDataById(value))}</details>
     </div>
   )
 }
 
 Card.defaultProps = {
+  className: 'poke-cards',
   id: 57,
   level: 100,
   nature: 'Quirky'

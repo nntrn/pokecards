@@ -30,7 +30,7 @@ function Dropdown(props) {
   return (
     <div {...props}>
       {props.moves.map(m => {
-        let move = movesData[m]
+        let move = movesData[m] || []
         return (
           <div
             key={move.name}
@@ -51,6 +51,7 @@ function Dropdown(props) {
 }
 
 Dropdown.defaultProps = {
+  moves: ['Growl', 'Tackle', 'Tackle', 'Quick Attack'],
   className: 'dropdown',
   style: {
     width: '100%',

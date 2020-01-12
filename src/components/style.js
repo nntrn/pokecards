@@ -27,7 +27,8 @@ export const ButtonStyle = {
   alignContent: 'flex-start',
   alignItems: 'center',
   justifyContent: 'center',
-  userSelect: 'none'
+  userSelect: 'none',
+  zIndex: 1000
 }
 
 export const CardStyle = {
@@ -71,7 +72,5 @@ export const TypeStyle = {
 }
 
 export const LevelStyle = {
-  // background: '#fff',
-  // color: '#fff',
   border: 0
 }

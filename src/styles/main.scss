@@ -1,0 +1,32 @@
+$positions: ('top', 'left', 'bottom', 'right');
+
+.absolute {
+  position: absolute;
+}
+
+@each $position in $positions {
+  .absolute.#{$position} {
+    #{$position}: 0;
+  }
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
+[data-locked='true'] {
+  input {
+    background: #000;
+  }
+  button.delete {
+    display: none !important;
+  }
+}
