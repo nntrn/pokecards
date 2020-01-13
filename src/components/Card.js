@@ -9,7 +9,7 @@ import Abilities from './Abilities'
 import StatCalculator from './StatCalculator'
 
 import { getGalarDataById } from '../data/galar-data'
-import { CardStyle, LevelStyle } from './style'
+import { CardStyle } from './style'
 
 export default function Card(props) {
   const { nature } = props
@@ -33,9 +33,15 @@ export default function Card(props) {
   const handleDelete = event => {
     event.target.parentElement.remove()
   }
-  
+
   const getPokemon = value => {
     return getGalarDataById(value)
+  }
+
+  const setNewPokemon = () => {
+    const n = parseInt(value) + 1
+    setValue(n)
+    setNewValue(n)
   }
 
   return (
@@ -49,11 +55,10 @@ export default function Card(props) {
 
       <div className="flex flex-wrap">
         <div className="flex column flex-grow-1">
-          <h1>{getPokemon(value).name}</h1>
-
+          <h1 className="pokemon-name">{getPokemon(value).name}</h1>
           <div className="types">
             {getPokemon(value).types.map(type => (
-              <Type key={type} type={type} />
+              <Type key={type} type={type} style={{ color: 'black' }} />
             ))}
           </div>
         </div>
@@ -64,24 +69,28 @@ export default function Card(props) {
         />
       </div>
 
-      <div className="flex absolute bottom right" style={{ margin: '5px' }}>
-        <Input onChange={e => handleChange(e)} value={newValue} disabled={lock} />
+      <div className="flex absolute top right" style={{ margin: '10px' }}>
+        <Input
+          onChange={e => handleChange(e)}
+          value={newValue}
+          disabled={lock}
+          className="dex"
+        />
         <button className={`lock ${lock}`} onClick={() => handleLock()}>
           {lock ? 'unlock' : 'lock'}
         </button>
       </div>
 
-      <div className="flex space-between flex-wrap box" style={{ margin: '.5rem 0' }}>
+      <div className="flex space-between flex-wrap box">
         <div className="flex column no-select" style={{ flexGrow: 0 }}>
           <Sprite id={value} />
           <div className="level">
             <label>Lvl. &nbsp;</label>
-            <input
+            <Input
               type="number"
               min="1"
               max="100"
               defaultValue={level}
-              style={LevelStyle}
               onChange={e => setLevel(e.target.value)}
               disabled={lock}
             />
@@ -97,13 +106,12 @@ export default function Card(props) {
 
         <Moveset pokemon={getPokemon(value).name} />
       </div>
-      <details>{JSON.stringify(getGalarDataById(value))}</details>
     </div>
   )
 }
 
 Card.defaultProps = {
-  className: 'poke-cards',
+  className: 'pokecard',
   id: 57,
   level: 100,
   nature: 'Quirky'

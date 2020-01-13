@@ -5,9 +5,8 @@ import { typeColor } from '../data/pokemon'
 export default function Type(props) {
   const defaultStyle = {
     ...TypeStyle,
+    background: typeColor[props.type.toLowerCase()],
     ...props.style,
-
-    background: typeColor[props.type.toLowerCase()]
   }
 
   return (

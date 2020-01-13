@@ -13,7 +13,7 @@ export default function Abilities(props) {
         <div className="flex ability" key={e.name + props.id}>
           <input
             type={props.type}
-            name={props.name}
+            name={props.name + props.id}
             value={e.name}
             id={e.name + props.id}
             disabled={props.disabled}

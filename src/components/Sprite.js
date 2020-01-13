@@ -1,6 +1,8 @@
 import React from 'react'
 import { getGalarDataById } from '../data/galar-data'
 
+import { SpriteStyle } from './style'
+
 function replaceString(str, replaceWith = {}) {
   Object.keys(replaceWith).forEach(e => {
     const re = new RegExp(`\\[\\@${e}\\]`, 'g')
@@ -25,14 +27,14 @@ function getSpriteImgUrl(props) {
 export default function Sprite(props) {
   const pokedat = getGalarDataById(props.id)
 
-  return <img {...props} src={getSpriteImgUrl(pokedat)} alt={pokedat.name} />
+  return (
+    <img
+      {...props}
+      style={SpriteStyle}
+      src={getSpriteImgUrl(pokedat)}
+      alt={pokedat.name}
+    />
+  )
 }
 
-Sprite.defaultProps = {
-  style: {
-    height: '160px',
-    marginTop: '.5rem',
-    opacity: '.9',
-    filter: 'saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
-  }
-}
+Sprite.defaultProps = {}

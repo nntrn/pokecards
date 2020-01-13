@@ -10,16 +10,19 @@ $positions: ('top', 'left', 'bottom', 'right');
   }
 }
 
-.flex-grow-0 {
-  flex-grow: 0;
-}
-
-.flex-grow-1 {
-  flex-grow: 1;
-}
-
-.flex-grow-2 {
-  flex-grow: 2;
+.flex-grow- {
+  &0 {
+    flex-grow: 0;
+  }
+  &1 {
+    flex-grow: 1;
+  }
+  &2 {
+    flex-grow: 2;
+  }
+  &3 {
+    flex-grow: 3;
+  }
 }
 
 [data-locked='true'] {
@@ -28,5 +31,9 @@ $positions: ('top', 'left', 'bottom', 'right');
   }
   button.delete {
     display: none !important;
+  }
+
+  .ability input[type='radio']:checked + label {
+    filter: grayscale(1);
   }
 }

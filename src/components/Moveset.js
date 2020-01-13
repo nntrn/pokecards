@@ -1,51 +1,54 @@
 import React, { useState } from 'react'
 import { movesByPokemon, movesData } from '../data/moveslist'
-import { typeColor } from '../data/pokemon'
+import { typeIcon } from '../data/pokemon'
 
-function Move(props) {
+import '../styles/moves.scss'
+
+function MoveType(props) {
   return (
-    <div {...props}>
-      <div className="move-name">Move</div>
-      <div className="move-pp">PP</div>
-    </div>
+    <svg width="15" height="15" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d={typeIcon[props.type].svg}
+        fill="white"
+      />
+    </svg>
   )
 }
 
-Move.defaultProps = {
-  className: 'move',
-  style: {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    alignContent: 'center',
-    padding: '.45rem .75rem',
-    margin: '.25rem',
-    borderRadius: '15px',
-    background: '#000'
-  }
-}
-
 function Dropdown(props) {
+  const header = ['name', 'category', 'power', 'PP']
   return (
     <div {...props}>
-      {props.moves.map(m => {
-        let move = movesData[m] || []
-        return (
-          <div
-            key={move.name}
-            className="move-item flex space-between"
-            style={{
-              background: typeColor[move.type.toLowerCase()],
-              width: '100%',
-              padding: '.25rem'
-            }}
-          >
-            <div>{move.name}</div>
-            <div>{move.PP}</div>
-          </div>
-        )
-      })}
+      <table>
+        <thead>
+          <tr>
+            {header.map(h => (
+              <th>{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {props.moves.map(m => {
+            let move = movesData[m] || []
+            return (
+              <tr
+                key={move.name}
+                style={{
+                  background: typeIcon[move.type.toLowerCase()].color,
+                  width: '100%',
+                  border: '5px solid #000'
+                }}
+              >
+                {header.map(e => (
+                  <td>{move[e]}</td>
+                ))}
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -54,45 +57,15 @@ Dropdown.defaultProps = {
   moves: ['Growl', 'Tackle', 'Tackle', 'Quick Attack'],
   className: 'dropdown',
   style: {
-    width: '100%',
-    height: '150px',
+    height: '200px',
     overflow: 'scroll',
-    fontSize: '.8em'
+    fontSize: '.8em',
+    flexGrow: 3
   }
 }
 
 export default function Moveset(props) {
-  const [dropdown, setDropdown] = React.useState(true)
-  const [pos, setPos] = React.useState(35)
-
-  const handlePopup = pos => {
-    let position = 30 * parseInt(pos) + 8 * parseInt(pos)
-
-    setDropdown(!dropdown)
-    setPos(position)
-  }
-
-  return (
-    <div {...props}>
-      <Move onClick={e => handlePopup(1)} />
-      <Move onClick={e => handlePopup(2)} />
-      <Move onClick={e => handlePopup(3)} />
-      <Move onClick={e => handlePopup(4)} />
-
-      <div
-        style={{ width: '100%', position: 'absolute', marginTop: `${pos}px` }}
-        hidden={dropdown}
-      >
-        <Dropdown moves={movesByPokemon[props.pokemon]} />
-      </div>
-    </div>
-  )
+  return <Dropdown moves={movesByPokemon[props.pokemon]} />
 }
 
-Moveset.defaultProps = {
-  className: 'moveset',
-  style: {
-    flexGrow: 2,
-    position: 'relative'
-  }
-}
+Moveset.defaultProps = {}

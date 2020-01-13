@@ -9,6 +9,7 @@ export const BarStyle = {
     width: '100%',
     bottom: 0,
     position: 'absolute',
+    textAlign: 'center',
     fontSize: '.8em'
   },
   nature: {
@@ -37,11 +38,17 @@ export const CardStyle = {
   color: 'white',
   width: '80vw',
   margin: '1.25rem auto',
-  border: '1px solid #ddd',
   borderRadius: '8px',
-  padding: '1rem',
+  padding: '.85rem',
   position: 'relative',
   boxSizing: 'border-box'
+}
+
+export const SpriteStyle = {
+  height: '160px',
+  marginTop: '.5rem',
+  opacity: '.9',
+  filter: 'saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
 }
 
 export const StatStyle = {

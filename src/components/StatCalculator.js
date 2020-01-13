@@ -5,6 +5,7 @@ import { natures } from '../data/pokemon'
 import { calculateHP, calculateStat } from './utils/calculate'
 
 export default function StatCalculator(props) {
+  
   const [nature, setNature] = React.useState(props.nature)
 
   let stat = {}
