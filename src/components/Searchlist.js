@@ -5,10 +5,26 @@ import Type from './Type'
 
 import '../styles/searchlist.scss'
 
+function searchPokemon(searchString) {
+  var results = []
+
+  if (searchString === '') {
+    return results
+  }
+  for (var i = 0; i < galarSubset.length; i++) {
+    var pokemon = galarSubset[i][2].toLowerCase()
+    if (pokemon.indexOf(searchString.toLowerCase()) === 0) {
+      results.push(galarSubset[i])
+    }
+  }
+  return results
+}
+
 function SearchItem(props) {
   return (
     <div
       id={props.id}
+      data-ndex={props.ndex}
       style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -16,24 +32,20 @@ function SearchItem(props) {
         padding: '.25rem'
       }}
     >
-      <span style={{ width: '100%', whiteSpace: 'pre' }} before={'#' + props.id}>
+      <span style={{ width: '100%', whiteSpace: 'pre' }} before={'#' + props.id} >
         {props.name}
       </span>
       <span className="types">
         {props.types.map(type => (
-          <Type key={type} type={type} />
+          <Type key={type} type={type} style={{ fontSize: '.8em' }}/>
         ))}
       </span>
     </div>
   )
 }
 
-SearchItem.defaultProps = {
-  className: 'search-item'
-}
-
 export default function Searchlist(props) {
-  const [list, setList] = React.useState([])
+  const [ list, setList ] = React.useState([])
 
   const handleChange = event => {
     setList(searchPokemon(event.target.value))
@@ -48,6 +60,17 @@ export default function Searchlist(props) {
       borderRadius: '4px',
       zIndex: 100,
       borderBottom: 0
+    },
+    list: {
+      zIndex: 1000,
+      position: 'absolute',
+      maxHeight: 'calc(100vh / 3)',
+      height: `${list.length * 25}px`,
+      overflow: 'scroll',
+      background: '#fff',
+      color: '#222',
+      marginTop: '-2px',
+      border: '3px solid #000'
     }
   }
 
@@ -62,22 +85,16 @@ export default function Searchlist(props) {
         onChange={e => handleChange(e)}
         style={style.input}
       />
-      <div
-        style={{
-          zIndex: 1000,
-          position: 'absolute',
-          maxHeight: 'calc(100vh / 3)',
-          height: `${list.length * 25}px`,
-          overflow: 'scroll',
-          background: '#222',
-          color: '#fff',
-          marginTop: '-2px',
-          border: '3px solid #000'
-        }}
-        className="list"
-      >
+      <div style={style.list} className="list">
         {list.map(item => (
-          <SearchItem key={item[2]} name={item[2]} types={item[3]} id={item[0]} />
+          <SearchItem
+            key={item[2]}
+            name={item[2]}
+            types={item[3]}
+            id={item[0]}
+            gdex={item[0]}
+            ndex={item[1]}
+          />
         ))}
       </div>
     </div>
@@ -85,26 +102,5 @@ export default function Searchlist(props) {
 }
 
 Searchlist.defaultProps = {
-  search: '',
-  style: {
-    position: 'absolute',
-    zIndex: '100',
-    background: 'white',
-    overflow: 'scroll'
-  }
-}
-
-function searchPokemon(searchString) {
-  var results = []
-
-  if (searchString === '') {
-    return results
-  }
-  for (var i = 0; i < galarSubset.length; i++) {
-    var pokemon = galarSubset[i][2].toLowerCase()
-    if (pokemon.indexOf(searchString.toLowerCase()) === 0) {
-      results.push(galarSubset[i])
-    }
-  }
-  return results
+  search: ''
 }

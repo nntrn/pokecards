@@ -14,6 +14,7 @@ function replaceString(str, replaceWith = {}) {
 function getSpriteImgUrl(props) {
   const pokemon = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/[@id].png'
   const serebii = 'https://www.serebii.net/swordshield/pokemon/[@id].png'
+  const pokemondb = 'https://img.pokemondb.net/artwork/[@name].jpg'
 
   const id = props.id.toString().padStart(3, 0)
 
@@ -25,12 +26,20 @@ function getSpriteImgUrl(props) {
 }
 
 export default function Sprite(props) {
-  const pokedat = getGalarDataById(props.id)
+  const {id, ...attr} = props
+  const pokedat = getGalarDataById((id))
+
+  let style = SpriteStyle.default
+
+  if (parseInt(pokedat.id) > 809) {
+    style = { ...SpriteStyle.default, ...SpriteStyle.default }
+  }
 
   return (
     <img
-      {...props}
-      style={SpriteStyle}
+      {...attr}
+      id={[ pokedat.galar_dex, pokedat.name, pokedat.id ].join('-')}
+      style={style}
       src={getSpriteImgUrl(pokedat)}
       alt={pokedat.name}
     />

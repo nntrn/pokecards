@@ -6,10 +6,10 @@ import { calculateHP, calculateStat } from './utils/calculate'
 
 export default function StatCalculator(props) {
   
-  const [nature, setNature] = React.useState(props.nature)
+  const [ nature, setNature ] = React.useState(props.nature)
 
   let stat = {}
-  let statNames = ['hp', 'atk', 'def', 'spa', 'spd', 'spe']
+  let statNames = [ 'hp', 'atk', 'def', 'spa', 'spd', 'spe' ]
   var level = props.level > 0 && props.level < 101 ? props.level : 100
 
   statNames.forEach((e, i) => {
@@ -63,7 +63,7 @@ export default function StatCalculator(props) {
 }
 
 StatCalculator.defaultProps = {
-  base: [0, 0, 0, 0, 0, 0],
+  base: [ 0, 0, 0, 0, 0, 0 ],
   level: 100,
   style: {
     margin: 0,

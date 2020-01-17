@@ -13,10 +13,10 @@ import { CardStyle } from './style'
 
 export default function Card(props) {
   const { nature } = props
-  const [value, setValue] = React.useState(props.id)
-  const [newValue, setNewValue] = React.useState(props.id)
-  const [lock, setLock] = React.useState(false)
-  const [level, setLevel] = React.useState(props.level)
+  const [ value, setValue ] = React.useState(props.id)
+  const [ newValue, setNewValue ] = React.useState(props.id)
+  const [ lock, setLock ] = React.useState(false)
+  const [ level, setLevel ] = React.useState(props.level)
 
   const handleChange = event => {
     if (event.target.value && Number.isInteger(parseInt(event.target.value))) {
@@ -36,12 +36,6 @@ export default function Card(props) {
 
   const getPokemon = value => {
     return getGalarDataById(value)
-  }
-
-  const setNewPokemon = () => {
-    const n = parseInt(value) + 1
-    setValue(n)
-    setNewValue(n)
   }
 
   return (

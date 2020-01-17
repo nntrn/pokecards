@@ -2,6 +2,10 @@ export function getGalarDataById(galar_id) {
   return galarData.filter(e=>e.galar_dex===parseInt(galar_id)).shift()
 }
 
+export function getNationalData(ndex_id) {
+  return galarData.filter(e=>e.id===parseInt(ndex_id)).shift()
+}
+
 export function getSpriteImgUrl(id) {
   return `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id
     .toString()

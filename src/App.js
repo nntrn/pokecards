@@ -6,7 +6,7 @@ import Searchlist from './components/Searchlist'
 import './App.css'
 import './styles/main.css'
 
-import { randomNum, randomId } from './components/utils/util'
+import { randomId } from './components/utils/util'
 
 function getKey() {
   const key = randomId(6)
@@ -18,19 +18,18 @@ function getKey() {
 }
 
 function App() {
-
-  const [test, setTest] = React.useState([])
-  const [cards, setCards] = React.useState([])
+  const [ test, setTest ] = React.useState([])
+  const [ cards, setCards ] = React.useState([])
 
   const addId = id => {
-    const idArr = [...test, id]
+    const idArr = [ ...test, id ]
     setTest(idArr)
   }
 
   const handleAdd = event => {
     const cardId = getKey()
     const newCard = <Card {...cardId} />
-    setCards([...cards, newCard])
+    setCards([ ...cards, newCard ])
     addId(cardId.key)
   }
 
@@ -40,11 +39,16 @@ function App() {
       event.target.id ||
       event.target.parentElement.parentElement.id
 
+      const ndexId =
+      event.target.parentElement.getAttribute('data-ndex') ||
+      event.target.getAttribute('data-ndex') ||
+      event.target.parentElement.parentElement.getAttribute('data-ndex')
+
     if (parseInt(pokeId)) {
       const cardId = getKey()
-      const newCard = <Card {...cardId} id={pokeId} />
+      const newCard = <Card {...cardId} id={pokeId} ndex={ndexId}/>
       addId(cardId.key)
-      setCards([newCard, ...cards])
+      setCards([ newCard, ...cards ])
     }
   }
 
@@ -53,7 +57,7 @@ function App() {
       <h1>PokeCards</h1>
       <p>{test.join(',')}</p>
       <div onClick={e => addNew(e)}>
-        <Searchlist/>
+        <Searchlist />
       </div>
       {cards}
       <Button className="add" onClick={e => handleAdd()} text="+" />

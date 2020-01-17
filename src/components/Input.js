@@ -9,6 +9,9 @@ Input.defaultProps = {
   max: 401,
   maxLength: 3,
   type: 'number',
+  autoCorrect: 'off',
+  autoComplete: 'off',
+  spellCheck: 'false',
   style: {
     margin: 0,
     fontSize: 'inherit',

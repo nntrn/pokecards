@@ -11,7 +11,7 @@ export default function Type(props) {
 
   return (
     <span {...props} style={defaultStyle}>
-      {props.type}
+      <span className="text">{props.type}</span>
     </span>
   )
 }

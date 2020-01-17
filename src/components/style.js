@@ -44,11 +44,23 @@ export const CardStyle = {
   boxSizing: 'border-box'
 }
 
+export const InputStyle = {
+  margin: 0,
+  fontSize: 'inherit',
+  border: 0,
+  outline: 0
+}
+
 export const SpriteStyle = {
-  height: '160px',
-  marginTop: '.5rem',
-  opacity: '.9',
-  filter: 'saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
+  gen8: {
+    filter: 'saturate(.3) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
+  },
+  default: {
+    maxHeight: '140px',
+    marginTop: '.5rem',
+    opacity: '.9',
+    filter: 'saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
+  }
 }
 
 export const StatStyle = {
@@ -71,11 +83,12 @@ export const TypeStyle = {
   margin: '0 0.14rem',
   borderRadius: '5px',
   textTransform: 'uppercase',
-  position: 'relative',
+  // position: 'relative',
   fontFamily: 'sans-serif',
   whiteSpace: 'pre',
-  color: 'rgba(0,0,0,1)',
-  filter: 'opacity(.6) saturate(1.25) contrast(1.2)'
+  // color: 'rgba(0,0,0,1)',
+  color: 'white',
+  filter: 'opacity(.9) saturate(1.25) contrast(1.2)'
 }
 
 export const LevelStyle = {

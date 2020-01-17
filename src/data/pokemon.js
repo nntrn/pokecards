@@ -26,78 +26,140 @@ export let natures = {
   Timid: { plus: 'spe', minus: 'atk' },
 }
 
-export const typeIcon = {
+export const pokeTypes = {
   fire: {
     color: '#d52100',
-    svg: 'M352 395c7-23-6-70-6-70s-9 38-23 53a74 74 0 01-47 23c17-9 29-26 29-46 0-28-23-51-52-51-28 0-51 23-51 51 0 8 1 15 5 22-18-15-21-37-21-37s-20 82 35 121 162 6 162 6-154 108-268-10C17 356 90 222 90 222s-3 12-3 27c0 14 7 25 7 25s24-49 42-69c17-19 38-34 57-47 14-10 27-19 34-28C269 84 243 0 243 0s47 41 60 94c5 20 2 43-1 64-5 33-9 60 25 58 54-3 7-86 7-86s122 65 113 177c-9 113-134 138-134 138s33-26 39-50z'
+    icon:
+      'M352 395c7-23-6-70-6-70s-9 38-23 53a74 74 0 01-47 23c17-9 29-26 29-46 0-28-23-51-52-51-28 0-51 23-51 51 0 8 1 15 5 22-18-15-21-37-21-37s-20 82 35 121 162 6 162 6-154 108-268-10C17 356 90 222 90 222s-3 12-3 27c0 14 7 25 7 25s24-49 42-69c17-19 38-34 57-47 14-10 27-19 34-28C269 84 243 0 243 0s47 41 60 94c5 20 2 43-1 64-5 33-9 60 25 58 54-3 7-86 7-86s122 65 113 177c-9 113-134 138-134 138s33-26 39-50z',
+    gradient: 'linear-gradient( to bottom, #d37b31 0%, #d39540 100% )'
   },
   water: {
     color: '#0080ff',
-    svg: 'M422 347a166 166 0 01-332 0C90 258 247 14 256 0c9 14 166 258 166 347zM228 459c-84-19-69-112-69-112s23 56 78 75c56 18 124-9 124-9s-48 64-133 46z'
+    icon:
+      'M422 347a166 166 0 01-332 0C90 258 247 14 256 0c9 14 166 258 166 347zM228 459c-84-19-69-112-69-112s23 56 78 75c56 18 124-9 124-9s-48 64-133 46z',
+    gradient: 'linear-gradient( to bottom, #4d91d7 0%, #73c6df 100% )'
   },
   electric: {
     color: '#c90',
-    svg: 'M153 1V0h180l83 267-1 1H296h-1l69 242h-1L97 155c-1 0 0 0 0 0h109v-1L153 1z'
+    icon: 'M153 1V0h180l83 267-1 1H296h-1l69 242h-1L97 155c-1 0 0 0 0 0h109v-1L153 1z',
+    gradient: 'linear-gradient( to bottom, #c3a427 0%, #d2bd64 100% )'
   },
   grass: {
     color: '#5cb737',
-    svg: 'M97 441l-5-5C2 345 2 198 92 107c91-90 380-97 380-97s39 335-51 426c-81 80-206 89-296 27l72-90 117-25-95-10 60-61 69-15-54-16 54-98-77 86-30-42 10 70-53 61-25-77v102z'
+    icon:
+      'M97 441l-5-5C2 345 2 198 92 107c91-90 380-97 380-97s39 335-51 426c-81 80-206 89-296 27l72-90 117-25-95-10 60-61 69-15-54-16 54-98-77 86-30-42 10 70-53 61-25-77v102z',
+    gradient: 'linear-gradient( to bottom, #21934d 0%, #2fb47f 100% )'
   },
   ice: {
     color: '#0af',
-    svg: 'M384 39l2 138-121 58-1-130 120-66zM505 257l-119 68-120-68 120-63 119 63zM245 257l-119 68L6 257l120-63 119 63zM124 38l124 62-3 134-117-58-4-138zM388 474l-124-62 3-134 117 58 4 138zM129 475l-2-139 121-58 1 131-120 66z'
+    icon:
+      'M384 39l2 138-121 58-1-130 120-66zM505 257l-119 68-120-68 120-63 119 63zM245 257l-119 68L6 257l120-63 119 63zM124 38l124 62-3 134-117-58-4-138zM388 474l-124-62 3-134 117 58 4 138zM129 475l-2-139 121-58 1 131-120 66z',
+    gradient: 'linear-gradient( to bottom, #2bb5a6 0%, #78c5bf 100% )'
   },
   fighting: {
     color: '#a84d3d',
-    svg: 'M88 43a56 56 0 01102-17h17a56 56 0 0192 17h14a56 56 0 0182 25h37l1 1 5-1c32 0 57 26 57 57v175c-4 118-109 212-239 212-132 0-239-97-239-218 0-58 25-110 66-149-1 56 0 115 5 114 12-3 2-178 0-216z'
+    icon:
+      'M88 43a56 56 0 01102-17h17a56 56 0 0192 17h14a56 56 0 0182 25h37l1 1 5-1c32 0 57 26 57 57v175c-4 118-109 212-239 212-132 0-239-97-239-218 0-58 25-110 66-149-1 56 0 115 5 114 12-3 2-178 0-216z',
+    gradient: 'linear-gradient( to bottom, #c3334e 0%, #d37377 100% )'
   },
   poison: {
     color: '#88447a',
-    svg: 'M428 393c52-41 84-101 84-167C512 101 397 0 256 0S0 101 0 226c0 64 30 122 79 163-3 10-5 21-5 33 0 50 30 90 67 90 25 0 46-17 58-43 12 26 33 43 57 43 22 0 42-14 54-36 12 22 32 36 54 36 37 0 67-40 67-90 0-10-1-20-3-29zm-24-163c0 64-68 115-151 115-84 0-152-51-152-115 0-63 68-114 152-114 83 0 151 51 151 114z'
+    icon:
+      'M428 393c52-41 84-101 84-167C512 101 397 0 256 0S0 101 0 226c0 64 30 122 79 163-3 10-5 21-5 33 0 50 30 90 67 90 25 0 46-17 58-43 12 26 33 43 57 43 22 0 42-14 54-36 12 22 32 36 54 36 37 0 67-40 67-90 0-10-1-20-3-29zm-24-163c0 64-68 115-151 115-84 0-152-51-152-115 0-63 68-114 152-114 83 0 151 51 151 114z',
+    gradient: 'linear-gradient( to bottom, #aa66cc 0%, #c660d7 100% )'
   },
   ground: {
     color: '#bf9926',
-    svg: 'M113 440v-1L243 70h140l129 369v1H113zM0 441l97-260h85L88 441H0z'
+    icon: 'M113 440v-1L243 70h140l129 369v1H113zM0 441l97-260h85L88 441H0z',
+    gradient: 'linear-gradient( to bottom, #c17249 0%, #ca936c 100% )'
   },
   flying: {
     color: '#556dff',
-    svg: 'M179 478c75 0 139-42 165-101 1-1-106 28-103 18 2-5 67-29 115-57 27-16 40-50 40-50s-46 23-69 29c-47 11-89 10-89 9 0-3 69-16 164-74 45-28 58-75 58-75s-50 30-80 39c-71 23-135 30-135 27 0-7 57-22 117-51 31-16 59-35 90-58 52-36 60-100 60-100s-51 33-76 44a844 844 0 01-257 73C80 159 0 227 0 317c0 89 80 161 179 161z'
+    icon:
+      'M179 478c75 0 139-42 165-101 1-1-106 28-103 18 2-5 67-29 115-57 27-16 40-50 40-50s-46 23-69 29c-47 11-89 10-89 9 0-3 69-16 164-74 45-28 58-75 58-75s-50 30-80 39c-71 23-135 30-135 27 0-7 57-22 117-51 31-16 59-35 90-58 52-36 60-100 60-100s-51 33-76 44a844 844 0 01-257 73C80 159 0 227 0 317c0 89 80 161 179 161z',
+    gradient: 'linear-gradient( to bottom, #8199bd 0%, #a5b4cb 100% )'
   },
   psychic: {
     color: '#ff227a',
-    svg: 'M456 425s-65 52-193 31c-98-17-150-124-150-182 0-137 102-168 170-168 69 0 114 67 114 119 0 51-37 96-94 96s-74-39-74-76 30-50 57-50 36 23 36 43-15 27-28 27-14-6-19-13 6-33-12-33c-19 0-22 30-22 30s7 57 62 56 82-44 74-86-49-87-121-78-101 82-88 160 106 123 179 106c73-16 146-69 146-203C493 69 377-12 238 1 99 15 13 136 18 282c6 146 144 226 261 230 118 4 189-64 189-64s16-14 10-26c-6-11-22 3-22 3z'
+    icon:
+      'M456 425s-65 52-193 31c-98-17-150-124-150-182 0-137 102-168 170-168 69 0 114 67 114 119 0 51-37 96-94 96s-74-39-74-76 30-50 57-50 36 23 36 43-15 27-28 27-14-6-19-13 6-33-12-33c-19 0-22 30-22 30s7 57 62 56 82-44 74-86-49-87-121-78-101 82-88 160 106 123 179 106c73-16 146-69 146-203C493 69 377-12 238 1 99 15 13 136 18 282c6 146 144 226 261 230 118 4 189-64 189-64s16-14 10-26c-6-11-22 3-22 3z',
+    gradient: 'linear-gradient( to bottom, #f96d75 0%, #fda39a 100% )'
   },
   bug: {
     color: '#83901a',
-    svg: 'M342 1l2-1 36 26v1l-50 73c24 7 41 16 41 16s-41 70-110 70-119-65-119-65 17-11 43-21l-55-66v-2l34-28h2l70 84a163 163 0 0145 0zm14 189c18-14 47-48 47-48s71 57 71 177c0 121-124 193-124 193s-59-60-73-136c-15-75 21-159 21-159s39-14 58-27zm-200 0c-18-14-46-48-46-48s-72 57-72 177c0 121 124 193 124 193s59-60 74-136c14-75-22-159-22-159s-39-14-58-27z'
+    icon:
+      'M342 1l2-1 36 26v1l-50 73c24 7 41 16 41 16s-41 70-110 70-119-65-119-65 17-11 43-21l-55-66v-2l34-28h2l70 84a163 163 0 0145 0zm14 189c18-14 47-48 47-48s71 57 71 177c0 121-124 193-124 193s-59-60-73-136c-15-75 21-159 21-159s39-14 58-27zm-200 0c-18-14-46-48-46-48s-72 57-72 177c0 121 124 193 124 193s59-60 74-136c14-75-22-159-22-159s-39-14-58-27z',
+    gradient: 'linear-gradient( to bottom, #6f9a24 0%, #9bb23d 100% )'
   },
   rock: {
     color: '#a59249',
-    svg: 'M395 245l33-191h10l74 233-54 43h-1l-62-85zM-1 371l112 37 250-173 27-180H166L-1 257v114zm159 46l122 40 145-104v-1l-54-81-213 146z'
+    icon:
+      'M395 245l33-191h10l74 233-54 43h-1l-62-85zM-1 371l112 37 250-173 27-180H166L-1 257v114zm159 46l122 40 145-104v-1l-54-81-213 146z',
+    gradient: 'linear-gradient( to bottom, #c7b78a 0%, #d7cd92 100% )'
   },
   ghost: {
     color: '#5454b3',
-    svg: 'M369 510c-46 3-99 3-117 0C112 492 0 389 0 251 0 112 115 0 256 0s256 112 256 251c0 64-25 123-66 167-11 12 5 21 20 30 15 8 30 16 22 29-10 13-64 30-119 33zM220 219c0 22-18 40-40 40s-40-18-40-40c0-14 8-27 20-34 1 19 16 34 35 34h25zm124-34c-1 19-16 34-35 34h-25c0 22 18 40 40 40s40-18 40-40c0-14-8-27-20-34z'
+    icon:
+      'M369 510c-46 3-99 3-117 0C112 492 0 389 0 251 0 112 115 0 256 0s256 112 256 251c0 64-25 123-66 167-11 12 5 21 20 30 15 8 30 16 22 29-10 13-64 30-119 33zM220 219c0 22-18 40-40 40s-40-18-40-40c0-14 8-27 20-34 1 19 16 34 35 34h25zm124-34c-1 19-16 34-35 34h-25c0 22 18 40 40 40s40-18 40-40c0-14-8-27-20-34z',
+    gradient: 'linear-gradient( to bottom, #456095 0%, #7a75b5 100% )'
   },
   dragon: {
     color: '#4e38e9',
-    svg: 'M281 255c3-2 6-7 8-12 32 13 54 43 54 79 0 46-39 84-87 84-19 0-38-6-52-17l-12-6c-5-3-8-5-10-4-6 0-4 6-3 11 1 3 2 6 1 8-2 1-7-4-13-10-9-8-19-17-23-14-4 2 0 8 4 16l6 9c4 6 8 11 6 12s-16-8-27-21l-13-15c-8-11-16-20-20-19-5 1-1 12 4 21l9 13c4 7 7 11 6 12-2 1-15-12-24-28l-13-29c-4-9-7-16-9-17-7-3-7 11-4 31l1 8c26 84 106 145 201 145 115 0 209-92 209-205 0-107-85-195-193-204l3-15s19-46 20-55v-3c1-10 4-30-13-30-10 0-14 7-19 14a566 566 0 01-67 70c-34 30-67 55-87 69-9 6-15 11-16 13-14 13-64 103-64 103s-17 29-11 35 20 5 20 5l202-46 10-2c7-1 8-2 16-6zm-132-55c-10 10-26 32-26 32s30 2 47-14 13-44 13-44-24 17-34 26z'
+    icon:
+      'M281 255c3-2 6-7 8-12 32 13 54 43 54 79 0 46-39 84-87 84-19 0-38-6-52-17l-12-6c-5-3-8-5-10-4-6 0-4 6-3 11 1 3 2 6 1 8-2 1-7-4-13-10-9-8-19-17-23-14-4 2 0 8 4 16l6 9c4 6 8 11 6 12s-16-8-27-21l-13-15c-8-11-16-20-20-19-5 1-1 12 4 21l9 13c4 7 7 11 6 12-2 1-15-12-24-28l-13-29c-4-9-7-16-9-17-7-3-7 11-4 31l1 8c26 84 106 145 201 145 115 0 209-92 209-205 0-107-85-195-193-204l3-15s19-46 20-55v-3c1-10 4-30-13-30-10 0-14 7-19 14a566 566 0 01-67 70c-34 30-67 55-87 69-9 6-15 11-16 13-14 13-64 103-64 103s-17 29-11 35 20 5 20 5l202-46 10-2c7-1 8-2 16-6zm-132-55c-10 10-26 32-26 32s30 2 47-14 13-44 13-44-24 17-34 26z',
+    gradient: 'linear-gradient( to bottom, #1d547d 0%, #1e719b 100% )'
   },
   dark: {
     color: '#573e31',
-    svg: 'M229 453l30 2a196 196 0 10-21-390c53 41 89 111 89 191 0 84-39 157-98 197zm27 59a256 256 0 100-512 256 256 0 000 512z'
+    icon:
+      'M229 453l30 2a196 196 0 10-21-390c53 41 89 111 89 191 0 84-39 157-98 197zm27 59a256 256 0 100-512 256 256 0 000 512z',
+    gradient: 'linear-gradient( to bottom, #41403e 0%, #585755 100% )'
   },
   steel: {
     color: '#8e8ea4',
-    svg: 'M0 255v-1L129 34h256l127 220v1L385 474H129L0 255zm375-1a119 119 0 11-238 0 119 119 0 01238 0z'
+    icon:
+      'M0 255v-1L129 34h256l127 220v1L385 474H129L0 255zm375-1a119 119 0 11-238 0 119 119 0 01238 0z',
+    gradient: 'linear-gradient( to bottom, #54869e 0%, #58abab 100% )'
   },
   fairy: {
     color: '#e76de7',
-    svg: 'M103 406l82-24 71 130 71-130 82 24h1l-24-81 126-69-127-70 25-84h-1l-84 24L256 0l-69 126-84-24h-1l25 84L0 256l126 69-24 81h1zm63-149l59 32 31 58h1l32-58 58-32v-1l-58-31-32-59h-1l-31 59-59 31v1z'
+    icon:
+      'M103 406l82-24 71 130 71-130 82 24h1l-24-81 126-69-127-70 25-84h-1l-84 24L256 0l-69 126-84-24h-1l25 84L0 256l126 69-24 81h1zm63-149l59 32 31 58h1l32-58 58-32v-1l-58-31-32-59h-1l-31 59-59 31v1z',
+    gradient: 'linear-gradient( to bottom, #d289c1 0%, #d1a2c4 100% )'
   },
   normal: {
     color: '#a8a878',
-    svg: 'M481 256a225 225 0 11-450 0 225 225 0 01450 0zm-96 0a129 129 0 11-258 0 129 129 0 01258 0z'
+    icon:
+      'M481 256a225 225 0 11-450 0 225 225 0 01450 0zm-96 0a129 129 0 11-258 0 129 129 0 01258 0z',
+    gradient: 'linear-gradient( to bottom, #797d7e 0%, #9a9995 100% )'
+  }
+}
+
+
+export const moveCategories = {
+  status: {
+    viewbox: "0 0 100 74",
+    paths: [
+      'M57 5H47l3 3c-9 0-16 6-16 13s7 13 16 13c10 0 17 6 17 13s-7 13-17 13l-8 1-10-2c-6-2-13-3-21-12l6 7c6 6 18 10 18 10s11 4 32 0c20-5 27-21 29-32C97 21 80 6 57 5z',
+      'M50 68C22 68 0 53 0 34S22 0 50 0c27 0 50 15 50 34S77 68 50 68zm0-60C27 8 8 20 8 34s19 26 42 26 42-12 42-26S73 8 50 8z'
+    ],
+    fill: '#bdc3c7'
+  },
+  physical: {
+    viewbox: "0 0 115 90",
+    paths: [
+      'M98 12L80 36l29 8-29 8 18 24-32-13-10 22-10-22-32 13 18-24-29-8 29-8-18-24 32 13L56 3l10 22z'
+    ],
+    fill: '#efc13b'
+  },
+  special: {
+    viewbox: "0 0 100 73",
+    paths: [
+      'M50 68C23 68 0 53 0 34S23 0 50 0c28 0 50 15 50 34S78 68 50 68zm0-60C27 8 8 20 8 34s19 26 42 26 42-12 42-26S73 8 50 8z',
+      'M50 51c-18 0-32-7-32-17s14-17 32-17 32 7 32 17-14 17-32 17zm0-28c-15 0-25 6-25 11s10 10 25 10 26-5 26-10-11-11-26-11z',
+      'M61 34c0 2-5 3-11 3s-11-1-11-3 5-4 11-4 11 2 11 4z'
+    ],
+    fill: '#3498db'
   }
 }
 
@@ -121,6 +183,159 @@ export const typeColor = {
   fairy: '#e76de7',
   normal: '#a8a878',
 }
+
+export const pokemonTypeMatchup = [
+  {
+    name: 'normal',
+    strongAgainst: [],
+    weakAgainst: ['rock', 'ghost', 'steel'],
+    resistantTo: ['ghost'],
+    vulnerableTo: ['fighting']
+  },
+  {
+    name: 'fighting',
+    strongAgainst: ['normal', 'rock', 'steel', 'ice', 'dark'],
+    weakAgainst: ['flying', 'poison', 'psychic', 'bug', 'ghost', 'fairy'],
+    resistantTo: ['rock', 'bug', 'dark'],
+    vulnerableTo: ['flying', 'psychic', 'fairy']
+  },
+  {
+    name: 'flying',
+    strongAgainst: ['fighting', 'bug', 'grass'],
+    weakAgainst: ['rock', 'steel', 'electric'],
+    resistantTo: ['fighting', 'ground', 'bug', 'grass'],
+    vulnerableTo: ['rock', 'electric', 'ice']
+  },
+  {
+    name: 'poison',
+    strongAgainst: ['grass', 'fairy'],
+    weakAgainst: ['poison', 'ground', 'rock', 'ghost', 'steel'],
+    resistantTo: ['fighting', 'poison', 'grass', 'fairy'],
+    vulnerableTo: ['ground', 'psychic']
+  },
+  {
+    name: 'ground',
+    strongAgainst: ['poison', 'rock', 'steel', 'fire', 'electric'],
+    weakAgainst: ['flying', 'bug', 'grass'],
+    resistantTo: ['poison', 'rock', 'electric'],
+    vulnerableTo: ['water', 'grass', 'ice']
+  },
+  {
+    name: 'rock',
+    strongAgainst: ['flying', 'bug', 'fire', 'ice'],
+    weakAgainst: ['fighting', 'ground', 'steel'],
+    resistantTo: ['normal', 'flying', 'poison', 'fire'],
+    vulnerableTo: ['fighting', 'ground', 'steel', 'water', 'grass']
+  },
+  {
+    name: 'bug',
+    strongAgainst: ['grass', 'psychic', 'dark'],
+    weakAgainst: ['fighting', 'flying', 'poison', 'ghost', 'steel', 'fire', 'fairy'],
+    resistantTo: ['fighting', 'ground', 'grass'],
+    vulnerableTo: ['flying', 'rock', 'fire']
+  },
+  {
+    name: 'ghost',
+    strongAgainst: ['ghost', 'psychic'],
+    weakAgainst: ['normal', 'dark'],
+    resistantTo: ['normal', 'fighting', 'poison', 'bug'],
+    vulnerableTo: ['ghost', 'dark']
+  },
+  {
+    name: 'steel',
+    strongAgainst: ['rock', 'ice', 'fairy'],
+    weakAgainst: ['steel', 'fire', 'water', 'electric'],
+    resistantTo: [ 'normal', 'flying','poison', 'rock', 'bug', 'steel', 'grass',
+      'psychic','ice', 'dragon','fairy' ],
+    vulnerableTo: ['fighting', 'ground', 'fire']
+  },
+  {
+    name: 'fire',
+    strongAgainst: ['bug', 'steel', 'grass', 'ice'],
+    weakAgainst: ['rock', 'fire', 'water', 'dragon'],
+    resistantTo: ['bug', 'steel', 'fire', 'grass', 'ice'],
+    vulnerableTo: ['ground', 'rock', 'water']
+  },
+  {
+    name: 'water',
+    strongAgainst: ['ground', 'rock', 'fire'],
+    weakAgainst: ['water', 'grass', 'dragon'],
+    resistantTo: ['steel', 'fire', 'water', 'ice'],
+    vulnerableTo: ['grass', 'electric']
+  },
+  {
+    name: 'grass',
+    strongAgainst: ['ground', 'rock', 'water'],
+    weakAgainst: ['flying', 'poison', 'bug', 'steel', 'fire', 'grass', 'dragon'],
+    resistantTo: ['ground', 'water', 'grass', 'electric'],
+    vulnerableTo: ['flying', 'poison', 'bug', 'fire', 'ice']
+  },
+  {
+    name: 'electric',
+    strongAgainst: ['flying', 'water'],
+    weakAgainst: ['ground', 'grass', 'electric', 'dragon'],
+    resistantTo: ['flying', 'steel', 'electric'],
+    vulnerableTo: ['ground']
+  },
+  {
+    name: 'psychic',
+    strongAgainst: ['fighting', 'poison'],
+    weakAgainst: ['steel', 'psychic', 'dark'],
+    resistantTo: ['fighting', 'psychic'],
+    vulnerableTo: ['bug', 'ghost', 'dark']
+  },
+  {
+    name: 'ice',
+    strongAgainst: ['flying', 'ground', 'grass', 'dragon'],
+    weakAgainst: ['steel', 'fire', 'water', 'ice'],
+    resistantTo: ['ice'],
+    vulnerableTo: ['fighting', 'rock', 'steel', 'fire']
+  },
+  {
+    name: 'dragon',
+    strongAgainst: ['dragon'],
+    weakAgainst: ['steel', 'fairy'],
+    resistantTo: ['fire', 'water', 'grass', 'electric'],
+    vulnerableTo: ['ice', 'dragon', 'fairy']
+  },
+  {
+    name: 'fairy',
+    strongAgainst: ['fighting', 'dragon', 'dark'],
+    weakAgainst: ['poison', 'steel', 'fire'],
+    resistantTo: ['fighting', 'bug', 'dragon', 'dark'],
+    vulnerableTo: ['poison', 'steel']
+  },
+  {
+    name: 'dark',
+    strongAgainst: ['ghost', 'psychic'],
+    weakAgainst: ['fighting', 'dark', 'fairy'],
+    resistantTo: ['ghost', 'psychic', 'dark'],
+    vulnerableTo: ['fighting', 'bug', 'fairy']
+  }
+]
+
+
+export const typechart = {
+  null: {"normal": 1, "fighting": 1, "flying": 1, "poison": 1, "ground": 1, "rock": 1, "bug": 1, "ghost": 1, "steel": 1, "fire": 1, "water": 1, "grass": 1, "electric": 1, "psychic": 1, "ice": 1, "dragon": 1, "dark": 1, "fairy": 1},
+  normal: {"normal": 1, "fighting": 2, "flying": 1, "poison": 1, "ground": 1, "rock": 1, "bug": 1, "ghost": 0, "steel": 1, "fire": 1, "water": 1, "grass": 1, "electric": 1, "psychic": 1, "ice": 1, "dragon": 1, "dark": 1, "fairy": 1},
+  fighting: {"normal": 1, "fighting": 1, "flying": 2, "poison": 1, "ground": 1, "rock": 0.5, "bug": 0.5, "ghost": 1, "steel": 1, "fire": 1, "water": 1, "grass": 1, "electric": 1, "psychic": 2, "ice": 1, "dragon": 1, "dark": 0.5, "fairy": 2},
+  flying: {"normal": 1, "fighting": 0.5, "flying": 1, "poison": 1, "ground": 0, "rock": 2, "bug": 0.5, "ghost": 1, "steel": 1, "fire": 1, "water": 1, "grass": 0.5, "electric": 2, "psychic": 1, "ice": 2, "dragon": 1, "dark": 1, "fairy": 1},
+  poison: {"normal": 1, "fighting": 0.5, "flying": 1, "poison": 0.5, "ground": 2, "rock": 1, "bug": 0.5, "ghost": 1, "steel": 1, "fire": 1, "water": 1, "grass": 0.5, "electric": 1, "psychic": 2, "ice": 1, "dragon": 1, "dark": 1, "fairy": 0.5},
+  ground: {"normal": 1, "fighting": 1, "flying": 1, "poison": 0.5, "ground": 1, "rock": 0.5, "bug": 1, "ghost": 1, "steel": 1, "fire": 1, "water": 2, "grass": 2, "electric": 0, "psychic": 1, "ice": 2, "dragon": 1, "dark": 1, "fairy": 1},
+  rock: {"normal": 0.5, "fighting": 2, "flying": 0.5, "poison": 0.5, "ground": 2, "rock": 1, "bug": 1, "ghost": 1, "steel": 2, "fire": 0.5, "water": 2, "grass": 0.5, "electric": 1, "psychic": 1, "ice": 1, "dragon": 1, "dark": 1, "fairy": 1},
+  bug: {"normal": 1, "fighting": 0.5, "flying": 2, "poison": 1, "ground": 0.5, "rock": 2, "bug": 1, "ghost": 1, "steel": 1, "fire": 2, "water": 1, "grass": 0.5, "electric": 1, "psychic": 1, "ice": 1, "dragon": 1, "dark": 1, "fairy": 1},
+  ghost: {"normal": 0, "fighting": 0, "flying": 1, "poison": 0.5, "ground": 1, "rock": 1, "bug": 0.5, "ghost": 2, "steel": 1, "fire": 1, "water": 1, "grass": 1, "electric": 1, "psychic": 1, "ice": 1, "dragon": 1, "dark": 2, "fairy": 1},
+  steel: {"normal": 0.5, "fighting": 2, "flying": 0.5, "poison": 0, "ground": 2, "rock": 0.5, "bug": 0.5, "ghost": 1, "steel": 0.5, "fire": 2, "water": 1, "grass": 0.5, "electric": 1, "psychic": 0.5, "ice": 0.5, "dragon": 0.5, "dark": 1, "fairy": 0.5},
+  fire: {"normal": 1, "fighting": 1, "flying": 1, "poison": 1, "ground": 2, "rock": 2, "bug": 0.5, "ghost": 1, "steel": 0.5, "fire": 0.5, "water": 2, "grass": 0.5, "electric": 1, "psychic": 1, "ice": 0.5, "dragon": 1, "dark": 1, "fairy": 0.5},
+  water: {"normal": 1, "fighting": 1, "flying": 1, "poison": 1, "ground": 1, "rock": 1, "bug": 1, "ghost": 1, "steel": 0.5, "fire": 0.5, "water": 0.5, "grass": 2, "electric": 2, "psychic": 1, "ice": 0.5, "dragon": 1, "dark": 1, "fairy": 1},
+  grass: {"normal": 1, "fighting": 1, "flying": 2, "poison": 2, "ground": 0.5, "rock": 1, "bug": 2, "ghost": 1, "steel": 1, "fire": 2, "water": 0.5, "grass": 0.5, "electric": 0.5, "psychic": 1, "ice": 2, "dragon": 1, "dark": 1, "fairy": 1},
+  electric: {"normal": 1, "fighting": 1, "flying": 0.5, "poison": 1, "ground": 2, "rock": 1, "bug": 1, "ghost": 1, "steel": 0.5, "fire": 1, "water": 1, "grass": 1, "electric": 0.5, "psychic": 1, "ice": 1, "dragon": 1, "dark": 1, "fairy": 1},
+  psychic: {"normal": 1, "fighting": 0.5, "flying": 1, "poison": 1, "ground": 1, "rock": 1, "bug": 2, "ghost": 2, "steel": 1, "fire": 1, "water": 1, "grass": 1, "electric": 1, "psychic": 0.5, "ice": 1, "dragon": 1, "dark": 2, "fairy": 1},
+  ice: {"normal": 1, "fighting": 2, "flying": 1, "poison": 1, "ground": 1, "rock": 2, "bug": 1, "ghost": 1, "steel": 2, "fire": 2, "water": 1, "grass": 1, "electric": 1, "psychic": 1, "ice": 0.5, "dragon": 1, "dark": 1, "fairy": 1},
+  dragon: {"normal": 1, "fighting": 1, "flying": 1, "poison": 1, "ground": 1, "rock": 1, "bug": 1, "ghost": 1, "steel": 1, "fire": 0.5, "water": 0.5, "grass": 0.5, "electric": 0.5, "psychic": 1, "ice": 2, "dragon": 2, "dark": 1, "fairy": 2},
+  dark: {"normal": 1, "fighting": 2, "flying": 1, "poison": 1, "ground": 1, "rock": 1, "bug": 2, "ghost": 0.5, "steel": 1, "fire": 1, "water": 1, "grass": 1, "electric": 1, "psychic": 0, "ice": 1, "dragon": 1, "dark": 0.5, "fairy": 2},
+  fairy: {"normal": 1, "fighting": 0.5, "flying": 1, "poison": 2, "ground": 1, "rock": 1, "bug": 0.5, "ghost": 1, "steel": 2, "fire": 1, "water": 1, "grass": 1, "electric": 1, "psychic": 1, "ice": 1, "dragon": 0, "dark": 0.5, "fairy": 1}
+  }
 
 export const abilities = [
   {'name': 'Adaptability', 'desc': "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 2 instead of 1.5."},

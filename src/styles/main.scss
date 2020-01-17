@@ -37,3 +37,8 @@ $positions: ('top', 'left', 'bottom', 'right');
     filter: grayscale(1);
   }
 }
+
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
