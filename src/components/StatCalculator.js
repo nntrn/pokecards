@@ -5,7 +5,6 @@ import { natures } from '../data/pokemon'
 import { calculateHP, calculateStat } from './utils/calculate'
 
 export default function StatCalculator(props) {
-  
   const [ nature, setNature ] = React.useState(props.nature)
 
   let stat = {}
@@ -24,11 +23,12 @@ export default function StatCalculator(props) {
   const max = Math.max(...Object.values(stat)) + 50
 
   return (
-    <div>
+    <div className="flex column space-between">
       <select
         value={nature}
         onChange={e => setNature(e.target.value)}
         disabled={props.disabled}
+        data-store="nature"
       >
         {Object.keys(natures).map(e => (
           <option value={e} key={e}>
@@ -36,6 +36,7 @@ export default function StatCalculator(props) {
           </option>
         ))}
       </select>
+
       <div {...props}>
         {Object.keys(stat).map((e, i) => (
           <Stat
@@ -54,10 +55,10 @@ export default function StatCalculator(props) {
           />
         ))}
       </div>
-      <p>
+      <div>
         <strong>Base total: </strong>
         <span> {props.base.reduce((a, b) => a + b, 0)}</span>
-      </p>
+      </div>
     </div>
   )
 }

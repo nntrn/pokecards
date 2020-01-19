@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { galarSubset } from '../data/galar-data'
 
 import Type from './Type'
 
+import { SearchListStyle } from './style'
 import '../styles/searchlist.scss'
 
 function searchPokemon(searchString) {
@@ -20,58 +21,15 @@ function searchPokemon(searchString) {
   return results
 }
 
-function SearchItem(props) {
-  return (
-    <div
-      id={props.id}
-      data-ndex={props.ndex}
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        borderBottom: '3px solid #000',
-        padding: '.25rem'
-      }}
-    >
-      <span style={{ width: '100%', whiteSpace: 'pre' }} before={'#' + props.id} >
-        {props.name}
-      </span>
-      <span className="types">
-        {props.types.map(type => (
-          <Type key={type} type={type} style={{ fontSize: '.8em' }}/>
-        ))}
-      </span>
-    </div>
-  )
-}
-
-export default function Searchlist(props) {
+export default function Searchlist({ item, onChildClick }) {
   const [ list, setList ] = React.useState([])
 
   const handleChange = event => {
     setList(searchPokemon(event.target.value))
   }
 
-  const style = {
-    input: {
-      outline: 'none',
-      padding: '.35em',
-      border: '3px solid black',
-      fontSize: '1.2em',
-      borderRadius: '4px',
-      zIndex: 100,
-      borderBottom: 0
-    },
-    list: {
-      zIndex: 1000,
-      position: 'absolute',
-      maxHeight: 'calc(100vh / 3)',
-      height: `${list.length * 25}px`,
-      overflow: 'scroll',
-      background: '#fff',
-      color: '#222',
-      marginTop: '-2px',
-      border: '3px solid #000'
-    }
+  const sendData = item => {
+    onChildClick({ gdex: item[0], ndex: item[1], name: item[2], types: item[3] })
   }
 
   return (
@@ -83,19 +41,29 @@ export default function Searchlist(props) {
         autoComplete="off"
         spellCheck="false"
         onChange={e => handleChange(e)}
-        style={style.input}
+        style={SearchListStyle.input}
       />
-      <div style={style.list} className="list">
-        {list.map(item => (
-          <SearchItem
-            key={item[2]}
-            name={item[2]}
-            types={item[3]}
-            id={item[0]}
-            gdex={item[0]}
-            ndex={item[1]}
-          />
-        ))}
+      <div
+        style={{ ...SearchListStyle.list, height: `${list.length * 25}px` }}
+        className="list"
+      >
+        {list.map(item => {
+          return (
+            <div
+              key={item[2]}
+              style={SearchListStyle.item}
+              title={item[3].join('/')}
+              onClick={() => sendData(item)}
+            >
+              <span before={'#' + item[0]}>{item[2]}</span>
+              <span className="types small">
+                {item[3].map(type => (
+                  <Type key={type} type={type} />
+                ))}
+              </span>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

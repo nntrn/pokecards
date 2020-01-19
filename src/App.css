@@ -1,3 +1,5 @@
+@import-normalize;
+
 * {
   box-sizing: border-box;
 }
@@ -69,10 +71,6 @@ button.delete:hover {
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.05);
   color: #068c9d;
   transition: all 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-input[disabled] {
-  background: #ddd;
 }
 
 .white-space {
@@ -177,13 +175,13 @@ button.add:hover {
 }
 
 .abilities {
-  align-items: center;
+  align-items: baseline;
   align-content: center;
   justify-content: flex-start;
   display: flex;
   font-size: 0.8em;
-  margin: 0.5rem 0;
   position: relative;
+  background: inherit;
 }
 
 input[type='radio'] {
@@ -217,9 +215,9 @@ input[type='radio'] {
   padding: 0.3rem;
   background: black;
   bottom: 0;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   min-width: calc(100% / 3);
-  z-index: 10;
+  z-index: 1000;
   white-space: pre-wrap;
   content: attr(data-desc);
 }
@@ -227,4 +225,11 @@ input[type='radio'] {
 .ability input[type='radio'] + label:hover:before {
   content: attr(data-desc);
   display: flex !important;
+}
+
+@media screen and (max-width: 500px) {
+  .abilities {
+    flex-grow: 3;
+    width: 100%;
+  }
 }

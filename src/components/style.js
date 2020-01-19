@@ -48,7 +48,39 @@ export const InputStyle = {
   margin: 0,
   fontSize: 'inherit',
   border: 0,
-  outline: 0
+  outline: 0,
+  fontWeight: 500,
+  padding: 0,
+}
+
+export const SearchListStyle = {
+  item: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    borderBottom: '3px solid #000',
+    padding: '.25rem',
+    border: '2px solid #222',
+    position: 'relative'
+  },
+  input: {
+    outline: 'none',
+    padding: '.35em',
+    border: '3px solid #222',
+    fontSize: '1.2em',
+    borderRadius: '4px',
+    zIndex: 100,
+    borderBottom: 0
+  },
+  list: {
+    zIndex: 200,
+    position: 'absolute',
+    maxHeight: 'calc(100vh / 3)',
+    overflow: 'scroll',
+    background: '#fff',
+    color: '#222',
+    marginTop: '-3px',
+    border: '2px solid #222'
+  }
 }
 
 export const SpriteStyle = {
@@ -70,25 +102,24 @@ export const StatStyle = {
   alignItems: 'flex-start',
   alignContent: 'center',
   width: 'calc(85% / 6)',
+  minWidth: 'fit-content',
   height: '100px',
   flexDirection: 'column',
   justifyContent: 'flex-end',
   fontSize: '.9rem',
-  overflow: 'hidden'
+  overflow: 'hidden',
 }
 
 export const TypeStyle = {
   padding: '0.1rem 0.3rem',
-  fontSize: '0.85em',
   margin: '0 0.14rem',
   borderRadius: '5px',
   textTransform: 'uppercase',
-  // position: 'relative',
   fontFamily: 'sans-serif',
   whiteSpace: 'pre',
-  // color: 'rgba(0,0,0,1)',
-  color: 'white',
-  filter: 'opacity(.9) saturate(1.25) contrast(1.2)'
+  color: '#777',
+  fontSize: '.8em',
+  textAlign: 'center'
 }
 
 export const LevelStyle = {

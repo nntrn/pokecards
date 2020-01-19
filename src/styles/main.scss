@@ -1,4 +1,31 @@
 $positions: ('top', 'left', 'bottom', 'right');
+$sizes: (25, 50, 100, 150, 200);
+
+@each $size in $sizes {
+  .m#{$size} {
+    margin: #{$size/100}#{rem};
+  }
+  .p#{$size} {
+    padding: #{$size/100}#{rem};
+  }
+}
+
+@each $position in $positions {
+  .margin-#{$position} {
+    @each $p in $positions {
+      @if $p != $position {
+        margin-#{$p}: 0;
+      }
+    }
+  }
+  .padding-#{$position} {
+    @each $p in $positions {
+      @if $p != $position {
+        padding-#{$p}: 0;
+      }
+    }
+  }
+}
 
 .absolute {
   position: absolute;
@@ -25,20 +52,45 @@ $positions: ('top', 'left', 'bottom', 'right');
   }
 }
 
+button.lock {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
 [data-locked='true'] {
-  input {
+  input,
+  select {
     background: #000;
+    color: #777;
+    border: 0;
   }
   button.delete {
     display: none !important;
   }
 
   .ability input[type='radio']:checked + label {
-    filter: grayscale(1);
+    background: #222;
   }
 }
 
 *::-webkit-scrollbar {
   width: 0px;
   height: 0px;
+}
+
+.icon svg:hover {
+  opacity: 0.8;
+}
+
+.textfield::-webkit-outer-spin-button,
+.textfield[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  text-align: center;
 }

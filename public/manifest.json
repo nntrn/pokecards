@@ -13,9 +13,9 @@
       "sizes": "128x128"
     },
     {
-      "src": "siteicon-512.png",
+      "src": "siteicon-32.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "32x32"
     }
   ],
   "start_url": ".",

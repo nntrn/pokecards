@@ -1,68 +1,52 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Card from './components/Card'
 import Button from './components/Button'
 import Searchlist from './components/Searchlist'
+
 import './App.css'
 import './styles/main.css'
 
-import { randomId } from './components/utils/util'
+import { randomStrId } from './components/utils/util'
 
-function getKey() {
-  const key = randomId(6)
-  const props = {
-    key: key,
-    'data-id': key
-  }
-  return props
-}
+const App = props => {
+  const [ store, setStore ] = React.useState(props.store)
 
-function App() {
-  const [ test, setTest ] = React.useState([])
-  const [ cards, setCards ] = React.useState([])
-
-  const addId = id => {
-    const idArr = [ ...test, id ]
-    setTest(idArr)
+  const removeFromArray = id => {
+    return store.filter(e => e.id !== id)
   }
 
-  const handleAdd = event => {
-    const cardId = getKey()
-    const newCard = <Card {...cardId} />
-    setCards([ ...cards, newCard ])
-    addId(cardId.key)
+  const handleDelete = e => {
+    console.log('deleted', e)
+    setStore(removeFromArray(e.target.parentElement.id))
   }
 
-  const addNew = event => {
-    const pokeId =
-      event.target.parentElement.id ||
-      event.target.id ||
-      event.target.parentElement.parentElement.id
-
-      const ndexId =
-      event.target.parentElement.getAttribute('data-ndex') ||
-      event.target.getAttribute('data-ndex') ||
-      event.target.parentElement.parentElement.getAttribute('data-ndex')
-
-    if (parseInt(pokeId)) {
-      const cardId = getKey()
-      const newCard = <Card {...cardId} id={pokeId} ndex={ndexId}/>
-      addId(cardId.key)
-      setCards([ newCard, ...cards ])
-    }
+  const handleAdd = props => {
+    console.log('added', props)
+    var id = (props && props.id) || randomStrId()
+    setStore([ ...store, { id: id, ...props } ])
   }
 
   return (
-    <>
+    <div>
       <h1>PokeCards</h1>
-      <p>{test.join(',')}</p>
-      <div onClick={e => addNew(e)}>
-        <Searchlist />
+      <Searchlist onChildClick={handleAdd} />
+
+      <div className="container">
+        {store &&
+          store.map((card, index) => (
+            <Card {...card} key={card.id + index}>
+              <Button className="delete" onClick={e => handleDelete(e)} text="X" />
+            </Card>
+          ))}
       </div>
-      {cards}
-      <Button className="add" onClick={e => handleAdd()} text="+" />
-    </>
+      {/* <Button className="add" onClick={e => handleAdd()} text="+" /> */}
+    </div>
   )
+}
+
+App.defaultProps = {
+  store: []
 }
 
 export default App

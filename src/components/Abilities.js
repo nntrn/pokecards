@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import { abilities } from '../data/pokemon'
 
 export default function Abilities(props) {
-  let unique = [...new Set(props.abilities)]
-
+  const unique = [...new Set(props.abilities)]
   const abilityInfo = abilities.filter(e => unique.includes(e.name))
 
+  const classNames = [ props.className, 'abilities', 'flex-grow-1' ].join(' ')
   return (
-    <form className="abilities flex-grow-2">
+    <form className={classNames}>
       <legend className="gray">abilities:</legend>
       {abilityInfo.map(e => (
         <div className="flex ability" key={e.name + props.id}>

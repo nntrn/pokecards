@@ -3,8 +3,13 @@ export function randomNum(min, max) {
 }
 
 export function randomId(size = 100, bit = 16) {
+
   bit = bit > 1 && bit < 37 ? bit : 16
   return Math.floor(0x100000000 + Math.random() * 0xf00000000)
     .toString(bit)
     .substr(0, size)
+}
+
+export function randomStrId(size = 7) {
+  return 's' + Math.random().toString(36).substring(size);
 }

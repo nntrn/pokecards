@@ -12,9 +12,14 @@ function MoveCategory(props) {
 
   return (
     <div className="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox={category.viewbox} width="24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox={category.viewbox}
+        width="20"
+        height="20"
+      >
         {category.paths.map((e, i) => (
-          <path d={e} fill={category.fill} key={props.name + i} />
+          <path d={e} fill="white" key={props.name + i} />
         ))}
       </svg>
       <span hidden>{props.category}</span>
@@ -24,14 +29,19 @@ function MoveCategory(props) {
 
 export default function Moveset(props) {
   const moves = movesByPokemon[props.pokemon]
-  const header = ['name', 'category', 'accuracy', 'power', 'PP']
+  const header = [ 'name', 'category', 'accuracy', 'power', 'PP' ]
+  
   return (
     <div {...props}>
       <table>
         <thead>
           <tr>
             {header.map(h => {
-              return <th key={'header_' + h} title={h}>{h.length > 4 ? h.substr(0, 3) + '.' : h}</th>
+              return (
+                <th key={'header_' + h} title={h}>
+                  {h.length > 4 ? h.substr(0, 3) + '.' : h}
+                </th>
+              )
             })}
           </tr>
         </thead>
@@ -44,7 +54,6 @@ export default function Moveset(props) {
                 data-type={move.type.toLowerCase()}
                 style={{
                   background: pokeTypes[move.type.toLowerCase()].color,
-                  border: '5px solid #000'
                 }}
               >
                 {header.map(e => {
@@ -68,14 +77,5 @@ export default function Moveset(props) {
 }
 
 Moveset.defaultProps = {
-  className: 'moveset',
-  style: {
-    height: '180px',
-    overflow: 'scroll',
-    fontSize: '.9em',
-    flexGrow: 3,
-    border: '2px solid #000',
-    borderBottomWidth: '4px',
-    fontWeight: 600
-  }
+  className: 'moveset'
 }

@@ -1,7 +1,8 @@
 import React from 'react'
+import { InputStyle } from './style'
 
 export default function Input(props) {
-  return <input {...props} min={props.min} max={props.max} />
+  return <input {...props} style={InputStyle} />
 }
 
 Input.defaultProps = {

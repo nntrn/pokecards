@@ -5,4 +5,16 @@ body {
   text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family:sans-serif;
+  font-weight:500;
+  overflow-x:hidden;
+  
+}
+
+
+h1,strong, .abilities{
+  letter-spacing:-.25px
+}
+.center{
+  text-align: center;
 }
