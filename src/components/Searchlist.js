@@ -2,6 +2,7 @@ import React from 'react'
 import { galarSubset } from '../data/galar-data'
 
 import Type from './Type'
+import SvgIcon from './SvgIcon'
 
 import { SearchListStyle } from './style'
 import '../styles/searchlist.scss'
@@ -21,28 +22,58 @@ function searchPokemon(searchString) {
   return results
 }
 
+const SearchIcon = props => {
+  return (
+    <SvgIcon {...props}>
+      <path d="M10 18c1.846 0 3.543-.635 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396C17.365 13.543 18 11.846 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
+    </SvgIcon>
+  )
+}
+
+export const List = props => {
+  return (
+    <ul className="list-group">
+      {props.items.map(item => (
+        <li className="list-group-item" data-category={item} key={item}>
+          {item}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export default function Searchlist({ item, onChildClick }) {
   const [ list, setList ] = React.useState([])
+  const [ value, setValue ] = React.useState([])
 
   const handleChange = event => {
+    setValue(event.target.value)
     setList(searchPokemon(event.target.value))
   }
 
   const sendData = item => {
+    setValue('')
+     setList([])
     onChildClick({ gdex: item[0], ndex: item[1], name: item[2], types: item[3] })
   }
 
   return (
-    <div id="searchlist">
-      <input
-        type="search"
-        id="search"
-        autoCorrect="off"
-        autoComplete="off"
-        spellCheck="false"
-        onChange={e => handleChange(e)}
-        style={SearchListStyle.input}
-      />
+    <div className="Search" id="searchlist">
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <SearchIcon fill="#ddd" />
+
+        <input
+          type="search"
+          id="search"
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck="false"
+          onChange={e => handleChange(e)}
+          style={SearchListStyle.input}
+          value={value}
+        />
+        <div>{value}</div>
+      </div>
       <div
         style={{ ...SearchListStyle.list, height: `${list.length * 25}px` }}
         className="list"

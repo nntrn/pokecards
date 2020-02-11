@@ -50,36 +50,43 @@ export const InputStyle = {
   border: 0,
   outline: 0,
   fontWeight: 500,
-  padding: 0,
+  padding: 0
 }
 
 export const SearchListStyle = {
   item: {
     display: 'flex',
     justifyContent: 'space-between',
-    borderBottom: '3px solid #000',
+   
     padding: '.25rem',
-    border: '2px solid #222',
+    border: '0px solid #ccc',
+
+    borderBottom: '3px solid #ddd',
     position: 'relative'
   },
   input: {
     outline: 'none',
-    padding: '.35em',
-    border: '3px solid #222',
+    padding: '.15em',
+    border: '0px solid #222',
     fontSize: '1.2em',
-    borderRadius: '4px',
+    // borderRadius: '4px',
     zIndex: 100,
+    height: '100%',
     borderBottom: 0
   },
   list: {
     zIndex: 200,
     position: 'absolute',
+    borderRadius: '4px',
+    height: 'fit-content',
     maxHeight: 'calc(100vh / 3)',
     overflow: 'scroll',
-    background: '#fff',
+    background: '#222',
     color: '#222',
-    marginTop: '-3px',
-    border: '2px solid #222'
+    marginTop: '9px',
+    border: '0px solid #eee',
+    left: 0,
+    boxShadow: '3px 0px 0 0 #eee, -3px 0px 0 0 #eee, inset 0px -4px 0 0 #eee'
   }
 }
 
@@ -107,7 +114,7 @@ export const StatStyle = {
   flexDirection: 'column',
   justifyContent: 'flex-end',
   fontSize: '.9rem',
-  overflow: 'hidden',
+  overflow: 'hidden'
 }
 
 export const TypeStyle = {

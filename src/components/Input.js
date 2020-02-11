@@ -1,8 +1,8 @@
 import React from 'react'
 import { InputStyle } from './style'
 
-export default function Input(props) {
-  return <input {...props} style={InputStyle} />
+const Input = props => {
+  return <input {...props} />
 }
 
 Input.defaultProps = {
@@ -19,3 +19,5 @@ Input.defaultProps = {
     border: 0
   }
 }
+
+export default Input
