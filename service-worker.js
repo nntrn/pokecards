@@ -15,9 +15,7 @@ importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js"
 );
 
-importScripts(
-  "/pokecards/precache-manifest.e82d7d4c9be482b1dbb48130c56b6dd9.js"
-);
+importScripts("/precache-manifest.bb22b02539979bb06370b3de0cfee807.js");
 
 self.addEventListener("message", event => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -36,7 +34,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerNavigationRoute(
-  workbox.precaching.getCacheKeyForURL("/pokecards/index.html"),
+  workbox.precaching.getCacheKeyForURL("/index.html"),
   {
     blacklist: [/^\/_/, /\/[^/?]+\.[^/]+$/]
   }
