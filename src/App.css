@@ -1,5 +1,17 @@
 @import-normalize;
 
+body {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -232,4 +244,14 @@ input[type='radio'] {
     flex-grow: 3;
     width: 100%;
   }
+}
+
+h1,
+strong,
+.abilities {
+  letter-spacing: -0.25px;
+}
+
+.center {
+  text-align: center;
 }

@@ -1,6 +1,5 @@
-# Acknowledgements
+# Pokecards
 
-**[Roundicons](https://roundicons.com/)**: Site logo (zubat)
+![Preview](public/assets/webpage.png)
 
-type icon
-https://github.com/duiker101/pokemon-type-svg-icons
+[Demo](https://nntrn.github.io/pokecards/)
