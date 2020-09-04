@@ -1,22 +1,18 @@
 {
   "files": {
-    "main.css": "/pokecards/static/css/main.4e366f2d.chunk.css",
+    "main.css": "/pokecards/static/css/main.a7120720.chunk.css",
     "main.js": "/pokecards/static/js/main.e14fe133.chunk.js",
-    "main.js.map": "/pokecards/static/js/main.e14fe133.chunk.js.map",
     "runtime-main.js": "/pokecards/static/js/runtime-main.6a71fb7b.js",
-    "runtime-main.js.map": "/pokecards/static/js/runtime-main.6a71fb7b.js.map",
     "static/js/2.d97f2277.chunk.js": "/pokecards/static/js/2.d97f2277.chunk.js",
-    "static/js/2.d97f2277.chunk.js.map": "/pokecards/static/js/2.d97f2277.chunk.js.map",
     "index.html": "/pokecards/index.html",
-    "precache-manifest.714fb713eedd97c95e72ec6e7995305d.js": "/pokecards/precache-manifest.714fb713eedd97c95e72ec6e7995305d.js",
+    "precache-manifest.e82d7d4c9be482b1dbb48130c56b6dd9.js": "/pokecards/precache-manifest.e82d7d4c9be482b1dbb48130c56b6dd9.js",
     "service-worker.js": "/pokecards/service-worker.js",
-    "static/css/main.4e366f2d.chunk.css.map": "/pokecards/static/css/main.4e366f2d.chunk.css.map",
     "static/js/2.d97f2277.chunk.js.LICENSE.txt": "/pokecards/static/js/2.d97f2277.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6a71fb7b.js",
     "static/js/2.d97f2277.chunk.js",
-    "static/css/main.4e366f2d.chunk.css",
+    "static/css/main.a7120720.chunk.css",
     "static/js/main.e14fe133.chunk.js"
   ]
 }
