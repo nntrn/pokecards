@@ -1,5 +1,5 @@
 # Pokecards
 
-![Preview](public/assets/webpage.png)
+![Preview](assets/webpage.png)
 
 [Demo](https://nntrn.github.io/pokecards/)
