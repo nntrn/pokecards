@@ -16,7 +16,7 @@ Input.defaultProps = {
   style: {
     margin: 0,
     fontSize: 'inherit',
-    border: 0
+    border: '1px solid #ddd'
   }
 }
 

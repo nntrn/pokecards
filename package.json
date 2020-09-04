@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "author": "annie tran",
-  "homepage": "https://nntrn.github.io/pokecards/",
   "dependencies": {
     "@testing-library/react": "^11.0.2",
     "clsx": "^1.1.1",
@@ -19,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
+    "postbuild": "prettier --write '**/*.{ts,js,css,html}'",
     "deploy": "gh-pages -d build"
   },
   "browserslist": {

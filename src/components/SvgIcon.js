@@ -1,5 +1,4 @@
 import React from 'react'
-import { capitalize } from './utils/strings'
 
 const SvgIcon = props => {
   const {
@@ -14,6 +13,7 @@ const SvgIcon = props => {
     viewBox = '0 0 24 24',
     width = 24,
     height = 24,
+    size,
     ...other
   } = props
 
@@ -25,8 +25,8 @@ const SvgIcon = props => {
       color={htmlColor}
       aria-hidden={titleAccess ? null : 'true'}
       role={titleAccess ? 'img' : 'presentation'}
-      width={width}
-      height={height}
+      width={size || width }
+      height={size || height }
       {...other}
     >
       {children}

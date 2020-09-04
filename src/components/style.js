@@ -33,9 +33,9 @@ export const ButtonStyle = {
 }
 
 export const CardStyle = {
-  background: '#222',
+  background: '#fff',
   boxShadow: 'inset 0 0 0px 4px rgba(0, 0, 0, 0.85)',
-  color: 'white',
+  color: '#222',
   width: '80vw',
   margin: '1.25rem auto',
   borderRadius: '8px',
@@ -57,10 +57,8 @@ export const SearchListStyle = {
   item: {
     display: 'flex',
     justifyContent: 'space-between',
-   
     padding: '.25rem',
     border: '0px solid #ccc',
-
     borderBottom: '3px solid #ddd',
     position: 'relative'
   },
@@ -69,7 +67,6 @@ export const SearchListStyle = {
     padding: '.15em',
     border: '0px solid #222',
     fontSize: '1.2em',
-    // borderRadius: '4px',
     zIndex: 100,
     height: '100%',
     borderBottom: 0
@@ -81,7 +78,7 @@ export const SearchListStyle = {
     height: 'fit-content',
     maxHeight: 'calc(100vh / 3)',
     overflow: 'scroll',
-    background: '#222',
+    background: '#fff',
     color: '#222',
     marginTop: '9px',
     border: '0px solid #eee',

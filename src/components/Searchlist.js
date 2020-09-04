@@ -60,7 +60,9 @@ export default function Searchlist({ item, onChildClick }) {
   return (
     <div className="Search" id="searchlist">
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <SearchIcon fill="#ddd" />
+        <span style={{display: 'flex', alignItems: 'center', margin: 'auto', marginRight: '.25rem'}}>
+          <SearchIcon fill="#222" size="20" />
+        </span>
 
         <input
           type="search"
@@ -72,7 +74,7 @@ export default function Searchlist({ item, onChildClick }) {
           style={SearchListStyle.input}
           value={value}
         />
-        <div>{value}</div>
+
       </div>
       <div
         style={{ ...SearchListStyle.list, height: `${list.length * 25}px` }}

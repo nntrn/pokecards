@@ -60,8 +60,9 @@ button.lock {
 
 [data-locked='true'] {
   input,
-  select {
-    background: #000;
+  select,
+  label {
+    background: #ddd;
     color: #777;
     border: 0;
   }
@@ -70,7 +71,8 @@ button.lock {
   }
 
   .ability input[type='radio']:checked + label {
-    background: #222;
+    background: #888;
+    color: white;
   }
 }
 

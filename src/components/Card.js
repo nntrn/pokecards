@@ -47,9 +47,10 @@ export default function Card(props) {
       <Flex wrap="wrap">
         <Flex direction="column" flexGrow="1">
           <h1 className="pokemon-name">{getPokemon(value).name}</h1>
+          <b4/>
           <div className="types p50 padding-bottom">
             {getPokemon(value).types.map(type => (
-              <Type key={type} type={type} style={{ color: 'black' }} />
+              <Type key={type} type={type} style={{ color: 'white' }} />
             ))}
           </div>
         </Flex>

@@ -53,7 +53,7 @@ export default function Moveset(props) {
                 key={move.name}
                 data-type={move.type.toLowerCase()}
                 style={{
-                  background: pokeTypes[move.type.toLowerCase()].color,
+                  background: pokeTypes[move.type.toLowerCase()].color + '80',
                 }}
               >
                 {header.map(e => {
