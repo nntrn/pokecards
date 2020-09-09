@@ -44,31 +44,29 @@
 }
 #searchlist {
   position: relative;
-  border: 3px solid #222;
-  border-radius: 2px;
+  border-bottom: 3px solid #fff;
+  border-radius: 0;
   padding: 0.2rem;
-}
-#searchlist,
-#searchlist input {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  z-index: 10000;
 }
 #searchlist input {
+  width: 100%;
   position: -webkit-sticky;
   position: sticky;
+  background: transparent;
 }
 #searchlist input:focus + .list {
   display: block;
 }
 #searchlist .list {
   width: 100%;
-  background: #eee;
+  background: #222;
 }
 #searchlist .list div {
   mix-blend-mode: multiply;
-  background: #eee !important;
-  border-bottom: 3px solid #e3e3e3 !important;
+  background: #444 !important;
+  color: #e3e3e3;
+  border-bottom: 3px solid #222 !important;
 }
 #searchlist .list div:hover {
   background: #aaa !important;
@@ -276,14 +274,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: sans-serif;
   font-weight: 500;
-  overflow-x: hidden;
+  margin: 0;
+  background: #222;
 }
 * {
   box-sizing: border-box;
-}
-#root {
-  width: 80%;
-  margin: auto;
 }
 .types {
   background: inherit;
@@ -299,7 +294,8 @@ body {
 .flex {
   display: flex;
 }
-.flex-wrap {
+.flex-wrap,
+.flex .flex-wrap {
   flex-wrap: wrap;
 }
 .column,
@@ -310,13 +306,9 @@ body {
 .row {
   flex-direction: row !important;
 }
-h1,
-h2,
-h3 {
-  margin: 0;
-}
 input {
   font-size: inherit;
+  font-weight: 500;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -491,6 +483,14 @@ strong {
 .center {
   text-align: center;
 }
+.margin-y-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.margin-x-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 .m25 {
   margin: 0.25rem;
 }
@@ -594,13 +594,18 @@ button.lock {
   padding: 0;
 }
 [data-locked="true"] input,
+[data-locked="true"] label,
 [data-locked="true"] select {
-  background: #000;
+  background: #ddd;
   color: #777;
   border: 0;
 }
 [data-locked="true"] button.delete {
   display: none !important;
+}
+[data-locked="true"] .ability input[type="radio"]:checked + label {
+  background: #888;
+  color: #fff;
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -618,4 +623,20 @@ button.lock {
 }
 input[type="number"] {
   text-align: center;
+}
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  background: #222;
+  color: #fff;
+  padding: 2rem 0;
+}
+.header .container {
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
 }

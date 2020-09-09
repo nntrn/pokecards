@@ -60,7 +60,7 @@
           boxShadow: "inset 0 0 0px 4px rgba(0, 0, 0, 0.85)",
           color: "#222",
           width: "80vw",
-          margin: "1.25rem auto",
+          margin: "1.5rem auto",
           borderRadius: "8px",
           padding: ".85rem",
           position: "relative",
@@ -82,22 +82,21 @@
             fontSize: "1.2em",
             zIndex: 100,
             height: "100%",
-            borderBottom: 0
+            borderBottom: 0,
+            color: "#fff"
           },
           list: {
             zIndex: 200,
             position: "absolute",
-            borderRadius: "4px",
+            borderRadius: "2px",
             height: "fit-content",
             maxHeight: "calc(100vh / 3)",
             overflow: "scroll",
             background: "#fff",
             color: "#222",
-            marginTop: "9px",
+            marginTop: "5px",
             border: "0px solid #eee",
-            left: 0,
-            boxShadow:
-              "3px 0px 0 0 #eee, -3px 0px 0 0 #eee, inset 0px -4px 0 0 #eee"
+            left: 0
           }
         },
         d = {
@@ -131,7 +130,7 @@
           fontSize: ".8em",
           textAlign: "center"
         },
-        _ = function(e) {
+        _ = function Input(e) {
           return o.a.createElement("input", e);
         };
       _.defaultProps = {
@@ -146,7 +145,7 @@
       };
       var v = _,
         S = a(4),
-        b = function(e) {
+        b = function Icon(e) {
           var t = e.width,
             a = e.height,
             i = e.path,
@@ -184,14 +183,12 @@
         className: "icon"
       };
       var w = b;
-      function f(e) {
-        return k
-          .filter(function(t) {
-            return t.galar_dex === parseInt(e);
-          })
-          .shift();
+      function getGalarDataById(e) {
+        return P.filter(function(t) {
+          return t.galar_dex === parseInt(e);
+        }).shift();
       }
-      var P = [
+      var f = [
           [1, 810, "Grookey", ["Grass"]],
           [2, 811, "Thwackey", ["Grass"]],
           [3, 812, "Rillaboom", ["Grass"]],
@@ -677,7 +674,7 @@
           [400, 890, "Eternatus", ["Poison", "Dragon"]],
           [400, 1170, "Eternatus 1", ["Poison", "Dragon"]]
         ],
-        k = [
+        P = [
           {
             id: 810,
             name: "Grookey",
@@ -38275,7 +38272,7 @@
             description: null
           }
         ];
-      function F(e) {
+      function replaceString(e) {
         var t =
           arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
         return (
@@ -38286,21 +38283,22 @@
           e
         );
       }
-      function x(e) {
+      function Sprite_getSpriteImgUrl(e) {
         var t = e.id.toString().padStart(3, 0);
         return e.id > 809
-          ? F("https://www.serebii.net/swordshield/pokemon/[@id].png", {
-              id: t
-            })
-          : F(
+          ? replaceString(
+              "https://www.serebii.net/swordshield/pokemon/[@id].png",
+              { id: t }
+            )
+          : replaceString(
               "https://assets.pokemon.com/assets/cms2/img/pokedex/full/[@id].png",
               { id: t }
             );
       }
-      function T(e) {
+      function Sprite(e) {
         var t = e.id,
           a = Object(S.a)(e, ["id"]),
-          i = f(t),
+          i = getGalarDataById(t),
           s = d;
         return (
           parseInt(i.id) > 809 && (s = Object(n.a)(Object(n.a)({}, d), d)),
@@ -38309,14 +38307,14 @@
             Object.assign({}, a, {
               id: [i.galar_dex, i.name, i.id].join("-"),
               style: s,
-              src: x(i),
+              src: Sprite_getSpriteImgUrl(i),
               alt: i.name
             })
           )
         );
       }
-      T.defaultProps = {};
-      var M = {
+      Sprite.defaultProps = {};
+      var k = {
           Adamant: { plus: "atk", minus: "spa" },
           Bashful: {},
           Bold: { plus: "def", minus: "atk" },
@@ -38343,7 +38341,7 @@
           Serious: {},
           Timid: { plus: "spe", minus: "atk" }
         },
-        D = {
+        F = {
           fire: {
             color: "#d52100",
             icon:
@@ -38453,7 +38451,7 @@
             gradient: "linear-gradient( to bottom, #797d7e 0%, #9a9995 100% )"
           }
         },
-        B = {
+        x = {
           status: {
             viewbox: "0 0 100 74",
             paths: [
@@ -38479,7 +38477,7 @@
             fill: "#3498db"
           }
         },
-        A = {
+        T = {
           fire: "#d52100",
           water: "#0080ff",
           electric: "#c90",
@@ -38499,7 +38497,7 @@
           fairy: "#e76de7",
           normal: "#a8a878"
         },
-        C = [
+        M = [
           {
             name: "Adaptability",
             desc:
@@ -39741,11 +39739,11 @@
               "If this Pokemon is a Darmanitan or Darmanitan-Galar, it changes to Zen Mode if it has 1/2 or less of its maximum HP at the end of a turn. If Darmanitan's HP is above 1/2 of its maximum HP at the end of a turn, it changes back to Standard Mode. This Ability cannot be removed or suppressed."
           }
         ];
-      function G(e) {
+      function Type(e) {
         var t = Object(n.a)(
           Object(n.a)({}, y),
           {},
-          { background: A[e.type.toLowerCase()] },
+          { background: T[e.type.toLowerCase()] },
           e.style
         );
         return o.a.createElement(
@@ -39754,8 +39752,8 @@
           o.a.createElement("span", { className: "text" }, e.type)
         );
       }
-      G.defaultProps = { type: "Normal" };
-      var W = {
+      Type.defaultProps = { type: "Normal" };
+      var D = {
           Grookey: [
             4,
             22,
@@ -64590,7 +64588,7 @@
           ],
           Eternatus: []
         },
-        R = [
+        B = [
           {
             name: "Absorb",
             type: "Grass",
@@ -70602,10 +70600,10 @@
           }
         ];
       a(14);
-      function H(e) {
+      function MoveCategory(e) {
         var t = Object(n.a)(
-          Object(n.a)({}, B.status),
-          B[e.category.toLowerCase()]
+          Object(n.a)({}, x.status),
+          x[e.category.toLowerCase()]
         );
         return o.a.createElement(
           "div",
@@ -70629,8 +70627,8 @@
           o.a.createElement("span", { hidden: !0 }, e.category)
         );
       }
-      function I(e) {
-        var t = W[e.pokemon],
+      function Moveset(e) {
+        var t = D[e.pokemon],
           a = ["name", "category", "accuracy", "power", "PP"];
         return o.a.createElement(
           "div",
@@ -70657,20 +70655,23 @@
               "tbody",
               null,
               t.map(function(e) {
-                var t = R[e] || [];
+                var t = B[e] || [];
                 return o.a.createElement(
                   "tr",
                   {
                     key: t.name,
                     "data-type": t.type.toLowerCase(),
-                    style: { background: D[t.type.toLowerCase()].color + "80" }
+                    style: { background: F[t.type.toLowerCase()].color + "80" }
                   },
                   a.map(function(e) {
                     return o.a.createElement(
                       "td",
                       { key: t.name + e, title: e },
                       "category" === e
-                        ? o.a.createElement(H, { category: t[e], name: t.name })
+                        ? o.a.createElement(MoveCategory, {
+                            category: t[e],
+                            name: t.name
+                          })
                         : o.a.createElement("span", null, t[e])
                     );
                   })
@@ -70680,12 +70681,14 @@
           )
         );
       }
-      function L(e) {
+      function Abilities(e) {
         var t = Object(l.a)(new Set(e.abilities)),
-          a = C.filter(function(e) {
+          a = M.filter(function(e) {
             return t.includes(e.name);
           }),
-          i = [e.className, "abilities", "flex-grow-1"].join(" ");
+          i = [e.className, "abilities", "flex-grow-1"]
+            .filter(Boolean)
+            .join(" ");
         return o.a.createElement(
           "form",
           { className: i },
@@ -70710,7 +70713,7 @@
           })
         );
       }
-      function E(e) {
+      function Bar(e) {
         var t = {
           container: { style: Object(n.a)({}, h.container) },
           bar: {
@@ -70731,7 +70734,7 @@
           o.a.createElement("div", t.bar)
         );
       }
-      function N(e) {
+      function Stat(e) {
         var t = Object(n.a)(
             Object(n.a)({}, e),
             {},
@@ -70739,21 +70742,24 @@
               "data-label": e.type,
               title: e.type,
               className: "stat",
-              style: Object(n.a)(Object(n.a)({}, m), e.style)
+              style: Object(n.a)(
+                Object(n.a)(Object(n.a)({}, m), e.style),
+                {},
+                { width: "calc(100% / 6)" }
+              )
             }
           ),
           a = {
             textTransform: "uppercase",
             color: "#777",
             fontSize: ".8em",
-            width: "100%",
             textAlign: "center"
           };
         return o.a.createElement(
           "div",
           t,
           o.a.createElement(
-            E,
+            Bar,
             Object.assign({}, e, {
               height: (e.value / e.max) * 100,
               value: e.value
@@ -70775,7 +70781,7 @@
           )
         );
       }
-      function z(e) {
+      function StatCalculator(e) {
         var t = o.a.useState(e.nature),
           a = Object(c.a)(t, 2),
           i = a[0],
@@ -70784,7 +70790,7 @@
           n = e.level > 0 && e.level < 101 ? e.level : 100;
         ["hp", "atk", "def", "spa", "spd", "spe"].forEach(function(t, a) {
           if (0 === a)
-            r[t] = (function() {
+            r[t] = (function calculateHP() {
               var e =
                   arguments.length > 0 && void 0 !== arguments[0]
                     ? arguments[0]
@@ -70810,8 +70816,8 @@
               );
             })(e.base[a], n);
           else {
-            var o = t === M[i].plus ? 1.1 : t === M[i].minus ? 0.9 : 1;
-            r[t] = (function() {
+            var o = t === k[i].plus ? 1.1 : t === k[i].minus ? 0.9 : 1;
+            r[t] = (function calculateStat() {
               var e =
                   arguments.length > 0 && void 0 !== arguments[0]
                     ? arguments[0]
@@ -70851,13 +70857,13 @@
             "select",
             {
               value: i,
-              onChange: function(e) {
+              onChange: function onChange(e) {
                 return s(e.target.value);
               },
               disabled: e.disabled,
               "data-store": "nature"
             },
-            Object.keys(M).map(function(e) {
+            Object.keys(k).map(function(e) {
               return o.a.createElement("option", { value: e, key: e }, e);
             })
           ),
@@ -70865,16 +70871,16 @@
             "div",
             e,
             Object.keys(r).map(function(t, a) {
-              return o.a.createElement(N, {
+              return o.a.createElement(Stat, {
                 key: t,
                 type: t,
                 base: e.base[a],
                 value: r[t],
                 max: h,
                 nature:
-                  t === M[i].plus
+                  t === k[i].plus
                     ? "increase"
-                    : t === M[i].minus
+                    : t === k[i].minus
                     ? "decrease"
                     : "normal"
               });
@@ -70895,15 +70901,18 @@
           )
         );
       }
-      (I.defaultProps = { className: "moveset" }),
-        (L.defaultProps = { type: "radio", name: "ability" }),
-        (N.defaultProps = {}),
-        (z.defaultProps = {
+      (Moveset.defaultProps = {
+        className: "moveset",
+        style: { margin: "1rem 0" }
+      }),
+        (Abilities.defaultProps = { type: "radio", name: "ability" }),
+        (Stat.defaultProps = {}),
+        (StatCalculator.defaultProps = {
           base: [0, 0, 0, 0, 0, 0],
           level: 100,
           style: { margin: 0, padding: 0, display: "flex", width: "90%" }
         });
-      var U = {
+      var A = {
           alignContent: "flex-start",
           alignItems: "flex-start",
           display: "flex",
@@ -70916,19 +70925,20 @@
           justifyContent: "",
           order: ""
         },
-        O = function(e) {
+        C = function Flex(e) {
           var t = {},
             a = { display: "flex", flexWrap: "wrap" };
           return (
             Object.keys(e).forEach(function(i) {
-              if (Object.keys(U).includes(i)) a[i] = e[i];
+              if (Object.keys(A).includes(i)) a[i] = e[i];
               else {
                 var o = "flex".concat(
-                  (s = i.toLowerCase()).charAt(0).toUpperCase() + s.slice(1)
+                  (function capitalize(e) {
+                    return e.charAt(0).toUpperCase() + e.slice(1);
+                  })(i.toLowerCase())
                 );
-                U[o] ? (a[o] = e[i]) : (t[i] = e[i]);
+                A[o] ? (a[o] = e[i]) : (t[i] = e[i]);
               }
-              var s;
             }),
             o.a.createElement(
               "div",
@@ -70936,8 +70946,12 @@
               e.children
             )
           );
-        };
-      function K(e) {
+        },
+        G =
+          "M12 2a5 5 0 00-5 5v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-1V7a5 5 0 00-5-5zM9 7a3 3 0 016 0v3H9V7zm4 10.7V20h-2v-2.3a2 2 0 01.6-3.7 2 2 0 011.4 3.7z",
+        W =
+          "M17 8V7A5 5 0 007 7v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2H9V7a3 3 0 016 0v1h2z";
+      function Card(e) {
         var t = e.nature,
           a = o.a.useState(e.gdex),
           i = Object(c.a)(a, 2),
@@ -70953,15 +70967,11 @@
           _ = m[1],
           S = o.a.useState(e.level),
           b = Object(c.a)(S, 2),
-          P = b[0],
-          k = b[1],
-          F = function(e) {
-            return f(e);
-          },
-          x =
-            "M12 2a5 5 0 00-5 5v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-1V7a5 5 0 00-5-5zM9 7a3 3 0 016 0v3H9V7zm4 10.7V20h-2v-2.3a2 2 0 01.6-3.7 2 2 0 011.4 3.7z",
-          M =
-            "M17 8V7A5 5 0 007 7v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2H9V7a3 3 0 016 0v1h2z";
+          f = b[0],
+          P = b[1],
+          k = function getPokemon(e) {
+            return getGalarDataById(e);
+          };
         return o.a.createElement(
           "div",
           Object.assign({}, e, {
@@ -70969,18 +70979,21 @@
             "data-locked": y
           }),
           o.a.createElement(
-            O,
+            C,
             { wrap: "wrap" },
             o.a.createElement(
-              O,
+              C,
               { direction: "column", flexGrow: "1" },
-              o.a.createElement("h1", { className: "pokemon-name" }, F(s).name),
-              o.a.createElement("b4", null),
+              o.a.createElement(
+                "h1",
+                { className: "pokemon-name margin-y-0" },
+                k(s).name
+              ),
               o.a.createElement(
                 "div",
                 { className: "types p50 padding-bottom" },
-                F(s).types.map(function(e) {
-                  return o.a.createElement(G, {
+                k(s).types.map(function(e) {
+                  return o.a.createElement(Type, {
                     key: e,
                     type: e,
                     style: { color: "white" }
@@ -70988,8 +71001,8 @@
                 })
               )
             ),
-            o.a.createElement(L, {
-              abilities: F(s).abilities,
+            o.a.createElement(Abilities, {
+              abilities: k(s).abilities,
               id: e.id,
               disabled: y
             })
@@ -70998,16 +71011,15 @@
             "div",
             { className: "flex absolute top right", style: { margin: "10px" } },
             o.a.createElement(v, {
-              onChange: function(e) {
-                return (
-                  (t = e).target.value &&
-                    Number.isInteger(parseInt(t.target.value)) &&
-                    parseInt(t.target.value) > 0 &&
-                    parseInt(t.target.value) < 401 &&
-                    r(t.target.value),
-                  void p(t.target.value)
-                );
-                var t;
+              onChange: function onChange(e) {
+                return (function handleChange(e) {
+                  e.target.value &&
+                    Number.isInteger(parseInt(e.target.value)) &&
+                    parseInt(e.target.value) > 0 &&
+                    parseInt(e.target.value) < 401 &&
+                    r(e.target.value),
+                    p(e.target.value);
+                })(e);
               },
               className: "center",
               value: g,
@@ -71017,27 +71029,29 @@
               "button",
               {
                 className: "lock ".concat(y),
-                onClick: function() {
-                  _(!y);
+                onClick: function onClick() {
+                  return (function handleLock() {
+                    _(!y);
+                  })();
                 }
               },
               o.a.createElement(w, {
-                path: y ? x : M,
+                path: y ? G : W,
                 fill: y ? "#f1c40f" : "#bdc3c7"
               })
             )
           ),
           o.a.createElement(
-            O,
+            C,
             {
               className: "box m50 margin-top",
               justifyContent: "space-between",
               wrap: "wrap"
             },
             o.a.createElement(
-              O,
+              C,
               { className: "no-select", direction: "column" },
-              o.a.createElement(T, { id: s }),
+              o.a.createElement(Sprite, { id: s }),
               o.a.createElement(
                 "div",
                 { className: "level" },
@@ -71047,26 +71061,26 @@
                   "data-store": "level",
                   min: "1",
                   max: "100",
-                  defaultValue: P,
-                  onChange: function(e) {
-                    return k(e.target.value);
+                  defaultValue: f,
+                  onChange: function onChange(e) {
+                    return P(e.target.value);
                   },
                   disabled: y
                 })
               )
             ),
-            o.a.createElement(z, {
-              base: F(s).base_stats,
+            o.a.createElement(StatCalculator, {
+              base: k(s).base_stats,
               nature: t,
               disabled: y,
-              level: P
+              level: f
             }),
-            o.a.createElement(I, { pokemon: F(s).name })
+            o.a.createElement(Moveset, { pokemon: k(s).name })
           ),
           o.a.createElement(o.a.Fragment, null, e.children)
         );
       }
-      function V(e) {
+      function Button(e) {
         var t = Object(n.a)(Object(n.a)({}, g), e.style);
         return o.a.createElement(
           "button",
@@ -71075,14 +71089,14 @@
           e.text
         );
       }
-      (K.defaultProps = {
+      (Card.defaultProps = {
         className: "pokecard",
         gdex: 57,
         level: 100,
         nature: "Quirky"
       }),
-        (V.defaultProps = { active: "true" });
-      var q = function(e) {
+        (Button.defaultProps = { active: "true" });
+      var I = function SvgIcon(e) {
         var t = e.children,
           a = (e.classes, e.className),
           i = (e.color, e.component),
@@ -71130,9 +71144,9 @@
         );
       };
       a(15);
-      var j = function(e) {
+      var R = function SearchIcon(e) {
         return o.a.createElement(
-          q,
+          I,
           e,
           o.a.createElement("path", {
             d:
@@ -71140,7 +71154,7 @@
           })
         );
       };
-      function Q(e) {
+      function Searchlist(e) {
         e.item;
         var t = e.onChildClick,
           a = o.a.useState([]),
@@ -71151,15 +71165,15 @@
           h = Object(c.a)(l, 2),
           g = h[0],
           u = h[1],
-          d = function(e) {
+          d = function handleChange(e) {
             u(e.target.value),
               r(
-                (function(e) {
+                (function searchPokemon(e) {
                   var t = [];
                   if ("" === e) return t;
-                  for (var a = 0; a < P.length; a++) {
-                    0 === P[a][2].toLowerCase().indexOf(e.toLowerCase()) &&
-                      t.push(P[a]);
+                  for (var a = 0; a < f.length; a++) {
+                    0 === f[a][2].toLowerCase().indexOf(e.toLowerCase()) &&
+                      t.push(f[a]);
                   }
                   return t;
                 })(e.target.value)
@@ -71181,7 +71195,7 @@
                   marginRight: ".25rem"
                 }
               },
-              o.a.createElement(j, { fill: "#222", size: "20" })
+              o.a.createElement(R, { fill: "#fff", size: "20" })
             ),
             o.a.createElement("input", {
               type: "search",
@@ -71189,11 +71203,12 @@
               autoCorrect: "off",
               autoComplete: "off",
               spellCheck: "false",
-              onChange: function(e) {
+              onChange: function onChange(e) {
                 return d(e);
               },
               style: p.input,
-              value: g
+              value: g,
+              placeholder: "Search..."
             })
           ),
           o.a.createElement(
@@ -71213,8 +71228,8 @@
                   key: e[2],
                   style: p.item,
                   title: e[3].join("/"),
-                  onClick: function() {
-                    return (function(e) {
+                  onClick: function onClick() {
+                    return (function sendData(e) {
                       u(""),
                         r([]),
                         t({ gdex: e[0], ndex: e[1], name: e[2], types: e[3] });
@@ -71226,7 +71241,7 @@
                   "span",
                   { className: "types small" },
                   e[3].map(function(e) {
-                    return o.a.createElement(G, { key: e, type: e });
+                    return o.a.createElement(Type, { key: e, type: e });
                   })
                 )
               );
@@ -71234,138 +71249,80 @@
           )
         );
       }
-      Q.defaultProps = { search: "" };
+      Searchlist.defaultProps = { search: "" };
       a(16), a(17);
-      var Y = function(e) {
+      var H = function App(e) {
         var t = o.a.useState(e.store),
           a = Object(c.a)(t, 2),
           i = a[0],
           s = a[1],
-          r = function(e) {
-            var t;
-            console.log("deleted", e),
-              s(
-                ((t = e.target.parentElement.id),
-                i.filter(function(e) {
-                  return e.id !== t;
-                }))
-              );
+          r = function handleDelete(e) {
+            s(
+              (function removeFromArray(e) {
+                return i.filter(function(t) {
+                  return t.id !== e;
+                });
+              })(e.target.parentElement.id)
+            );
           };
         return o.a.createElement(
-          "div",
+          o.a.Fragment,
           null,
-          o.a.createElement("h1", null, "PokeCards"),
-          o.a.createElement(Q, {
-            onChildClick: function(e) {
-              console.log("added", e);
-              var t =
-                (e && e.id) ||
-                (function() {
-                  var e =
-                    arguments.length > 0 && void 0 !== arguments[0]
-                      ? arguments[0]
-                      : 7;
-                  return (
-                    "s" +
-                    Math.random()
-                      .toString(36)
-                      .substring(e)
-                  );
-                })();
-              s([].concat(Object(l.a)(i), [Object(n.a)({ id: t }, e)]));
-            }
-          }),
           o.a.createElement(
-            "div",
-            { className: "container" },
-            i &&
-              i.map(function(e, t) {
-                return o.a.createElement(
-                  K,
-                  Object.assign({}, e, { key: e.id + t }),
-                  o.a.createElement(V, {
-                    className: "delete",
-                    onClick: function(e) {
-                      return r(e);
-                    },
-                    text: "X"
-                  })
-                );
+            "header",
+            { className: "header" },
+            o.a.createElement(
+              "div",
+              { className: "container" },
+              o.a.createElement("h1", { className: "margin-y-0" }, "PokeCards"),
+              o.a.createElement(Searchlist, {
+                onChildClick: function handleAdd(e) {
+                  var t =
+                    (e && e.id) ||
+                    (function randomStrId() {
+                      var e =
+                        arguments.length > 0 && void 0 !== arguments[0]
+                          ? arguments[0]
+                          : 7;
+                      return (
+                        "s" +
+                        Math.random()
+                          .toString(36)
+                          .substring(e)
+                      );
+                    })();
+                  s([].concat(Object(l.a)(i), [Object(n.a)({ id: t }, e)]));
+                }
               })
+            )
+          ),
+          o.a.createElement(
+            "main",
+            null,
+            o.a.createElement(
+              "div",
+              { className: "container" },
+              i &&
+                i.map(function(e, t) {
+                  return o.a.createElement(
+                    Card,
+                    Object.assign({}, e, { key: e.id + t }),
+                    o.a.createElement(Button, {
+                      className: "delete",
+                      onClick: function onClick(e) {
+                        return r(e);
+                      },
+                      text: "X"
+                    })
+                  );
+                })
+            )
           )
         );
       };
-      Y.defaultProps = { store: [] };
-      var J = Y,
-        Z = Boolean(
-          "localhost" === window.location.hostname ||
-            "[::1]" === window.location.hostname ||
-            window.location.hostname.match(
-              /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-            )
-        );
-      function X(e, t) {
-        navigator.serviceWorker
-          .register(e)
-          .then(function(e) {
-            e.onupdatefound = function() {
-              var a = e.installing;
-              null != a &&
-                (a.onstatechange = function() {
-                  "installed" === a.state &&
-                    (navigator.serviceWorker.controller
-                      ? (console.log(
-                          "New content is available and will be used when all tabs for this page are closed. See https://bit.ly/CRA-PWA."
-                        ),
-                        t && t.onUpdate && t.onUpdate(e))
-                      : (console.log("Content is cached for offline use."),
-                        t && t.onSuccess && t.onSuccess(e)));
-                });
-            };
-          })
-          .catch(function(e) {
-            console.error("Error during service worker registration:", e);
-          });
-      }
-      r.a.render(o.a.createElement(J, null), document.getElementById("root")),
-        (function(e) {
-          if ("serviceWorker" in navigator) {
-            if (
-              new URL("", window.location.href).origin !==
-              window.location.origin
-            )
-              return;
-            window.addEventListener("load", function() {
-              var t = "".concat("", "/service-worker.js");
-              Z
-                ? (!(function(e, t) {
-                    fetch(e, { headers: { "Service-Worker": "script" } })
-                      .then(function(a) {
-                        var i = a.headers.get("content-type");
-                        404 === a.status ||
-                        (null != i && -1 === i.indexOf("javascript"))
-                          ? navigator.serviceWorker.ready.then(function(e) {
-                              e.unregister().then(function() {
-                                window.location.reload();
-                              });
-                            })
-                          : X(e, t);
-                      })
-                      .catch(function() {
-                        console.log(
-                          "No internet connection found. App is running in offline mode."
-                        );
-                      });
-                  })(t, e),
-                  navigator.serviceWorker.ready.then(function() {
-                    console.log(
-                      "This web app is being served cache-first by a service worker. To learn more, visit https://bit.ly/CRA-PWA"
-                    );
-                  }))
-                : X(t, e);
-            });
-          }
-        })();
+      H.defaultProps = { store: [] };
+      var L = H;
+      r.a.render(o.a.createElement(L, null), document.getElementById("root"));
     }
   ],
   [[9, 1, 2]]
