@@ -1,10 +1,10 @@
-import React  from 'react'
+import React from 'react'
 import { abilities } from '../data/pokemon'
 
 export default function Abilities(props) {
   const unique = [...new Set(props.abilities)]
   const abilityInfo = abilities.filter(e => unique.includes(e.name))
-  const classNames = [ props.className, 'abilities', 'flex-grow-1' ].join(' ')
+  const classNames = [ props.className, 'abilities', 'flex-grow-1' ].filter(Boolean).join(' ')
   
   return (
     <form className={classNames}>

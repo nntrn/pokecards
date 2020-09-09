@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react'
-
+import React, { useEffect, useState } from 'react'
 import Card from './components/Card'
 import Button from './components/Button'
 import Searchlist from './components/Searchlist'
-
 import './App.css'
-import './styles/main.css'
-
+import './styles/main.scss'
 import { randomStrId } from './components/utils/util'
 
 const App = props => {
@@ -17,31 +14,35 @@ const App = props => {
   }
 
   const handleDelete = e => {
-    console.log('deleted', e)
     setStore(removeFromArray(e.target.parentElement.id))
   }
 
   const handleAdd = props => {
-    console.log('added', props)
     var id = (props && props.id) || randomStrId()
+
     setStore([ ...store, { id: id, ...props } ])
   }
 
   return (
-    <div>
-      <h1>PokeCards</h1>
-      <Searchlist onChildClick={handleAdd} />
-
-      <div className="container">
-        {store &&
+    <>
+      <header className="header">
+        <div className="container">
+          <h1 className="margin-y-0">PokeCards</h1>
+          <Searchlist onChildClick={handleAdd} />
+        </div>
+      </header>
+      <main>
+        <div className="container">
+          {store &&
           store.map((card, index) => (
             <Card {...card} key={card.id + index}>
               <Button className="delete" onClick={e => handleDelete(e)} text="X" />
             </Card>
           ))}
-      </div>
-      {/* <Button className="add" onClick={e => handleAdd()} text="+" /> */}
-    </div>
+        </div>
+
+      </main>
+    </>
   )
 }
 

@@ -9,16 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: sans-serif;
   font-weight: 500;
-  overflow-x: hidden;
+  margin: 0;
+  background: #222;
 }
 
 * {
   box-sizing: border-box;
-}
-
-#root {
-  width: 80%;
-  margin: auto;
 }
 
 .types {
@@ -36,6 +32,7 @@ body {
   display: flex;
 }
 
+.flex .flex-wrap,
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -50,14 +47,9 @@ body {
   flex-direction: row !important;
 }
 
-h1,
-h2,
-h3 {
-  margin: 0;
-}
-
 input {
   font-size: inherit;
+  font-weight: 500;
   width: max-content;
 }
 
@@ -255,4 +247,14 @@ strong,
 
 .center {
   text-align: center;
+}
+
+.margin-y-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.margin-x-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }

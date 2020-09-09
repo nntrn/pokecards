@@ -27,5 +27,4 @@ README*
 package.json
 yark.lock
 
-public/*
 src/styles/*.css

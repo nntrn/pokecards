@@ -1,7 +1,6 @@
 import React from 'react'
 import { movesByPokemon, movesData } from '../data/moveslist'
-import { pokeTypes, moveCategories } from '../data/pokemon'
-
+import { moveCategories, pokeTypes } from '../data/pokemon'
 import '../styles/moves.scss'
 
 function MoveCategory(props) {
@@ -48,6 +47,7 @@ export default function Moveset(props) {
         <tbody>
           {moves.map(m => {
             let move = movesData[m] || []
+
             return (
               <tr
                 key={move.name}
@@ -77,5 +77,8 @@ export default function Moveset(props) {
 }
 
 Moveset.defaultProps = {
-  className: 'moveset'
+  className: 'moveset',
+  style: {
+    margin: '1rem 0'
+  }
 }

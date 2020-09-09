@@ -18,6 +18,7 @@ const capitalize = s => s.charAt(0).toUpperCase() + s.slice(1)
 
 const Flex = props => {
   const nonStyleProps = {}
+
   const styleProps = {
     display: 'flex',
     flexWrap: 'wrap'
@@ -29,6 +30,7 @@ const Flex = props => {
       styleProps[e] = props[e]
     } else {
       let shorthand = `flex${capitalize(e.toLowerCase())}`
+
       if (FlexAttributes[shorthand]) {
         styleProps[shorthand] = props[e]
       } else {

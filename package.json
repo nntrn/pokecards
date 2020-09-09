@@ -3,24 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "author": "annie tran",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/react": "^11.0.2",
-    "clsx": "^1.1.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-jss": "^10.4.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "predeploy": "GENERATE_SOURCEMAP=false yarn build",
     "postbuild": "prettier --write '**/build/**/*.{ts,js,css,html}'",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint \"**/*.js\" --fix"
   },
   "browserslist": {
     "production": [

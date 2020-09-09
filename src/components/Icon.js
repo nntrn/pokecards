@@ -3,6 +3,7 @@ import React from 'react'
 const Icon = ({ width, height, path, viewBox, style, className, ...props }) => {
 
   const pathArr = [[path]].flat()
+
   return (
     <span style={style} className={className}>
       <svg width={width} height={height} viewBox={viewBox} {...props}>

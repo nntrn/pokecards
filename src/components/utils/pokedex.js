@@ -16,6 +16,7 @@ export function getSpriteImg(name) {
 
   let indexNum = /^\d+$/.test(name.toString()) ? name : getNdexId(name)
   let ndex = pad(indexNum, 3, 0)
+
   return Object.assign(document.createElement('img'), {
     src: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${ndex}.png`,
     style: [

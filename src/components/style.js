@@ -18,7 +18,6 @@ export const BarStyle = {
     increase: '#ff4136'
   }
 }
-
 export const ButtonStyle = {
   border: 0,
   borderRadius: '100%',
@@ -31,19 +30,17 @@ export const ButtonStyle = {
   userSelect: 'none',
   zIndex: 1000
 }
-
 export const CardStyle = {
   background: '#fff',
   boxShadow: 'inset 0 0 0px 4px rgba(0, 0, 0, 0.85)',
   color: '#222',
   width: '80vw',
-  margin: '1.25rem auto',
+  margin: '1.5rem auto',
   borderRadius: '8px',
   padding: '.85rem',
   position: 'relative',
   boxSizing: 'border-box'
 }
-
 export const InputStyle = {
   margin: 0,
   fontSize: 'inherit',
@@ -52,7 +49,6 @@ export const InputStyle = {
   fontWeight: 500,
   padding: 0
 }
-
 export const SearchListStyle = {
   item: {
     display: 'flex',
@@ -69,24 +65,24 @@ export const SearchListStyle = {
     fontSize: '1.2em',
     zIndex: 100,
     height: '100%',
-    borderBottom: 0
+    borderBottom: 0,
+    color: '#fff'
   },
   list: {
     zIndex: 200,
     position: 'absolute',
-    borderRadius: '4px',
+    borderRadius: '2px',
     height: 'fit-content',
     maxHeight: 'calc(100vh / 3)',
     overflow: 'scroll',
     background: '#fff',
     color: '#222',
-    marginTop: '9px',
+    marginTop: '5px',
     border: '0px solid #eee',
     left: 0,
-    boxShadow: '3px 0px 0 0 #eee, -3px 0px 0 0 #eee, inset 0px -4px 0 0 #eee'
+    // boxShadow: '3px 0px 0 0 #eee, -3px 0px 0 0 #eee, inset 0px -4px 0 0 #eee'
   }
 }
-
 export const SpriteStyle = {
   gen8: {
     filter: 'saturate(.3) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
@@ -98,7 +94,6 @@ export const SpriteStyle = {
     filter: 'saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)'
   }
 }
-
 export const StatStyle = {
   margin: '.15rem',
   position: 'relative',
@@ -113,7 +108,6 @@ export const StatStyle = {
   fontSize: '.9rem',
   overflow: 'hidden'
 }
-
 export const TypeStyle = {
   padding: '0.1rem 0.3rem',
   margin: '0 0.14rem',
@@ -125,7 +119,6 @@ export const TypeStyle = {
   fontSize: '.8em',
   textAlign: 'center'
 }
-
 export const LevelStyle = {
   border: 0
 }

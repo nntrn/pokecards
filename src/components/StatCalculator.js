@@ -1,12 +1,10 @@
 import React from 'react'
 import Stat from './Stat'
-
 import { natures } from '../data/pokemon'
 import { calculateHP, calculateStat } from './utils/calculate'
 
 export default function StatCalculator(props) {
   const [ nature, setNature ] = React.useState(props.nature)
-
   let stat = {}
   let statNames = [ 'hp', 'atk', 'def', 'spa', 'spd', 'spe' ]
   var level = props.level > 0 && props.level < 101 ? props.level : 100
@@ -16,6 +14,7 @@ export default function StatCalculator(props) {
       stat[e] = calculateHP(props.base[i], level)
     } else {
       let nmod = e === natures[nature].plus ? 1.1 : e === natures[nature].minus ? 0.9 : 1
+
       stat[e] = calculateStat(props.base[i], level, nmod)
     }
   })
@@ -49,8 +48,8 @@ export default function StatCalculator(props) {
               e === natures[nature].plus
                 ? 'increase'
                 : e === natures[nature].minus
-                ? 'decrease'
-                : 'normal'
+                  ? 'decrease'
+                  : 'normal'
             }
           />
         ))}

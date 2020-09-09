@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Input from './Input'
 import Icon from './Icon'
 import Sprite from './Sprite'
@@ -8,10 +7,16 @@ import Moveset from './Moveset'
 import Abilities from './Abilities'
 import StatCalculator from './StatCalculator'
 import Flex from './Flex'
-
 import { getGalarDataById } from '../data/galar-data'
 import { CardStyle } from './style'
 
+const svg = {
+  locked:
+      'M12 2a5 5 0 00-5 5v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-1V7a5 5 0 00-5-5zM9 7a3 3 0 016 0v3H9V7zm4 10.7V20h-2v-2.3a2 2 0 01.6-3.7 2 2 0 011.4 3.7z',
+  unlocked:
+      'M17 8V7A5 5 0 007 7v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2H9V7a3 3 0 016 0v1h2z'
+}
+  
 export default function Card(props) {
   const { nature } = props
   const [ value, setValue ] = React.useState(props.gdex)
@@ -35,19 +40,11 @@ export default function Card(props) {
     return getGalarDataById(value)
   }
 
-  const svg = {
-    locked:
-      'M12 2a5 5 0 00-5 5v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-1V7a5 5 0 00-5-5zM9 7a3 3 0 016 0v3H9V7zm4 10.7V20h-2v-2.3a2 2 0 01.6-3.7 2 2 0 011.4 3.7z',
-    unlocked:
-      'M17 8V7A5 5 0 007 7v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2H9V7a3 3 0 016 0v1h2z'
-  }
-
   return (
     <div {...props} style={{ ...CardStyle, ...props.style }} data-locked={lock}>
       <Flex wrap="wrap">
         <Flex direction="column" flexGrow="1">
-          <h1 className="pokemon-name">{getPokemon(value).name}</h1>
-          <b4/>
+          <h1 className="pokemon-name margin-y-0">{getPokemon(value).name}</h1>
           <div className="types p50 padding-bottom">
             {getPokemon(value).types.map(type => (
               <Type key={type} type={type} style={{ color: 'white' }} />

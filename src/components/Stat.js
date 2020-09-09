@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { BarStyle, StatStyle } from './style'
 
 function Bar(props) {
@@ -31,11 +30,12 @@ export default function Stat(props) {
   const props2 = {
     ...props,
     'data-label': props.type,
-    title: props.type,
-    className: 'stat',
-    style: {
+    'title': props.type,
+    'className': 'stat',
+    'style': {
       ...StatStyle,
-      ...props.style
+      ...props.style,
+      width: 'calc(100% / 6)'
     }
   }
 
@@ -43,7 +43,7 @@ export default function Stat(props) {
     textTransform: 'uppercase',
     color: '#777',
     fontSize: '.8em',
-    width: '100%',
+    // width: '100%',
     textAlign: 'center'
   }
 

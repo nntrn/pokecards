@@ -1,9 +1,7 @@
 import React from 'react'
 import { galarSubset } from '../data/galar-data'
-
 import Type from './Type'
 import SvgIcon from './SvgIcon'
-
 import { SearchListStyle } from './style'
 import '../styles/searchlist.scss'
 
@@ -15,6 +13,7 @@ function searchPokemon(searchString) {
   }
   for (var i = 0; i < galarSubset.length; i++) {
     var pokemon = galarSubset[i][2].toLowerCase()
+
     if (pokemon.indexOf(searchString.toLowerCase()) === 0) {
       results.push(galarSubset[i])
     }
@@ -53,17 +52,16 @@ export default function Searchlist({ item, onChildClick }) {
 
   const sendData = item => {
     setValue('')
-     setList([])
+    setList([])
     onChildClick({ gdex: item[0], ndex: item[1], name: item[2], types: item[3] })
   }
 
   return (
     <div className="Search" id="searchlist">
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{display: 'flex', alignItems: 'center', margin: 'auto', marginRight: '.25rem'}}>
-          <SearchIcon fill="#222" size="20" />
+        <span style={{ display: 'flex', alignItems: 'center', margin: 'auto', marginRight: '.25rem' }}>
+          <SearchIcon fill="#fff" size="20"/>
         </span>
-
         <input
           type="search"
           id="search"
@@ -73,13 +71,10 @@ export default function Searchlist({ item, onChildClick }) {
           onChange={e => handleChange(e)}
           style={SearchListStyle.input}
           value={value}
+          placeholder="Search..."
         />
-
       </div>
-      <div
-        style={{ ...SearchListStyle.list, height: `${list.length * 25}px` }}
-        className="list"
-      >
+      <div style={{ ...SearchListStyle.list, height: `${list.length * 25}px` }} className="list">
         {list.map(item => {
           return (
             <div

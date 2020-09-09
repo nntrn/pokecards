@@ -11,5 +11,5 @@ export function randomId(size = 100, bit = 16) {
 }
 
 export function randomStrId(size = 7) {
-  return 's' + Math.random().toString(36).substring(size);
+  return 's' + Math.random().toString(36).substring(size)
 }
