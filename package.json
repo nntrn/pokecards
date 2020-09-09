@@ -1,9 +1,14 @@
 {
   "name": "pokecards",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author": "annie tran",
   "homepage": "./",
+  "keywords": [
+    "react",
+    "pokemon",
+    "EV"
+  ],
   "dependencies": {
     "@testing-library/react": "^11.0.2",
     "node-sass": "^4.14.1",
