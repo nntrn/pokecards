@@ -8,17 +8,17 @@
   "lang": "en",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://nntrn.github.io/pokecards/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "siteicon-128.png",
+      "src": "https://nntrn.github.io/pokecards/siteicon-128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "siteicon-32.png",
+      "src": "https://nntrn.github.io/pokecards/siteicon-32.png",
       "type": "image/png",
       "sizes": "32x32"
     }
