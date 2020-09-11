@@ -1,0 +1,239 @@
+.topCardRow > div {
+  /* margin: 0.25rem 0; */
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin: 0;
+  background: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.types {
+  background: inherit;
+  user-select: none;
+  margin: 1px 0;
+}
+
+.undefined,
+#types *:empty {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex .flex-wrap,
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex .column,
+.column {
+  flex-direction: column;
+}
+
+.flex .row,
+.row {
+  flex-direction: row !important;
+}
+
+input {
+  font-size: inherit;
+  font-weight: 500;
+  width: max-content;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+button.delete {
+  width: 23px;
+  height: 23px;
+  top: -10px;
+  right: -10px;
+  position: absolute;
+  color: transparent;
+  background: transparent;
+  margin-top: -2px;
+  border: 0;
+  font-weight: 600;
+}
+
+button.delete:hover {
+  background: #0ad7f1;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.05);
+  color: #068c9d;
+  transition: all 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.white-space {
+  white-space: pre-wrap;
+}
+
+button span {
+  padding: 0 0.34rem;
+}
+
+[after]:after {
+  content: attr(after);
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+[before]:before {
+  content: attr(before);
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.bar {
+  mix-blend-mode: difference;
+}
+
+.box > div {
+  margin: 0.25rem;
+  flex-grow: 1;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.level {
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 0 4px transparent;
+  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  padding: 0.2rem;
+  background: #ddd;
+  max-width: fit-content;
+}
+
+.level:hover {
+  box-shadow: 0 0 0 2px #07cd07;
+  background: #07cd07ba;
+}
+
+.move-item {
+  border: 2px solid #000;
+}
+
+.abilities {
+  align-items: baseline;
+  align-content: center;
+  justify-content: flex-start;
+  display: flex;
+  font-size: 0.85em;
+  position: relative;
+  background: inherit;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.ability input[type="radio"]:checked + label {
+  border: 2px solid #07cd07;
+  background: #07cd07ba;
+}
+
+.ability {
+  white-space: pre;
+  background: #fff;
+  color: #444;
+}
+
+.ability input[type="radio"] + label {
+  padding: 0.1rem 0.35rem;
+  border-radius: 20px;
+  border: 2px solid transparent;
+}
+
+.ability input[type="radio"] + label:before {
+  display: none;
+  position: absolute;
+  font-size: 0.85em;
+  padding: 0.3rem;
+  background: black;
+  color: white;
+  bottom: 0;
+  margin-bottom: 60px;
+  z-index: 1000;
+  white-space: pre-wrap;
+  content: attr(data-desc);
+}
+
+.ability input[type="radio"] + label:hover:before {
+  content: attr(data-desc);
+  display: flex !important;
+}
+
+@media screen and (max-width: 500px) {
+  .abilities {
+    flex-grow: 3;
+  }
+  .pokeId {
+    position: absolute;
+    right: 0;
+    padding: 0 4px;
+  }
+  .topCardRow {
+    flex-direction: column;
+  }
+}
+
+h1,
+strong,
+.abilities {
+  letter-spacing: -0.25px;
+}
+
+.gray {
+  color: #777 !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.margin-y-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.margin-x-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.margin-0 {
+  margin: 0;
+}

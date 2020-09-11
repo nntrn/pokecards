@@ -31,109 +31,10 @@
         n = a(1),
         l = a(3),
         c = a(2),
-        h = {
-          container: { position: "relative", height: "100%", width: "100%" },
-          bar: {
-            background: "orange",
-            width: "100%",
-            bottom: 0,
-            position: "absolute",
-            textAlign: "center",
-            fontSize: ".8em"
-          },
-          nature: { normal: "orange", decrease: "#39cccc", increase: "#ff4136" }
-        },
-        g = {
-          border: 0,
-          borderRadius: "100%",
-          margin: 0,
-          padding: 0,
-          display: "flex",
-          alignContent: "flex-start",
-          alignItems: "center",
-          justifyContent: "center",
-          userSelect: "none",
-          zIndex: 1e3
-        },
-        u = {
-          background: "#fff",
-          boxShadow: "inset 0 0 0px 4px rgba(0, 0, 0, 0.85)",
-          color: "#222",
-          width: "80vw",
-          margin: "1.5rem auto",
-          borderRadius: "8px",
-          padding: ".85rem",
-          position: "relative",
-          boxSizing: "border-box"
-        },
-        p = {
-          item: {
-            display: "flex",
-            justifyContent: "space-between",
-            padding: ".25rem",
-            border: "0px solid #ccc",
-            borderBottom: "3px solid #ddd",
-            position: "relative"
-          },
-          input: {
-            outline: "none",
-            padding: ".15em",
-            border: "0px solid #222",
-            fontSize: "1.2em",
-            zIndex: 100,
-            height: "100%",
-            borderBottom: 0,
-            color: "#fff"
-          },
-          list: {
-            zIndex: 200,
-            position: "absolute",
-            borderRadius: "2px",
-            height: "fit-content",
-            maxHeight: "calc(100vh / 3)",
-            overflow: "scroll",
-            background: "#fff",
-            color: "#222",
-            marginTop: "5px",
-            border: "0px solid #eee",
-            left: 0
-          }
-        },
-        d = {
-          maxHeight: "140px",
-          marginTop: ".5rem",
-          opacity: ".9",
-          filter: "saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)"
-        },
-        m = {
-          margin: ".15rem",
-          position: "relative",
-          display: "flex",
-          alignItems: "flex-start",
-          alignContent: "center",
-          width: "calc(85% / 6)",
-          minWidth: "fit-content",
-          height: "100px",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          fontSize: ".9rem",
-          overflow: "hidden"
-        },
-        y = {
-          padding: "0.1rem 0.3rem",
-          margin: "0 0.14rem",
-          borderRadius: "5px",
-          textTransform: "uppercase",
-          fontFamily: "sans-serif",
-          whiteSpace: "pre",
-          color: "#777",
-          fontSize: ".8em",
-          textAlign: "center"
-        },
-        _ = function Input(e) {
+        h = function Input(e) {
           return o.a.createElement("input", e);
         };
-      _.defaultProps = {
+      h.defaultProps = {
         min: 1,
         max: 401,
         maxLength: 3,
@@ -143,16 +44,16 @@
         spellCheck: "false",
         style: { margin: 0, fontSize: "inherit", border: "1px solid #ddd" }
       };
-      var v = _,
-        S = a(4),
-        b = function Icon(e) {
+      var g = h,
+        u = a(4),
+        p = function Icon(e) {
           var t = e.width,
             a = e.height,
             i = e.path,
             s = e.viewBox,
             r = e.style,
             n = e.className,
-            l = Object(S.a)(e, [
+            l = Object(u.a)(e, [
               "width",
               "height",
               "path",
@@ -166,14 +67,22 @@
             { style: r, className: n },
             o.a.createElement(
               "svg",
-              Object.assign({ width: t, height: a, viewBox: s }, l),
+              Object.assign(
+                {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  width: t,
+                  height: a,
+                  viewBox: s
+                },
+                l
+              ),
               c.map(function(e) {
                 return o.a.createElement("path", { d: i, key: i });
               })
             )
           );
         };
-      b.defaultProps = {
+      p.defaultProps = {
         width: 18,
         height: 18,
         viewBox: "0 0 24 24",
@@ -182,13 +91,15 @@
         fill: "rgba(255,255,255,.8)",
         className: "icon"
       };
-      var w = b;
+      var d = p;
       function getGalarDataById(e) {
-        return P.filter(function(t) {
-          return t.galar_dex === parseInt(e);
-        }).shift();
+        return y
+          .filter(function(t) {
+            return t.galar_dex === parseInt(e);
+          })
+          .shift();
       }
-      var f = [
+      var m = [
           [1, 810, "Grookey", ["Grass"]],
           [2, 811, "Thwackey", ["Grass"]],
           [3, 812, "Rillaboom", ["Grass"]],
@@ -674,7 +585,7 @@
           [400, 890, "Eternatus", ["Poison", "Dragon"]],
           [400, 1170, "Eternatus 1", ["Poison", "Dragon"]]
         ],
-        P = [
+        y = [
           {
             id: 810,
             name: "Grookey",
@@ -38271,7 +38182,98 @@
             evolutions: [],
             description: null
           }
-        ];
+        ],
+        _ = {
+          container: { position: "relative", height: "100%", width: "100%" },
+          bar: {
+            background: "orange",
+            width: "100%",
+            bottom: 0,
+            position: "absolute",
+            textAlign: "center",
+            fontSize: ".8em"
+          },
+          nature: { normal: "orange", decrease: "#39cccc", increase: "#ff4136" }
+        },
+        v = {
+          border: 0,
+          borderRadius: "100%",
+          margin: 0,
+          padding: 0,
+          display: "flex",
+          alignContent: "flex-start",
+          alignItems: "center",
+          justifyContent: "center",
+          userSelect: "none",
+          zIndex: 1e3
+        },
+        S = {
+          background: "#fff",
+          color: "#222",
+          width: "80vw",
+          margin: "1.5rem auto",
+          borderRadius: "8px",
+          padding: ".85rem",
+          position: "relative",
+          boxSizing: "border-box"
+        },
+        b = {
+          item: {
+            display: "flex",
+            justifyContent: "space-between",
+            padding: ".25rem",
+            border: "0px solid #ccc",
+            borderBottom: "3px solid #ddd",
+            position: "relative"
+          },
+          input: {
+            outline: "none",
+            padding: ".15em",
+            border: "0px solid #222",
+            fontSize: "1.2em",
+            zIndex: 100,
+            height: "100%",
+            borderBottom: 0,
+            color: "#fff"
+          },
+          list: {
+            zIndex: 200,
+            position: "absolute",
+            borderRadius: "2px",
+            height: "fit-content",
+            maxHeight: "calc(100vh / 3)",
+            overflow: "scroll",
+            background: "#fff",
+            color: "#222",
+            marginTop: "5px",
+            border: "0px solid #eee",
+            left: 0
+          }
+        },
+        w = {
+          maxHeight: "140px",
+          opacity: ".9",
+          filter: "saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)"
+        },
+        f = {
+          fontSize: ".9rem",
+          height: "100px",
+          margin: ".15rem",
+          minWidth: "25px",
+          position: "relative",
+          width: "calc(85% / 6)"
+        },
+        P = {
+          padding: "0.1rem 0.3rem",
+          margin: "0 0.14rem",
+          borderRadius: "5px",
+          textTransform: "uppercase",
+          fontFamily: "sans-serif",
+          whiteSpace: "pre",
+          color: "#777",
+          fontSize: ".8em",
+          textAlign: "center"
+        };
       function replaceString(e) {
         var t =
           arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -38297,11 +38299,11 @@
       }
       function Sprite(e) {
         var t = e.id,
-          a = Object(S.a)(e, ["id"]),
+          a = Object(u.a)(e, ["id"]),
           i = getGalarDataById(t),
-          s = d;
+          s = w;
         return (
-          parseInt(i.id) > 809 && (s = Object(n.a)(Object(n.a)({}, d), d)),
+          parseInt(i.id) > 809 && (s = Object(n.a)(Object(n.a)({}, w), w)),
           o.a.createElement(
             "img",
             Object.assign({}, a, {
@@ -38342,116 +38344,121 @@
           Timid: { plus: "spe", minus: "atk" }
         },
         F = {
+          fire: "#d52100",
+          water: "#0080ff",
+          electric: "#ead411",
+          grass: "#5cb737",
+          ice: "#08a7f7",
+          fighting: "#a84d3d",
+          poison: "#88447a",
+          ground: "#bf9926",
+          flying: "#556dff",
+          psychic: "#ff227a",
+          bug: "#83901a",
+          rock: "#a59249",
+          ghost: "#5454b3",
+          dragon: "#4e38e9",
+          dark: "#573e31",
+          steel: "#8e8ea4",
+          fairy: "#e76de7",
+          normal: "#a8a878"
+        },
+        x = {
           fire: {
-            color: "#d52100",
             icon:
               "M352 395c7-23-6-70-6-70s-9 38-23 53a74 74 0 01-47 23c17-9 29-26 29-46 0-28-23-51-52-51-28 0-51 23-51 51 0 8 1 15 5 22-18-15-21-37-21-37s-20 82 35 121 162 6 162 6-154 108-268-10C17 356 90 222 90 222s-3 12-3 27c0 14 7 25 7 25s24-49 42-69c17-19 38-34 57-47 14-10 27-19 34-28C269 84 243 0 243 0s47 41 60 94c5 20 2 43-1 64-5 33-9 60 25 58 54-3 7-86 7-86s122 65 113 177c-9 113-134 138-134 138s33-26 39-50z",
             gradient: "linear-gradient( to bottom, #d37b31 0%, #d39540 100% )"
           },
           water: {
-            color: "#0080ff",
             icon:
               "M422 347a166 166 0 01-332 0C90 258 247 14 256 0c9 14 166 258 166 347zM228 459c-84-19-69-112-69-112s23 56 78 75c56 18 124-9 124-9s-48 64-133 46z",
             gradient: "linear-gradient( to bottom, #4d91d7 0%, #73c6df 100% )"
           },
           electric: {
-            color: "#c90",
             icon:
               "M153 1V0h180l83 267-1 1H296h-1l69 242h-1L97 155c-1 0 0 0 0 0h109v-1L153 1z",
             gradient: "linear-gradient( to bottom, #c3a427 0%, #d2bd64 100% )"
           },
           grass: {
-            color: "#5cb737",
             icon:
               "M97 441l-5-5C2 345 2 198 92 107c91-90 380-97 380-97s39 335-51 426c-81 80-206 89-296 27l72-90 117-25-95-10 60-61 69-15-54-16 54-98-77 86-30-42 10 70-53 61-25-77v102z",
             gradient: "linear-gradient( to bottom, #21934d 0%, #2fb47f 100% )"
           },
           ice: {
-            color: "#0af",
             icon:
               "M384 39l2 138-121 58-1-130 120-66zM505 257l-119 68-120-68 120-63 119 63zM245 257l-119 68L6 257l120-63 119 63zM124 38l124 62-3 134-117-58-4-138zM388 474l-124-62 3-134 117 58 4 138zM129 475l-2-139 121-58 1 131-120 66z",
             gradient: "linear-gradient( to bottom, #2bb5a6 0%, #78c5bf 100% )"
           },
           fighting: {
-            color: "#a84d3d",
             icon:
               "M88 43a56 56 0 01102-17h17a56 56 0 0192 17h14a56 56 0 0182 25h37l1 1 5-1c32 0 57 26 57 57v175c-4 118-109 212-239 212-132 0-239-97-239-218 0-58 25-110 66-149-1 56 0 115 5 114 12-3 2-178 0-216z",
             gradient: "linear-gradient( to bottom, #c3334e 0%, #d37377 100% )"
           },
           poison: {
-            color: "#88447a",
             icon:
               "M428 393c52-41 84-101 84-167C512 101 397 0 256 0S0 101 0 226c0 64 30 122 79 163-3 10-5 21-5 33 0 50 30 90 67 90 25 0 46-17 58-43 12 26 33 43 57 43 22 0 42-14 54-36 12 22 32 36 54 36 37 0 67-40 67-90 0-10-1-20-3-29zm-24-163c0 64-68 115-151 115-84 0-152-51-152-115 0-63 68-114 152-114 83 0 151 51 151 114z",
             gradient: "linear-gradient( to bottom, #aa66cc 0%, #c660d7 100% )"
           },
           ground: {
-            color: "#bf9926",
             icon:
               "M113 440v-1L243 70h140l129 369v1H113zM0 441l97-260h85L88 441H0z",
             gradient: "linear-gradient( to bottom, #c17249 0%, #ca936c 100% )"
           },
           flying: {
-            color: "#556dff",
             icon:
               "M179 478c75 0 139-42 165-101 1-1-106 28-103 18 2-5 67-29 115-57 27-16 40-50 40-50s-46 23-69 29c-47 11-89 10-89 9 0-3 69-16 164-74 45-28 58-75 58-75s-50 30-80 39c-71 23-135 30-135 27 0-7 57-22 117-51 31-16 59-35 90-58 52-36 60-100 60-100s-51 33-76 44a844 844 0 01-257 73C80 159 0 227 0 317c0 89 80 161 179 161z",
             gradient: "linear-gradient( to bottom, #8199bd 0%, #a5b4cb 100% )"
           },
           psychic: {
-            color: "#ff227a",
             icon:
               "M456 425s-65 52-193 31c-98-17-150-124-150-182 0-137 102-168 170-168 69 0 114 67 114 119 0 51-37 96-94 96s-74-39-74-76 30-50 57-50 36 23 36 43-15 27-28 27-14-6-19-13 6-33-12-33c-19 0-22 30-22 30s7 57 62 56 82-44 74-86-49-87-121-78-101 82-88 160 106 123 179 106c73-16 146-69 146-203C493 69 377-12 238 1 99 15 13 136 18 282c6 146 144 226 261 230 118 4 189-64 189-64s16-14 10-26c-6-11-22 3-22 3z",
             gradient: "linear-gradient( to bottom, #f96d75 0%, #fda39a 100% )"
           },
           bug: {
-            color: "#83901a",
             icon:
               "M342 1l2-1 36 26v1l-50 73c24 7 41 16 41 16s-41 70-110 70-119-65-119-65 17-11 43-21l-55-66v-2l34-28h2l70 84a163 163 0 0145 0zm14 189c18-14 47-48 47-48s71 57 71 177c0 121-124 193-124 193s-59-60-73-136c-15-75 21-159 21-159s39-14 58-27zm-200 0c-18-14-46-48-46-48s-72 57-72 177c0 121 124 193 124 193s59-60 74-136c14-75-22-159-22-159s-39-14-58-27z",
             gradient: "linear-gradient( to bottom, #6f9a24 0%, #9bb23d 100% )"
           },
           rock: {
-            color: "#a59249",
             icon:
               "M395 245l33-191h10l74 233-54 43h-1l-62-85zM-1 371l112 37 250-173 27-180H166L-1 257v114zm159 46l122 40 145-104v-1l-54-81-213 146z",
             gradient: "linear-gradient( to bottom, #c7b78a 0%, #d7cd92 100% )"
           },
           ghost: {
-            color: "#5454b3",
             icon:
               "M369 510c-46 3-99 3-117 0C112 492 0 389 0 251 0 112 115 0 256 0s256 112 256 251c0 64-25 123-66 167-11 12 5 21 20 30 15 8 30 16 22 29-10 13-64 30-119 33zM220 219c0 22-18 40-40 40s-40-18-40-40c0-14 8-27 20-34 1 19 16 34 35 34h25zm124-34c-1 19-16 34-35 34h-25c0 22 18 40 40 40s40-18 40-40c0-14-8-27-20-34z",
             gradient: "linear-gradient( to bottom, #456095 0%, #7a75b5 100% )"
           },
           dragon: {
-            color: "#4e38e9",
             icon:
               "M281 255c3-2 6-7 8-12 32 13 54 43 54 79 0 46-39 84-87 84-19 0-38-6-52-17l-12-6c-5-3-8-5-10-4-6 0-4 6-3 11 1 3 2 6 1 8-2 1-7-4-13-10-9-8-19-17-23-14-4 2 0 8 4 16l6 9c4 6 8 11 6 12s-16-8-27-21l-13-15c-8-11-16-20-20-19-5 1-1 12 4 21l9 13c4 7 7 11 6 12-2 1-15-12-24-28l-13-29c-4-9-7-16-9-17-7-3-7 11-4 31l1 8c26 84 106 145 201 145 115 0 209-92 209-205 0-107-85-195-193-204l3-15s19-46 20-55v-3c1-10 4-30-13-30-10 0-14 7-19 14a566 566 0 01-67 70c-34 30-67 55-87 69-9 6-15 11-16 13-14 13-64 103-64 103s-17 29-11 35 20 5 20 5l202-46 10-2c7-1 8-2 16-6zm-132-55c-10 10-26 32-26 32s30 2 47-14 13-44 13-44-24 17-34 26z",
             gradient: "linear-gradient( to bottom, #1d547d 0%, #1e719b 100% )"
           },
           dark: {
-            color: "#573e31",
             icon:
               "M229 453l30 2a196 196 0 10-21-390c53 41 89 111 89 191 0 84-39 157-98 197zm27 59a256 256 0 100-512 256 256 0 000 512z",
             gradient: "linear-gradient( to bottom, #41403e 0%, #585755 100% )"
           },
           steel: {
-            color: "#8e8ea4",
             icon:
               "M0 255v-1L129 34h256l127 220v1L385 474H129L0 255zm375-1a119 119 0 11-238 0 119 119 0 01238 0z",
             gradient: "linear-gradient( to bottom, #54869e 0%, #58abab 100% )"
           },
           fairy: {
-            color: "#e76de7",
             icon:
               "M103 406l82-24 71 130 71-130 82 24h1l-24-81 126-69-127-70 25-84h-1l-84 24L256 0l-69 126-84-24h-1l25 84L0 256l126 69-24 81h1zm63-149l59 32 31 58h1l32-58 58-32v-1l-58-31-32-59h-1l-31 59-59 31v1z",
             gradient: "linear-gradient( to bottom, #d289c1 0%, #d1a2c4 100% )"
           },
           normal: {
-            color: "#a8a878",
             icon:
               "M481 256a225 225 0 11-450 0 225 225 0 01450 0zm-96 0a129 129 0 11-258 0 129 129 0 01258 0z",
             gradient: "linear-gradient( to bottom, #797d7e 0%, #9a9995 100% )"
           }
-        },
-        x = {
+        };
+      Object.entries(F).forEach(function(e) {
+        Object.assign(x[e[0]], { color: e[1] });
+      });
+      var T = {
           status: {
             viewbox: "0 0 100 74",
             paths: [
@@ -38476,26 +38483,6 @@
             ],
             fill: "#3498db"
           }
-        },
-        T = {
-          fire: "#d52100",
-          water: "#0080ff",
-          electric: "#c90",
-          grass: "#5cb737",
-          ice: "#0af",
-          fighting: "#a84d3d",
-          poison: "#88447a",
-          ground: "#bf9926",
-          flying: "#556dff",
-          psychic: "#ff227a",
-          bug: "#83901a",
-          rock: "#a59249",
-          ghost: "#5454b3",
-          dragon: "#4e38e9",
-          dark: "#573e31",
-          steel: "#8e8ea4",
-          fairy: "#e76de7",
-          normal: "#a8a878"
         },
         M = [
           {
@@ -39741,9 +39728,9 @@
         ];
       function Type(e) {
         var t = Object(n.a)(
-          Object(n.a)({}, y),
+          Object(n.a)({}, P),
           {},
-          { background: T[e.type.toLowerCase()] },
+          { background: F[e.type.toLowerCase()] },
           e.style
         );
         return o.a.createElement(
@@ -70602,8 +70589,8 @@
       a(14);
       function MoveCategory(e) {
         var t = Object(n.a)(
-          Object(n.a)({}, x.status),
-          x[e.category.toLowerCase()]
+          Object(n.a)({}, T.status),
+          T[e.category.toLowerCase()]
         );
         return o.a.createElement(
           "div",
@@ -70661,7 +70648,7 @@
                   {
                     key: t.name,
                     "data-type": t.type.toLowerCase(),
-                    style: { background: F[t.type.toLowerCase()].color + "80" }
+                    style: { background: x[t.type.toLowerCase()].color + "80" }
                   },
                   a.map(function(e) {
                     return o.a.createElement(
@@ -70681,48 +70668,136 @@
           )
         );
       }
+      Moveset.defaultProps = {
+        className: "moveset",
+        style: { margin: "1rem .5rem", flexGrow: 1, width: "calc(100% / 4)" }
+      };
+      var A = {
+          alignContent: "flex-start",
+          alignItems: "flex-start",
+          display: "flex",
+          flex: 1,
+          flexBasis: "",
+          flexDirection: "column",
+          flexFlow: "row wrap",
+          flexGrow: "",
+          flexShrink: "",
+          flexWrap: "wrap",
+          justifyContent: "",
+          order: ""
+        },
+        C = {
+          default: {},
+          column: { flexDirection: "column" },
+          inline: { display: "inline-flex" },
+          row: { flexDirection: "row" },
+          spaceBetween: { justifyContent: "space-between" },
+          center: {
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%"
+          },
+          bottom: { alignItems: "flex-end", justifyContent: "flex-end" },
+          getPreset: function getPreset() {
+            for (
+              var e = this,
+                t = {},
+                a = arguments.length,
+                i = new Array(a),
+                o = 0;
+              o < a;
+              o++
+            )
+              i[o] = arguments[o];
+            return (
+              i.forEach(function(a) {
+                a.split(",").length > 1 &&
+                  (t = e.getPreset.apply(e, Object(l.a)(a.split(",")))),
+                  Array.isArray(a) &&
+                    (t = e.getPreset.apply(e, Object(l.a)(a))),
+                  e[a] && Object.assign(t, e[a]);
+              }),
+              t
+            );
+          }
+        },
+        G = function Flex(e) {
+          var t = e.preset,
+            a = Object(u.a)(e, ["preset"]),
+            i = {},
+            s = Object(n.a)(
+              Object(n.a)({ display: "flex", flexWrap: "wrap" }, a.style),
+              C.getPreset(t)
+            );
+          return (
+            Object.keys(a).forEach(function(e) {
+              if (Object.keys(A).includes(e)) s[e] = a[e];
+              else {
+                var t = "flex".concat(
+                  (function capitalize(e) {
+                    return e.charAt(0).toUpperCase() + e.slice(1);
+                  })(e.toLowerCase())
+                );
+                A[t] ? (s[t] = a[e]) : (i[e] = a[e]);
+              }
+            }),
+            o.a.createElement(
+              "div",
+              Object.assign({}, i, { style: s }),
+              a.children
+            )
+          );
+        };
+      G.defaultProps = { preset: "default" };
+      var W = G;
       function Abilities(e) {
         var t = Object(l.a)(new Set(e.abilities)),
           a = M.filter(function(e) {
             return t.includes(e.name);
           }),
-          i = [e.className, "abilities", "flex-grow-1"]
-            .filter(Boolean)
-            .join(" ");
+          i = [e.className, "abilities"].filter(Boolean).join(" ");
         return o.a.createElement(
           "form",
           { className: i },
           o.a.createElement("legend", { className: "gray" }, "abilities:"),
-          a.map(function(t) {
-            return o.a.createElement(
-              "div",
-              { className: "flex ability", key: t.name + e.id },
-              o.a.createElement("input", {
-                type: e.type,
-                name: e.name + e.id,
-                value: t.name,
-                id: t.name + e.id,
-                disabled: e.disabled
-              }),
-              o.a.createElement(
-                "label",
-                { htmlFor: t.name + e.id, "data-desc": t.desc },
-                t.name
-              )
-            );
-          })
+          o.a.createElement(
+            W,
+            null,
+            a.map(function(t, a) {
+              return o.a.createElement(
+                W,
+                {
+                  className: "ability",
+                  key: t.name + e.id,
+                  "data-selected": e.abilityIndex === a
+                },
+                o.a.createElement("input", {
+                  type: e.type,
+                  name: e.name + e.id,
+                  value: t.name,
+                  id: t.name + e.id,
+                  disabled: e.disabled
+                }),
+                o.a.createElement(
+                  "label",
+                  { htmlFor: t.name + e.id, "data-desc": t.desc },
+                  t.name
+                )
+              );
+            })
+          )
         );
       }
       function Bar(e) {
         var t = {
-          container: { style: Object(n.a)({}, h.container) },
+          container: { style: Object(n.a)({}, _.container) },
           bar: {
             before: e.value,
             style: Object(n.a)(
-              Object(n.a)(Object(n.a)({}, e.style), h.bar),
+              Object(n.a)(Object(n.a)({}, e.style), _.bar),
               {},
               {
-                background: h.nature[e.nature],
+                background: _.nature[e.nature],
                 height: "calc(".concat(e.height, "% + 6px)")
               }
             )
@@ -70734,30 +70809,28 @@
           o.a.createElement("div", t.bar)
         );
       }
+      Abilities.defaultProps = {
+        type: "radio",
+        name: "ability",
+        abilityIndex: -1
+      };
+      var I = {
+        textTransform: "uppercase",
+        color: "#777",
+        fontSize: ".8em",
+        textAlign: "center"
+      };
       function Stat(e) {
-        var t = Object(n.a)(
-            Object(n.a)({}, e),
-            {},
-            {
-              "data-label": e.type,
-              title: e.type,
-              className: "stat",
-              style: Object(n.a)(
-                Object(n.a)(Object(n.a)({}, m), e.style),
-                {},
-                { width: "calc(100% / 6)" }
-              )
-            }
-          ),
-          a = {
-            textTransform: "uppercase",
-            color: "#777",
-            fontSize: ".8em",
-            textAlign: "center"
-          };
+        var t = {
+          "data-label": e.type,
+          title: e.type.toUpperCase(),
+          "data-component": "Stat",
+          className: "stat",
+          style: Object(n.a)(Object(n.a)({}, f), e.style)
+        };
         return o.a.createElement(
-          "div",
-          t,
+          W,
+          Object.assign({}, t, { preset: "column", flow: "row wrap" }),
           o.a.createElement(
             Bar,
             Object.assign({}, e, {
@@ -70766,18 +70839,10 @@
             })
           ),
           o.a.createElement(
-            "div",
-            { style: a, className: "type no-select" },
-            e.type
-          ),
-          o.a.createElement(
-            "div",
-            {
-              style: a,
-              className: "base",
-              title: "base ".concat(e.type.toUpperCase())
-            },
-            e.base
+            W,
+            { preset: "center,column", style: I },
+            o.a.createElement("span", null, e.type),
+            o.a.createElement("span", null, e.base)
           )
         );
       }
@@ -70851,8 +70916,8 @@
         });
         var h = Math.max.apply(Math, Object(l.a)(Object.values(r))) + 50;
         return o.a.createElement(
-          "div",
-          { className: "flex column space-between" },
+          W,
+          { preset: "column" },
           o.a.createElement(
             "select",
             {
@@ -70869,7 +70934,20 @@
           ),
           o.a.createElement(
             "div",
-            e,
+            { style: { marginTop: "10px" } },
+            o.a.createElement("strong", null, "Base total: "),
+            o.a.createElement(
+              "span",
+              null,
+              " ",
+              e.base.reduce(function(e, t) {
+                return e + t;
+              }, 0)
+            )
+          ),
+          o.a.createElement(
+            "div",
+            Object.assign({}, e, { "data-component": "StatChart" }),
             Object.keys(r).map(function(t, a) {
               return o.a.createElement(Stat, {
                 key: t,
@@ -70885,114 +70963,61 @@
                     : "normal"
               });
             })
-          ),
-          o.a.createElement(
-            "div",
-            null,
-            o.a.createElement("strong", null, "Base total: "),
-            o.a.createElement(
-              "span",
-              null,
-              " ",
-              e.base.reduce(function(e, t) {
-                return e + t;
-              }, 0)
-            )
           )
         );
       }
-      (Moveset.defaultProps = {
-        className: "moveset",
-        style: { margin: "1rem 0" }
-      }),
-        (Abilities.defaultProps = { type: "radio", name: "ability" }),
-        (Stat.defaultProps = {}),
+      (Stat.defaultProps = {}),
         (StatCalculator.defaultProps = {
           base: [0, 0, 0, 0, 0, 0],
           level: 100,
           style: { margin: 0, padding: 0, display: "flex", width: "90%" }
         });
-      var A = {
-          alignContent: "flex-start",
-          alignItems: "flex-start",
-          display: "flex",
-          flexBasis: "",
-          flexDirection: "column",
-          flexFlow: "row wrap",
-          flexGrow: "",
-          flexShrink: "",
-          flexWrap: "wrap",
-          justifyContent: "",
-          order: ""
-        },
-        C = function Flex(e) {
-          var t = {},
-            a = { display: "flex", flexWrap: "wrap" };
-          return (
-            Object.keys(e).forEach(function(i) {
-              if (Object.keys(A).includes(i)) a[i] = e[i];
-              else {
-                var o = "flex".concat(
-                  (function capitalize(e) {
-                    return e.charAt(0).toUpperCase() + e.slice(1);
-                  })(i.toLowerCase())
-                );
-                A[o] ? (a[o] = e[i]) : (t[i] = e[i]);
-              }
-            }),
-            o.a.createElement(
-              "div",
-              Object.assign({}, t, { style: a }),
-              e.children
-            )
-          );
-        },
-        G =
+      var R =
           "M12 2a5 5 0 00-5 5v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-1V7a5 5 0 00-5-5zM9 7a3 3 0 016 0v3H9V7zm4 10.7V20h-2v-2.3a2 2 0 01.6-3.7 2 2 0 011.4 3.7z",
-        W =
+        H =
           "M17 8V7A5 5 0 007 7v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2H9V7a3 3 0 016 0v1h2z";
       function Card(e) {
-        var t = e.nature,
-          a = o.a.useState(e.gdex),
-          i = Object(c.a)(a, 2),
-          s = i[0],
-          r = i[1],
-          l = o.a.useState(e.gdex),
-          h = Object(c.a)(l, 2),
-          g = h[0],
-          p = h[1],
-          d = o.a.useState(!1),
-          m = Object(c.a)(d, 2),
-          y = m[0],
-          _ = m[1],
-          S = o.a.useState(e.level),
-          b = Object(c.a)(S, 2),
-          f = b[0],
-          P = b[1],
-          k = function getPokemon(e) {
+        var t = o.a.useState(e.nature),
+          a = Object(c.a)(t, 2),
+          i = a[0],
+          s = (a[1], o.a.useState(e.gdex)),
+          r = Object(c.a)(s, 2),
+          l = r[0],
+          h = r[1],
+          u = o.a.useState(e.gdex),
+          p = Object(c.a)(u, 2),
+          m = p[0],
+          y = p[1],
+          _ = o.a.useState(!1),
+          v = Object(c.a)(_, 2),
+          b = v[0],
+          w = v[1],
+          f = o.a.useState(e.level),
+          P = Object(c.a)(f, 2),
+          k = P[0],
+          F = P[1],
+          x = function getPokemon(e) {
             return getGalarDataById(e);
           };
         return o.a.createElement(
           "div",
           Object.assign({}, e, {
-            style: Object(n.a)(Object(n.a)({}, u), e.style),
-            "data-locked": y
+            level: k,
+            nature: i,
+            style: Object(n.a)(Object(n.a)({}, S), e.style),
+            "data-locked": b
           }),
           o.a.createElement(
-            C,
-            { wrap: "wrap" },
+            W,
+            { className: "topCardRow", wrap: "wrap", preset: "spaceBetween" },
             o.a.createElement(
-              C,
-              { direction: "column", flexGrow: "1" },
-              o.a.createElement(
-                "h1",
-                { className: "pokemon-name margin-y-0" },
-                k(s).name
-              ),
+              W,
+              { preset: "column" },
+              o.a.createElement("h1", { className: "margin-0" }, x(l).name),
               o.a.createElement(
                 "div",
-                { className: "types p50 padding-bottom" },
-                k(s).types.map(function(e) {
+                { className: "types" },
+                x(l).types.map(function(e) {
                   return o.a.createElement(Type, {
                     key: e,
                     type: e,
@@ -71002,86 +71027,83 @@
               )
             ),
             o.a.createElement(Abilities, {
-              abilities: k(s).abilities,
+              abilities: x(l).abilities,
               id: e.id,
-              disabled: y
-            })
-          ),
-          o.a.createElement(
-            "div",
-            { className: "flex absolute top right", style: { margin: "10px" } },
-            o.a.createElement(v, {
-              onChange: function onChange(e) {
-                return (function handleChange(e) {
-                  e.target.value &&
-                    Number.isInteger(parseInt(e.target.value)) &&
-                    parseInt(e.target.value) > 0 &&
-                    parseInt(e.target.value) < 401 &&
-                    r(e.target.value),
-                    p(e.target.value);
-                })(e);
-              },
-              className: "center",
-              value: g,
-              disabled: y
+              disabled: b
             }),
             o.a.createElement(
-              "button",
-              {
-                className: "lock ".concat(y),
-                onClick: function onClick() {
-                  return (function handleLock() {
-                    _(!y);
-                  })();
-                }
-              },
-              o.a.createElement(w, {
-                path: y ? G : W,
-                fill: y ? "#f1c40f" : "#bdc3c7"
-              })
+              W,
+              { style: { height: "max-content" }, className: "pokeId" },
+              o.a.createElement(g, {
+                onChange: function onChange(e) {
+                  return (function handleChange(e) {
+                    e.target.value &&
+                      Number.isInteger(parseInt(e.target.value)) &&
+                      parseInt(e.target.value) > 0 &&
+                      parseInt(e.target.value) < 401 &&
+                      h(e.target.value),
+                      y(e.target.value);
+                  })(e);
+                },
+                className: "center",
+                value: m,
+                disabled: b
+              }),
+              o.a.createElement(
+                "button",
+                {
+                  className: "lock ".concat(b),
+                  onClick: function onClick() {
+                    return (function handleLock() {
+                      w(!b);
+                    })();
+                  }
+                },
+                o.a.createElement(d, {
+                  path: b ? R : H,
+                  fill: b ? "#f1c40f" : "#bdc3c7"
+                })
+              )
             )
           ),
+          o.a.createElement("hr", null),
           o.a.createElement(
-            C,
-            {
-              className: "box m50 margin-top",
-              justifyContent: "space-between",
-              wrap: "wrap"
-            },
+            W,
+            { className: "box m50 margin-top", preset: "spaceBetween" },
             o.a.createElement(
-              C,
-              { className: "no-select", direction: "column" },
-              o.a.createElement(Sprite, { id: s }),
+              W,
+              { className: "no-select", preset: "column" },
+              o.a.createElement(Sprite, { id: l }),
               o.a.createElement(
                 "div",
                 { className: "level" },
                 o.a.createElement("label", null, "Lvl. \xa0"),
-                o.a.createElement(v, {
+                o.a.createElement(g, {
                   type: "number",
                   "data-store": "level",
                   min: "1",
                   max: "100",
-                  defaultValue: f,
+                  defaultValue: k,
                   onChange: function onChange(e) {
-                    return P(e.target.value);
+                    return F(e.target.value);
                   },
-                  disabled: y
+                  disabled: b
                 })
               )
             ),
             o.a.createElement(StatCalculator, {
-              base: k(s).base_stats,
-              nature: t,
-              disabled: y,
-              level: f
+              base: x(l).base_stats,
+              nature: i,
+              disabled: b,
+              level: k
             }),
-            o.a.createElement(Moveset, { pokemon: k(s).name })
+            o.a.createElement(Moveset, { pokemon: x(l).name })
           ),
           o.a.createElement(o.a.Fragment, null, e.children)
         );
       }
       function Button(e) {
-        var t = Object(n.a)(Object(n.a)({}, g), e.style);
+        var t = Object(n.a)(Object(n.a)({}, v), e.style);
         return o.a.createElement(
           "button",
           Object.assign({}, e, { style: t, "data-active": e.active }),
@@ -71092,11 +71114,11 @@
       (Card.defaultProps = {
         className: "pokecard",
         gdex: 57,
-        level: 100,
+        level: 50,
         nature: "Quirky"
       }),
         (Button.defaultProps = { active: "true" });
-      var I = function SvgIcon(e) {
+      var L = function SvgIcon(e) {
         var t = e.children,
           a = (e.classes, e.className),
           i = (e.color, e.component),
@@ -71107,10 +71129,10 @@
           c = void 0 === l ? "0 0 24 24" : l,
           h = e.width,
           g = void 0 === h ? 24 : h,
-          u = e.height,
-          p = void 0 === u ? 24 : u,
-          d = e.size,
-          m = Object(S.a)(e, [
+          p = e.height,
+          d = void 0 === p ? 24 : p,
+          m = e.size,
+          y = Object(u.a)(e, [
             "children",
             "classes",
             "className",
@@ -71134,19 +71156,19 @@
               color: r,
               "aria-hidden": n ? null : "true",
               role: n ? "img" : "presentation",
-              width: d || g,
-              height: d || p
+              width: m || g,
+              height: m || d
             },
-            m
+            y
           ),
           t,
           n ? o.a.createElement("title", null, n) : null
         );
       };
       a(15);
-      var R = function SearchIcon(e) {
+      var E = function SearchIcon(e) {
         return o.a.createElement(
-          I,
+          L,
           e,
           o.a.createElement("path", {
             d:
@@ -71165,15 +71187,15 @@
           h = Object(c.a)(l, 2),
           g = h[0],
           u = h[1],
-          d = function handleChange(e) {
+          p = function handleChange(e) {
             u(e.target.value),
               r(
                 (function searchPokemon(e) {
                   var t = [];
                   if ("" === e) return t;
-                  for (var a = 0; a < f.length; a++) {
-                    0 === f[a][2].toLowerCase().indexOf(e.toLowerCase()) &&
-                      t.push(f[a]);
+                  for (var a = 0; a < m.length; a++) {
+                    0 === m[a][2].toLowerCase().indexOf(e.toLowerCase()) &&
+                      t.push(m[a]);
                   }
                   return t;
                 })(e.target.value)
@@ -71195,7 +71217,7 @@
                   marginRight: ".25rem"
                 }
               },
-              o.a.createElement(R, { fill: "#fff", size: "20" })
+              o.a.createElement(E, { fill: "#fff", size: "20" })
             ),
             o.a.createElement("input", {
               type: "search",
@@ -71204,9 +71226,9 @@
               autoComplete: "off",
               spellCheck: "false",
               onChange: function onChange(e) {
-                return d(e);
+                return p(e);
               },
-              style: p.input,
+              style: b.input,
               value: g,
               placeholder: "Search..."
             })
@@ -71215,7 +71237,7 @@
             "div",
             {
               style: Object(n.a)(
-                Object(n.a)({}, p.list),
+                Object(n.a)({}, b.list),
                 {},
                 { height: "".concat(25 * s.length, "px") }
               ),
@@ -71226,7 +71248,7 @@
                 "div",
                 {
                   key: e[2],
-                  style: p.item,
+                  style: b.item,
                   title: e[3].join("/"),
                   onClick: function onClick() {
                     return (function sendData(e) {
@@ -71251,7 +71273,7 @@
       }
       Searchlist.defaultProps = { search: "" };
       a(16), a(17);
-      var H = function App(e) {
+      var N = function App(e) {
         var t = o.a.useState(e.store),
           a = Object(c.a)(t, 2),
           i = a[0],
@@ -71274,7 +71296,7 @@
             o.a.createElement(
               "div",
               { className: "container" },
-              o.a.createElement("h1", { className: "margin-y-0" }, "PokeCards"),
+              o.a.createElement("h1", { className: "margin-0" }, "PokeCards"),
               o.a.createElement(Searchlist, {
                 onChildClick: function handleAdd(e) {
                   var t =
@@ -71320,9 +71342,9 @@
           )
         );
       };
-      H.defaultProps = { store: [] };
-      var L = H;
-      r.a.render(o.a.createElement(L, null), document.getElementById("root"));
+      N.defaultProps = { store: [] };
+      var z = N;
+      r.a.render(o.a.createElement(z, null), document.getElementById("root"));
     }
   ],
   [[9, 1, 2]]

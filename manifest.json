@@ -1,6 +1,11 @@
 {
-  "short_name": "PokeCard",
   "name": "PokeCard",
+  "short_name": "PokeCard",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4e73e8",
+  "background_color": "#222222",
+  "lang": "en",
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,9 +22,5 @@
       "type": "image/png",
       "sizes": "32x32"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#4e73e8",
-  "background_color": "#ffffff"
+  ]
 }
