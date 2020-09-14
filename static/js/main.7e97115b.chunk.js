@@ -1,40 +1,28 @@
 (this.webpackJsonppokecards = this.webpackJsonppokecards || []).push([
   [0],
-  [
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    function(e, t, a) {
-      e.exports = a(18);
+  {
+    17: function(e, t, a) {
+      e.exports = a(27);
     },
-    ,
-    ,
-    ,
-    ,
-    function(e, t, a) {},
-    function(e, t, a) {},
-    function(e, t, a) {},
-    function(e, t, a) {},
-    function(e, t, a) {
+    22: function(e, t, a) {},
+    24: function(e, t, a) {},
+    25: function(e, t, a) {},
+    26: function(e, t, a) {},
+    27: function(e, t, a) {
       "use strict";
       a.r(t);
       var i = a(0),
         o = a.n(i),
-        s = a(8),
+        s = a(14),
         r = a.n(s),
         n = a(1),
-        l = a(3),
-        c = a(2),
-        h = function Input(e) {
+        l = a(6),
+        c = a(4),
+        h = a(3),
+        u = function(e) {
           return o.a.createElement("input", e);
         };
-      h.defaultProps = {
+      u.defaultProps = {
         min: 1,
         max: 401,
         maxLength: 3,
@@ -44,62 +32,74 @@
         spellCheck: "false",
         style: { margin: 0, fontSize: "inherit", border: "1px solid #ddd" }
       };
-      var g = h,
-        u = a(4),
-        p = function Icon(e) {
-          var t = e.width,
-            a = e.height,
-            i = e.path,
-            s = e.viewBox,
-            r = e.style,
-            n = e.className,
-            l = Object(u.a)(e, [
-              "width",
-              "height",
-              "path",
-              "viewBox",
-              "style",
-              "className"
-            ]),
-            c = [[i]].flat();
-          return o.a.createElement(
-            "span",
-            { style: r, className: n },
-            o.a.createElement(
-              "svg",
-              Object.assign(
-                {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  width: t,
-                  height: a,
-                  viewBox: s
-                },
-                l
-              ),
-              c.map(function(e) {
-                return o.a.createElement("path", { d: i, key: i });
-              })
-            )
-          );
+      var g = u,
+        p = {
+          search: {
+            viewBox: "0 0 57 57",
+            path: [
+              "M55 52L42 38A23 23 0 0024 0a23 23 0 1013 42l14 14a3 3 0 004 0v-4zM24 6a17 17 0 110 34 17 17 0 010-34z"
+            ]
+          },
+          pokeball: {
+            viewBox: "0 0 512 512",
+            path: [
+              {
+                d:
+                  "M437 75a254 254 0 00-362 0 254 254 0 000 362 254 254 0 00313 38 20 20 0 10-20-34A216 216 0 0141 276h127a90 90 0 00176 0h127c-3 35-15 70-36 100a20 20 0 1034 22 255 255 0 00-32-323z",
+                fill: "#fff"
+              },
+              {
+                d:
+                  "M256 40c112 0 205 86 215 196H344a90 90 0 00-176 0H41A216 216 0 01256 40zm0 266a50 50 0 110-100 50 50 0 010 100zm0 0",
+                opacity: ".5"
+              }
+            ]
+          },
+          get: function(e) {
+            return this[e] ? this[e] : {};
+          }
         };
-      p.defaultProps = {
-        width: 18,
-        height: 18,
-        viewBox: "0 0 24 24",
-        path:
-          "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z",
-        fill: "rgba(255,255,255,.8)",
-        className: "icon"
+      var d = function(e) {
+        var t = e.size,
+          a = e.preset,
+          i = e.children,
+          s = Object(h.a)(e, ["size", "preset", "children"]),
+          r = Object(n.a)(
+            Object(n.a)({}, s),
+            {},
+            { width: t, height: t },
+            p.get(a)
+          ),
+          l = r.path,
+          c = Object(h.a)(r, ["path"]);
+        return o.a.createElement(
+          "svg",
+          Object.assign({ xmlns: "http://www.w3.org/2000/svg" }, c),
+          [l].flat().map(function(e, t) {
+            return (a = e) === Object(a)
+              ? o.a.createElement("path", Object.assign({}, e, { key: t }))
+              : o.a.createElement("path", { d: e, key: e });
+            var a;
+          }),
+          i
+        );
       };
-      var d = p;
-      function getGalarDataById(e) {
-        return y
+      d.defaultProps = {
+        size: 20,
+        path: [],
+        viewBox: "0 0 24 24",
+        fill: "#222222",
+        preset: ""
+      };
+      var m = d;
+      function y(e) {
+        return v
           .filter(function(t) {
             return t.galar_dex === parseInt(e);
           })
           .shift();
       }
-      var m = [
+      var _ = [
           [1, 810, "Grookey", ["Grass"]],
           [2, 811, "Thwackey", ["Grass"]],
           [3, 812, "Rillaboom", ["Grass"]],
@@ -585,7 +585,7 @@
           [400, 890, "Eternatus", ["Poison", "Dragon"]],
           [400, 1170, "Eternatus 1", ["Poison", "Dragon"]]
         ],
-        y = [
+        v = [
           {
             id: 810,
             name: "Grookey",
@@ -38182,20 +38182,50 @@
             evolutions: [],
             description: null
           }
-        ],
-        _ = {
+        ];
+      function S(e) {
+        var t = e.id,
+          a = e.style,
+          i = Object(h.a)(e, ["id", "style"]),
+          s = y(t),
+          r = s.id.toString().padStart(3, 0),
+          l = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/".concat(
+            r,
+            ".png"
+          );
+        return o.a.createElement(
+          "img",
+          Object.assign({}, i, {
+            id: [s.galar_dex, s.name, s.id].join("-"),
+            style: Object(n.a)(
+              Object(n.a)({}, a),
+              {},
+              {
+                width: "130px",
+                filter: "saturate(2.8) drop-shadow(".concat(
+                  s.color,
+                  " -0.25px 3px .4px) contrast(1.15)"
+                )
+              }
+            ),
+            src: l,
+            alt: s.name,
+            title: s.name
+          })
+        );
+      }
+      S.defaultProps = {};
+      var b = {
           container: { position: "relative", height: "100%", width: "100%" },
           bar: {
             background: "orange",
             width: "100%",
-            bottom: 0,
-            position: "absolute",
             textAlign: "center",
             fontSize: ".8em"
           },
           nature: { normal: "orange", decrease: "#39cccc", increase: "#ff4136" }
         },
-        v = {
+        w = {
           border: 0,
           borderRadius: "100%",
           margin: 0,
@@ -38207,7 +38237,7 @@
           userSelect: "none",
           zIndex: 1e3
         },
-        S = {
+        f = {
           background: "#fff",
           color: "#222",
           width: "80vw",
@@ -38217,14 +38247,11 @@
           position: "relative",
           boxSizing: "border-box"
         },
-        b = {
+        P = {
           item: {
-            display: "flex",
-            justifyContent: "space-between",
             padding: ".25rem",
             border: "0px solid #ccc",
-            borderBottom: "3px solid #ddd",
-            position: "relative"
+            borderBottom: "3px solid #ddd"
           },
           input: {
             outline: "none",
@@ -38250,20 +38277,7 @@
             left: 0
           }
         },
-        w = {
-          maxHeight: "140px",
-          opacity: ".9",
-          filter: "saturate(2) drop-shadow(#000 -.5px 0px 0.04px) contrast(1.2)"
-        },
-        f = {
-          fontSize: ".9rem",
-          height: "100px",
-          margin: ".15rem",
-          minWidth: "25px",
-          position: "relative",
-          width: "calc(85% / 6)"
-        },
-        P = {
+        k = {
           padding: "0.1rem 0.3rem",
           margin: "0 0.14rem",
           borderRadius: "5px",
@@ -38273,50 +38287,8 @@
           color: "#777",
           fontSize: ".8em",
           textAlign: "center"
-        };
-      function replaceString(e) {
-        var t =
-          arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-        return (
-          Object.keys(t).forEach(function(a) {
-            var i = new RegExp("\\[\\@".concat(a, "\\]"), "g");
-            e = e.replace(i, t[a]);
-          }),
-          e
-        );
-      }
-      function Sprite_getSpriteImgUrl(e) {
-        var t = e.id.toString().padStart(3, 0);
-        return e.id > 809
-          ? replaceString(
-              "https://www.serebii.net/swordshield/pokemon/[@id].png",
-              { id: t }
-            )
-          : replaceString(
-              "https://assets.pokemon.com/assets/cms2/img/pokedex/full/[@id].png",
-              { id: t }
-            );
-      }
-      function Sprite(e) {
-        var t = e.id,
-          a = Object(u.a)(e, ["id"]),
-          i = getGalarDataById(t),
-          s = w;
-        return (
-          parseInt(i.id) > 809 && (s = Object(n.a)(Object(n.a)({}, w), w)),
-          o.a.createElement(
-            "img",
-            Object.assign({}, a, {
-              id: [i.galar_dex, i.name, i.id].join("-"),
-              style: s,
-              src: Sprite_getSpriteImgUrl(i),
-              alt: i.name
-            })
-          )
-        );
-      }
-      Sprite.defaultProps = {};
-      var k = {
+        },
+        F = {
           Adamant: { plus: "atk", minus: "spa" },
           Bashful: {},
           Bold: { plus: "def", minus: "atk" },
@@ -38343,7 +38315,7 @@
           Serious: {},
           Timid: { plus: "spe", minus: "atk" }
         },
-        F = {
+        x = {
           fire: "#d52100",
           water: "#0080ff",
           electric: "#ead411",
@@ -38363,128 +38335,36 @@
           fairy: "#e76de7",
           normal: "#a8a878"
         },
-        x = {
-          fire: {
-            icon:
-              "M352 395c7-23-6-70-6-70s-9 38-23 53a74 74 0 01-47 23c17-9 29-26 29-46 0-28-23-51-52-51-28 0-51 23-51 51 0 8 1 15 5 22-18-15-21-37-21-37s-20 82 35 121 162 6 162 6-154 108-268-10C17 356 90 222 90 222s-3 12-3 27c0 14 7 25 7 25s24-49 42-69c17-19 38-34 57-47 14-10 27-19 34-28C269 84 243 0 243 0s47 41 60 94c5 20 2 43-1 64-5 33-9 60 25 58 54-3 7-86 7-86s122 65 113 177c-9 113-134 138-134 138s33-26 39-50z",
-            gradient: "linear-gradient( to bottom, #d37b31 0%, #d39540 100% )"
-          },
-          water: {
-            icon:
-              "M422 347a166 166 0 01-332 0C90 258 247 14 256 0c9 14 166 258 166 347zM228 459c-84-19-69-112-69-112s23 56 78 75c56 18 124-9 124-9s-48 64-133 46z",
-            gradient: "linear-gradient( to bottom, #4d91d7 0%, #73c6df 100% )"
-          },
-          electric: {
-            icon:
-              "M153 1V0h180l83 267-1 1H296h-1l69 242h-1L97 155c-1 0 0 0 0 0h109v-1L153 1z",
-            gradient: "linear-gradient( to bottom, #c3a427 0%, #d2bd64 100% )"
-          },
-          grass: {
-            icon:
-              "M97 441l-5-5C2 345 2 198 92 107c91-90 380-97 380-97s39 335-51 426c-81 80-206 89-296 27l72-90 117-25-95-10 60-61 69-15-54-16 54-98-77 86-30-42 10 70-53 61-25-77v102z",
-            gradient: "linear-gradient( to bottom, #21934d 0%, #2fb47f 100% )"
-          },
-          ice: {
-            icon:
-              "M384 39l2 138-121 58-1-130 120-66zM505 257l-119 68-120-68 120-63 119 63zM245 257l-119 68L6 257l120-63 119 63zM124 38l124 62-3 134-117-58-4-138zM388 474l-124-62 3-134 117 58 4 138zM129 475l-2-139 121-58 1 131-120 66z",
-            gradient: "linear-gradient( to bottom, #2bb5a6 0%, #78c5bf 100% )"
-          },
-          fighting: {
-            icon:
-              "M88 43a56 56 0 01102-17h17a56 56 0 0192 17h14a56 56 0 0182 25h37l1 1 5-1c32 0 57 26 57 57v175c-4 118-109 212-239 212-132 0-239-97-239-218 0-58 25-110 66-149-1 56 0 115 5 114 12-3 2-178 0-216z",
-            gradient: "linear-gradient( to bottom, #c3334e 0%, #d37377 100% )"
-          },
-          poison: {
-            icon:
-              "M428 393c52-41 84-101 84-167C512 101 397 0 256 0S0 101 0 226c0 64 30 122 79 163-3 10-5 21-5 33 0 50 30 90 67 90 25 0 46-17 58-43 12 26 33 43 57 43 22 0 42-14 54-36 12 22 32 36 54 36 37 0 67-40 67-90 0-10-1-20-3-29zm-24-163c0 64-68 115-151 115-84 0-152-51-152-115 0-63 68-114 152-114 83 0 151 51 151 114z",
-            gradient: "linear-gradient( to bottom, #aa66cc 0%, #c660d7 100% )"
-          },
-          ground: {
-            icon:
-              "M113 440v-1L243 70h140l129 369v1H113zM0 441l97-260h85L88 441H0z",
-            gradient: "linear-gradient( to bottom, #c17249 0%, #ca936c 100% )"
-          },
-          flying: {
-            icon:
-              "M179 478c75 0 139-42 165-101 1-1-106 28-103 18 2-5 67-29 115-57 27-16 40-50 40-50s-46 23-69 29c-47 11-89 10-89 9 0-3 69-16 164-74 45-28 58-75 58-75s-50 30-80 39c-71 23-135 30-135 27 0-7 57-22 117-51 31-16 59-35 90-58 52-36 60-100 60-100s-51 33-76 44a844 844 0 01-257 73C80 159 0 227 0 317c0 89 80 161 179 161z",
-            gradient: "linear-gradient( to bottom, #8199bd 0%, #a5b4cb 100% )"
-          },
-          psychic: {
-            icon:
-              "M456 425s-65 52-193 31c-98-17-150-124-150-182 0-137 102-168 170-168 69 0 114 67 114 119 0 51-37 96-94 96s-74-39-74-76 30-50 57-50 36 23 36 43-15 27-28 27-14-6-19-13 6-33-12-33c-19 0-22 30-22 30s7 57 62 56 82-44 74-86-49-87-121-78-101 82-88 160 106 123 179 106c73-16 146-69 146-203C493 69 377-12 238 1 99 15 13 136 18 282c6 146 144 226 261 230 118 4 189-64 189-64s16-14 10-26c-6-11-22 3-22 3z",
-            gradient: "linear-gradient( to bottom, #f96d75 0%, #fda39a 100% )"
-          },
-          bug: {
-            icon:
-              "M342 1l2-1 36 26v1l-50 73c24 7 41 16 41 16s-41 70-110 70-119-65-119-65 17-11 43-21l-55-66v-2l34-28h2l70 84a163 163 0 0145 0zm14 189c18-14 47-48 47-48s71 57 71 177c0 121-124 193-124 193s-59-60-73-136c-15-75 21-159 21-159s39-14 58-27zm-200 0c-18-14-46-48-46-48s-72 57-72 177c0 121 124 193 124 193s59-60 74-136c14-75-22-159-22-159s-39-14-58-27z",
-            gradient: "linear-gradient( to bottom, #6f9a24 0%, #9bb23d 100% )"
-          },
-          rock: {
-            icon:
-              "M395 245l33-191h10l74 233-54 43h-1l-62-85zM-1 371l112 37 250-173 27-180H166L-1 257v114zm159 46l122 40 145-104v-1l-54-81-213 146z",
-            gradient: "linear-gradient( to bottom, #c7b78a 0%, #d7cd92 100% )"
-          },
-          ghost: {
-            icon:
-              "M369 510c-46 3-99 3-117 0C112 492 0 389 0 251 0 112 115 0 256 0s256 112 256 251c0 64-25 123-66 167-11 12 5 21 20 30 15 8 30 16 22 29-10 13-64 30-119 33zM220 219c0 22-18 40-40 40s-40-18-40-40c0-14 8-27 20-34 1 19 16 34 35 34h25zm124-34c-1 19-16 34-35 34h-25c0 22 18 40 40 40s40-18 40-40c0-14-8-27-20-34z",
-            gradient: "linear-gradient( to bottom, #456095 0%, #7a75b5 100% )"
-          },
-          dragon: {
-            icon:
-              "M281 255c3-2 6-7 8-12 32 13 54 43 54 79 0 46-39 84-87 84-19 0-38-6-52-17l-12-6c-5-3-8-5-10-4-6 0-4 6-3 11 1 3 2 6 1 8-2 1-7-4-13-10-9-8-19-17-23-14-4 2 0 8 4 16l6 9c4 6 8 11 6 12s-16-8-27-21l-13-15c-8-11-16-20-20-19-5 1-1 12 4 21l9 13c4 7 7 11 6 12-2 1-15-12-24-28l-13-29c-4-9-7-16-9-17-7-3-7 11-4 31l1 8c26 84 106 145 201 145 115 0 209-92 209-205 0-107-85-195-193-204l3-15s19-46 20-55v-3c1-10 4-30-13-30-10 0-14 7-19 14a566 566 0 01-67 70c-34 30-67 55-87 69-9 6-15 11-16 13-14 13-64 103-64 103s-17 29-11 35 20 5 20 5l202-46 10-2c7-1 8-2 16-6zm-132-55c-10 10-26 32-26 32s30 2 47-14 13-44 13-44-24 17-34 26z",
-            gradient: "linear-gradient( to bottom, #1d547d 0%, #1e719b 100% )"
-          },
-          dark: {
-            icon:
-              "M229 453l30 2a196 196 0 10-21-390c53 41 89 111 89 191 0 84-39 157-98 197zm27 59a256 256 0 100-512 256 256 0 000 512z",
-            gradient: "linear-gradient( to bottom, #41403e 0%, #585755 100% )"
-          },
-          steel: {
-            icon:
-              "M0 255v-1L129 34h256l127 220v1L385 474H129L0 255zm375-1a119 119 0 11-238 0 119 119 0 01238 0z",
-            gradient: "linear-gradient( to bottom, #54869e 0%, #58abab 100% )"
-          },
-          fairy: {
-            icon:
-              "M103 406l82-24 71 130 71-130 82 24h1l-24-81 126-69-127-70 25-84h-1l-84 24L256 0l-69 126-84-24h-1l25 84L0 256l126 69-24 81h1zm63-149l59 32 31 58h1l32-58 58-32v-1l-58-31-32-59h-1l-31 59-59 31v1z",
-            gradient: "linear-gradient( to bottom, #d289c1 0%, #d1a2c4 100% )"
-          },
-          normal: {
-            icon:
-              "M481 256a225 225 0 11-450 0 225 225 0 01450 0zm-96 0a129 129 0 11-258 0 129 129 0 01258 0z",
-            gradient: "linear-gradient( to bottom, #797d7e 0%, #9a9995 100% )"
-          }
-        };
-      Object.entries(F).forEach(function(e) {
-        Object.assign(x[e[0]], { color: e[1] });
-      });
-      var T = {
+        T = {
           status: {
-            viewbox: "0 0 100 74",
-            paths: [
+            viewBox: "0 0 100 50",
+            path: [
               "M57 5H47l3 3c-9 0-16 6-16 13s7 13 16 13c10 0 17 6 17 13s-7 13-17 13l-8 1-10-2c-6-2-13-3-21-12l6 7c6 6 18 10 18 10s11 4 32 0c20-5 27-21 29-32C97 21 80 6 57 5z",
               "M50 68C22 68 0 53 0 34S22 0 50 0c27 0 50 15 50 34S77 68 50 68zm0-60C27 8 8 20 8 34s19 26 42 26 42-12 42-26S73 8 50 8z"
             ],
             fill: "#bdc3c7"
           },
           physical: {
-            viewbox: "0 0 115 90",
-            paths: [
+            viewBox: "0 0 115 60",
+            path: [
               "M98 12L80 36l29 8-29 8 18 24-32-13-10 22-10-22-32 13 18-24-29-8 29-8-18-24 32 13L56 3l10 22z"
             ],
             fill: "#efc13b"
           },
           special: {
-            viewbox: "0 0 100 73",
-            paths: [
+            viewBox: "0 0 100 50",
+            path: [
               "M50 68C23 68 0 53 0 34S23 0 50 0c28 0 50 15 50 34S78 68 50 68zm0-60C27 8 8 20 8 34s19 26 42 26 42-12 42-26S73 8 50 8z",
               "M50 51c-18 0-32-7-32-17s14-17 32-17 32 7 32 17-14 17-32 17zm0-28c-15 0-25 6-25 11s10 10 25 10 26-5 26-10-11-11-26-11z",
               "M61 34c0 2-5 3-11 3s-11-1-11-3 5-4 11-4 11 2 11 4z"
             ],
             fill: "#3498db"
+          },
+          get: function(e) {
+            return this[e] ? this[e] : {};
           }
         },
-        M = [
+        D = [
           {
             name: "Adaptability",
             desc:
@@ -39726,21 +39606,25 @@
               "If this Pokemon is a Darmanitan or Darmanitan-Galar, it changes to Zen Mode if it has 1/2 or less of its maximum HP at the end of a turn. If Darmanitan's HP is above 1/2 of its maximum HP at the end of a turn, it changes back to Standard Mode. This Ability cannot be removed or suppressed."
           }
         ];
-      function Type(e) {
+      function M(e) {
         var t = Object(n.a)(
-          Object(n.a)({}, P),
+          Object(n.a)({}, k),
           {},
-          { background: F[e.type.toLowerCase()] },
+          {
+            background: x[e.type.toLowerCase()],
+            height: "min-content",
+            color: "#fff"
+          },
           e.style
         );
         return o.a.createElement(
           "span",
-          Object.assign({}, e, { style: t }),
-          o.a.createElement("span", { className: "text" }, e.type)
+          Object.assign({}, e, { style: t, className: "type" }),
+          e.type
         );
       }
-      Type.defaultProps = { type: "Normal" };
-      var D = {
+      M.defaultProps = { type: "Normal" };
+      var B = {
           Grookey: [
             4,
             22,
@@ -64575,7 +64459,7 @@
           ],
           Eternatus: []
         },
-        B = [
+        A = [
           {
             name: "Absorb",
             type: "Grass",
@@ -70585,37 +70469,18 @@
             effect:
               "A strong electric blast crashes down on the target, giving it an electric shock. This may also make the target flinch."
           }
-        ];
-      a(14);
-      function MoveCategory(e) {
-        var t = Object(n.a)(
-          Object(n.a)({}, T.status),
-          T[e.category.toLowerCase()]
-        );
-        return o.a.createElement(
-          "div",
-          { className: "icon" },
-          o.a.createElement(
-            "svg",
-            {
-              xmlns: "http://www.w3.org/2000/svg",
-              viewBox: t.viewbox,
-              width: "20",
-              height: "20"
-            },
-            t.paths.map(function(t, a) {
-              return o.a.createElement("path", {
-                d: t,
-                fill: "white",
-                key: e.name + a
-              });
-            })
-          ),
-          o.a.createElement("span", { hidden: !0 }, e.category)
-        );
-      }
-      function Moveset(e) {
-        var t = D[e.pokemon],
+        ],
+        C =
+          (a(22),
+          function(e) {
+            var t = e.category,
+              a = e.children,
+              i = Object(h.a)(e, ["category", "children"]),
+              s = T.get(t);
+            return o.a.createElement(m, Object.assign({}, s, i), a);
+          });
+      function G(e) {
+        var t = B[e.pokemon],
           a = ["name", "category", "accuracy", "power", "PP"];
         return o.a.createElement(
           "div",
@@ -70633,7 +70498,9 @@
                   return o.a.createElement(
                     "th",
                     { key: "header_" + e, title: e },
-                    e.length > 4 ? e.substr(0, 3) + "." : e
+                    e.length > 4
+                      ? o.a.createElement("abbr", { title: e }, e.substr(0, 3))
+                      : o.a.createElement("span", null, e)
                   );
                 })
               )
@@ -70642,23 +70509,20 @@
               "tbody",
               null,
               t.map(function(e) {
-                var t = B[e] || [];
+                var t = A[e] || [];
                 return o.a.createElement(
                   "tr",
                   {
                     key: t.name,
                     "data-type": t.type.toLowerCase(),
-                    style: { background: x[t.type.toLowerCase()].color + "80" }
+                    style: { background: x[t.type.toLowerCase()] + "80" }
                   },
                   a.map(function(e) {
                     return o.a.createElement(
                       "td",
-                      { key: t.name + e, title: e },
+                      { key: t.name + e, title: t[e] },
                       "category" === e
-                        ? o.a.createElement(MoveCategory, {
-                            category: t[e],
-                            name: t.name
-                          })
+                        ? o.a.createElement(C, { category: t[e].toLowerCase() })
                         : o.a.createElement("span", null, t[e])
                     );
                   })
@@ -70668,37 +70532,38 @@
           )
         );
       }
-      Moveset.defaultProps = {
+      G.defaultProps = {
         className: "moveset",
         style: { margin: "1rem .5rem", flexGrow: 1, width: "calc(100% / 4)" }
       };
-      var A = {
-          alignContent: "flex-start",
-          alignItems: "flex-start",
-          display: "flex",
-          flex: 1,
-          flexBasis: "",
-          flexDirection: "column",
-          flexFlow: "row wrap",
-          flexGrow: "",
-          flexShrink: "",
-          flexWrap: "wrap",
-          justifyContent: "",
-          order: ""
-        },
-        C = {
+      var W = [
+          "alignContent",
+          "alignItems",
+          "display",
+          "flex",
+          "flexBasis",
+          "flexDirection",
+          "flexFlow",
+          "flexGrow",
+          "flexShrink",
+          "flexWrap",
+          "justifyContent",
+          "order"
+        ],
+        R = {
           default: {},
-          column: { flexDirection: "column" },
+          nowrap: { flexWrap: "nowrap" },
           inline: { display: "inline-flex" },
+          column: { flexDirection: "column" },
           row: { flexDirection: "row" },
           spaceBetween: { justifyContent: "space-between" },
-          center: {
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%"
-          },
+          stretch: { alignSelf: "stretch" },
+          center: { alignItems: "center", justifyContent: "center" },
+          top: { alignItems: "baseline", justifyContent: "flex-start" },
           bottom: { alignItems: "flex-end", justifyContent: "flex-end" },
-          getPreset: function getPreset() {
+          w100: { width: "100%" },
+          box: { width: "100%", height: "100%" },
+          getPreset: function() {
             for (
               var e = this,
                 t = {},
@@ -70711,8 +70576,9 @@
               i[o] = arguments[o];
             return (
               i.forEach(function(a) {
-                a.split(",").length > 1 &&
-                  (t = e.getPreset.apply(e, Object(l.a)(a.split(",")))),
+                "string" === typeof a &&
+                  a.split(/[^\w]+/g).length > 1 &&
+                  (t = e.getPreset.apply(e, Object(l.a)(a.split(/[^\w]+/g)))),
                   Array.isArray(a) &&
                     (t = e.getPreset.apply(e, Object(l.a)(a))),
                   e[a] && Object.assign(t, e[a]);
@@ -70721,132 +70587,148 @@
             );
           }
         },
-        G = function Flex(e) {
+        I = function(e) {
           var t = e.preset,
-            a = Object(u.a)(e, ["preset"]),
-            i = {},
-            s = Object(n.a)(
-              Object(n.a)({ display: "flex", flexWrap: "wrap" }, a.style),
-              C.getPreset(t)
+            a = e.children,
+            i = Object(h.a)(e, ["preset", "children"]),
+            s = {},
+            r = Object(n.a)(
+              Object(n.a)(
+                { display: "flex", flexWrap: "wrap" },
+                R.getPreset(t)
+              ),
+              i.style
             );
           return (
-            Object.keys(a).forEach(function(e) {
-              if (Object.keys(A).includes(e)) s[e] = a[e];
+            Object.keys(i).forEach(function(e) {
+              if (W.includes(e)) r[e] = i[e];
               else {
                 var t = "flex".concat(
-                  (function capitalize(e) {
-                    return e.charAt(0).toUpperCase() + e.slice(1);
-                  })(e.toLowerCase())
+                  (a = e.toLowerCase()).charAt(0).toUpperCase() + a.slice(1)
                 );
-                A[t] ? (s[t] = a[e]) : (i[e] = a[e]);
+                W.includes(t) ? (r[t] = i[e]) : (s[e] = i[e]);
               }
+              var a;
             }),
-            o.a.createElement(
-              "div",
-              Object.assign({}, i, { style: s }),
-              a.children
-            )
+            o.a.createElement("div", Object.assign({}, s, { style: r }), a)
           );
         };
-      G.defaultProps = { preset: "default" };
-      var W = G;
-      function Abilities(e) {
-        var t = Object(l.a)(new Set(e.abilities)),
-          a = M.filter(function(e) {
-            return t.includes(e.name);
+      I.defaultProps = { preset: "" };
+      var H = I,
+        L = a(10);
+      function E(e) {
+        e.selectedAbility;
+        var t = Object(h.a)(e, ["selectedAbility"]),
+          a = Object(l.a)(new Set(t.abilities)),
+          i = D.filter(function(e) {
+            return a.includes(e.name);
           }),
-          i = [e.className, "abilities"].filter(Boolean).join(" ");
+          s = o.a.useState(""),
+          r = Object(c.a)(s, 2),
+          n = r[0],
+          u = r[1];
         return o.a.createElement(
-          "form",
-          { className: i },
-          o.a.createElement("legend", { className: "gray" }, "abilities:"),
+          H,
+          {
+            className: "ability",
+            preset: "column",
+            key: t.id,
+            style: { fontSize: "80%" }
+          },
           o.a.createElement(
-            W,
-            null,
-            a.map(function(t, a) {
+            "form",
+            {
+              onClick: function(e) {
+                return u(e.target.value);
+              },
+              className: "abilities"
+            },
+            o.a.createElement("label", null, "abilities:"),
+            i.map(function(e, a) {
               return o.a.createElement(
-                W,
-                {
-                  className: "ability",
-                  key: t.name + e.id,
-                  "data-selected": e.abilityIndex === a
-                },
+                H,
+                { key: e.name + t.id },
                 o.a.createElement("input", {
-                  type: e.type,
-                  name: e.name + e.id,
-                  value: t.name,
-                  id: t.name + e.id,
-                  disabled: e.disabled
+                  type: t.type,
+                  name: t.name + t.id,
+                  desc: t.desc,
+                  value: e.desc,
+                  id: e.name + t.id,
+                  disabled: t.disabled
                 }),
                 o.a.createElement(
                   "label",
-                  { htmlFor: t.name + e.id, "data-desc": t.desc },
-                  t.name
+                  { htmlFor: e.name + t.id, "data-desc": e.desc },
+                  e.name
                 )
               );
             })
-          )
+          ),
+          o.a.createElement(L.a, { id: "abilityDesc" }, n)
         );
       }
-      function Bar(e) {
-        var t = {
-          container: { style: Object(n.a)({}, _.container) },
-          bar: {
-            before: e.value,
-            style: Object(n.a)(
-              Object(n.a)(Object(n.a)({}, e.style), _.bar),
-              {},
-              {
-                background: _.nature[e.nature],
-                height: "calc(".concat(e.height, "% + 6px)")
-              }
-            )
-          }
-        };
+      function N(e) {
+        e.type, e.base;
+        var t = e.value,
+          a = e.nature,
+          i = e.height;
+        Object(h.a)(e, ["type", "base", "value", "nature", "height"]);
         return o.a.createElement(
           "div",
-          t.container,
-          o.a.createElement("div", t.bar)
+          {
+            style: Object(n.a)(
+              Object(n.a)({}, b.bar),
+              {},
+              {
+                background: b.nature[a],
+                height: "calc(".concat(i, "% + 6px)"),
+                zIndex: 0
+              }
+            )
+          },
+          t
         );
       }
-      Abilities.defaultProps = {
-        type: "radio",
-        name: "ability",
-        abilityIndex: -1
-      };
-      var I = {
+      E.defaultProps = { type: "radio", name: "ability", selectedAbility: -1 };
+      var z = {
         textTransform: "uppercase",
         color: "#777",
         fontSize: ".8em",
         textAlign: "center"
       };
-      function Stat(e) {
+      function U(e) {
         var t = {
           "data-label": e.type,
           title: e.type.toUpperCase(),
           "data-component": "Stat",
-          className: "stat",
-          style: Object(n.a)(Object(n.a)({}, f), e.style)
+          style: {
+            fontSize: ".9rem",
+            height: "130px",
+            margin: ".15rem",
+            minWidth: "25px",
+            position: "relative",
+            width: "calc(85% / 6)"
+          }
         };
         return o.a.createElement(
-          W,
-          Object.assign({}, t, { preset: "column", flow: "row wrap" }),
+          H,
+          Object.assign({}, t, {
+            preset: "column nowrap",
+            justifyContent: "flex-end"
+          }),
           o.a.createElement(
-            Bar,
-            Object.assign({}, e, {
-              height: (e.value / e.max) * 100,
-              value: e.value
-            })
+            N,
+            Object.assign({}, e, { height: (e.value / e.max) * 100 })
           ),
           o.a.createElement(
-            W,
-            { preset: "center,column", style: I },
-            o.a.createElement("span", null, e.type),
-            o.a.createElement("span", null, e.base)
+            "div",
+            { style: z },
+            o.a.createElement("div", null, e.type),
+            o.a.createElement("div", null, e.base)
           )
         );
       }
-      function StatCalculator(e) {
+      function O(e) {
         var t = o.a.useState(e.nature),
           a = Object(c.a)(t, 2),
           i = a[0],
@@ -70855,7 +70737,7 @@
           n = e.level > 0 && e.level < 101 ? e.level : 100;
         ["hp", "atk", "def", "spa", "spd", "spe"].forEach(function(t, a) {
           if (0 === a)
-            r[t] = (function calculateHP() {
+            r[t] = (function() {
               var e =
                   arguments.length > 0 && void 0 !== arguments[0]
                     ? arguments[0]
@@ -70881,8 +70763,8 @@
               );
             })(e.base[a], n);
           else {
-            var o = t === k[i].plus ? 1.1 : t === k[i].minus ? 0.9 : 1;
-            r[t] = (function calculateStat() {
+            var o = t === F[i].plus ? 1.1 : t === F[i].minus ? 0.9 : 1;
+            r[t] = (function() {
               var e =
                   arguments.length > 0 && void 0 !== arguments[0]
                     ? arguments[0]
@@ -70916,49 +70798,52 @@
         });
         var h = Math.max.apply(Math, Object(l.a)(Object.values(r))) + 50;
         return o.a.createElement(
-          W,
-          { preset: "column" },
+          H,
+          {
+            preset: "column center nowrap",
+            justifyContent: "space-evenly",
+            "data-component": "StatChart"
+          },
           o.a.createElement(
             "select",
             {
               value: i,
-              onChange: function onChange(e) {
+              onChange: function(e) {
                 return s(e.target.value);
               },
               disabled: e.disabled,
               "data-store": "nature"
             },
-            Object.keys(k).map(function(e) {
+            Object.keys(F).map(function(e) {
               return o.a.createElement("option", { value: e, key: e }, e);
             })
           ),
           o.a.createElement(
             "div",
-            { style: { marginTop: "10px" } },
+            null,
             o.a.createElement("strong", null, "Base total: "),
             o.a.createElement(
               "span",
               null,
-              " ",
               e.base.reduce(function(e, t) {
                 return e + t;
               }, 0)
             )
           ),
           o.a.createElement(
-            "div",
-            Object.assign({}, e, { "data-component": "StatChart" }),
+            H,
+            Object.assign({}, e, { preset: "nowrap center" }),
             Object.keys(r).map(function(t, a) {
-              return o.a.createElement(Stat, {
+              return o.a.createElement(U, {
                 key: t,
                 type: t,
                 base: e.base[a],
                 value: r[t],
                 max: h,
                 nature:
-                  t === k[i].plus
+                  t === F[i].plus
                     ? "increase"
-                    : t === k[i].minus
+                    : t === F[i].minus
                     ? "decrease"
                     : "normal"
               });
@@ -70966,59 +70851,77 @@
           )
         );
       }
-      (Stat.defaultProps = {}),
-        (StatCalculator.defaultProps = {
+      (U.defaultProps = {}),
+        (O.defaultProps = {
           base: [0, 0, 0, 0, 0, 0],
           level: 100,
-          style: { margin: 0, padding: 0, display: "flex", width: "90%" }
+          style: { margin: 0, padding: 0 }
         });
-      var R =
-          "M12 2a5 5 0 00-5 5v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-1V7a5 5 0 00-5-5zM9 7a3 3 0 016 0v3H9V7zm4 10.7V20h-2v-2.3a2 2 0 01.6-3.7 2 2 0 011.4 3.7z",
-        H =
-          "M17 8V7A5 5 0 007 7v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2H9V7a3 3 0 016 0v1h2z";
-      function Card(e) {
-        var t = o.a.useState(e.nature),
-          a = Object(c.a)(t, 2),
-          i = a[0],
-          s = (a[1], o.a.useState(e.gdex)),
-          r = Object(c.a)(s, 2),
-          l = r[0],
-          h = r[1],
-          u = o.a.useState(e.gdex),
-          p = Object(c.a)(u, 2),
-          m = p[0],
-          y = p[1],
-          _ = o.a.useState(!1),
-          v = Object(c.a)(_, 2),
-          b = v[0],
-          w = v[1],
-          f = o.a.useState(e.level),
-          P = Object(c.a)(f, 2),
-          k = P[0],
-          F = P[1],
-          x = function getPokemon(e) {
-            return getGalarDataById(e);
+      var K = {
+          locked: {
+            path: [
+              "M12 2a5 5 0 00-5 5v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-1V7a5 5 0 00-5-5z M9 7a3 3 0 016 0v3H9V7zm4 10.7V20h-2v-2.3a2 2 0 01.6-3.7 2 2 0 011.4 3.7z"
+            ],
+            fill: "#f1c40f"
+          },
+          unlocked: {
+            path: [
+              "M17 8V7A5 5 0 007 7v3H6a2 2 0 00-2 2v8c0 1.1.9 2 2 2h12a2 2 0 002-2v-8a2 2 0 00-2-2H9V7a3 3 0 016 0v1h2z"
+            ],
+            fill: "#bdc3c7"
+          }
+        },
+        V = function(e) {
+          var t = e.icon,
+            a = void 0 === t ? "locked" : t,
+            i = Object(h.a)(e, ["icon"]);
+          return o.a.createElement(
+            m,
+            Object.assign({}, K[a.toLowerCase()], i, { viewBox: "0 0 24 24" })
+          );
+        };
+      function q(e) {
+        var t = e.nature,
+          a = o.a.useState(e.gdex),
+          i = Object(c.a)(a, 2),
+          s = i[0],
+          r = i[1],
+          n = o.a.useState(e.gdex),
+          l = Object(c.a)(n, 2),
+          h = l[0],
+          u = l[1],
+          p = o.a.useState(!1),
+          d = Object(c.a)(p, 2),
+          m = d[0],
+          _ = d[1],
+          v = o.a.useState(e.level),
+          b = Object(c.a)(v, 2),
+          w = b[0],
+          P = b[1],
+          k = function(e) {
+            return y(e);
           };
         return o.a.createElement(
           "div",
-          Object.assign({}, e, {
-            level: k,
-            nature: i,
-            style: Object(n.a)(Object(n.a)({}, S), e.style),
-            "data-locked": b
-          }),
+          Object.assign({}, e, { style: f, "data-locked": m }),
           o.a.createElement(
-            W,
-            { className: "topCardRow", wrap: "wrap", preset: "spaceBetween" },
+            L.a,
+            {
+              sx: {
+                gridGap: 3,
+                gridTemplateColumns: "repeat(3, minmax(min-content, 1fr))"
+              },
+              className: "flexbox-grid"
+            },
             o.a.createElement(
-              W,
+              H,
               { preset: "column" },
-              o.a.createElement("h1", { className: "margin-0" }, x(l).name),
+              o.a.createElement("h1", null, k(s).name),
               o.a.createElement(
                 "div",
-                { className: "types" },
-                x(l).types.map(function(e) {
-                  return o.a.createElement(Type, {
+                null,
+                k(s).types.map(function(e) {
+                  return o.a.createElement(M, {
                     key: e,
                     type: e,
                     style: { color: "white" }
@@ -71026,56 +70929,56 @@
                 })
               )
             ),
-            o.a.createElement(Abilities, {
-              abilities: x(l).abilities,
+            o.a.createElement(E, {
+              abilities: k(s).abilities,
               id: e.id,
-              disabled: b
+              disabled: m
             }),
             o.a.createElement(
-              W,
-              { style: { height: "max-content" }, className: "pokeId" },
+              H,
+              {
+                justifyContent: "flex-end",
+                style: { height: "max-content" },
+                className: "pokeId"
+              },
               o.a.createElement(g, {
-                onChange: function onChange(e) {
-                  return (function handleChange(e) {
-                    e.target.value &&
-                      Number.isInteger(parseInt(e.target.value)) &&
-                      parseInt(e.target.value) > 0 &&
-                      parseInt(e.target.value) < 401 &&
-                      h(e.target.value),
-                      y(e.target.value);
-                  })(e);
+                onChange: function(e) {
+                  return (
+                    (t = e).target.value &&
+                      Number.isInteger(parseInt(t.target.value)) &&
+                      parseInt(t.target.value) > 0 &&
+                      parseInt(t.target.value) < 401 &&
+                      r(t.target.value),
+                    void u(t.target.value)
+                  );
+                  var t;
                 },
                 className: "center",
-                value: m,
-                disabled: b
+                value: h,
+                disabled: m
               }),
               o.a.createElement(
                 "button",
                 {
-                  className: "lock ".concat(b),
-                  onClick: function onClick() {
-                    return (function handleLock() {
-                      w(!b);
-                    })();
+                  className: "lock ".concat(m),
+                  onClick: function() {
+                    _(!m);
                   }
                 },
-                o.a.createElement(d, {
-                  path: b ? R : H,
-                  fill: b ? "#f1c40f" : "#bdc3c7"
-                })
+                o.a.createElement(V, { icon: m ? "locked" : "unlocked" })
               )
             )
           ),
           o.a.createElement("hr", null),
           o.a.createElement(
-            W,
-            { className: "box m50 margin-top", preset: "spaceBetween" },
+            H,
+            { className: "box", preset: "spaceBetween nowrap" },
             o.a.createElement(
-              W,
-              { className: "no-select", preset: "column" },
-              o.a.createElement(Sprite, { id: l }),
+              H,
+              { preset: "column center", justifyContent: "space-around" },
+              o.a.createElement(S, { id: s }),
               o.a.createElement(
-                "div",
+                L.a,
                 { className: "level" },
                 o.a.createElement("label", null, "Lvl. \xa0"),
                 o.a.createElement(g, {
@@ -71083,27 +70986,27 @@
                   "data-store": "level",
                   min: "1",
                   max: "100",
-                  defaultValue: k,
-                  onChange: function onChange(e) {
-                    return F(e.target.value);
+                  defaultValue: w,
+                  onChange: function(e) {
+                    return P(e.target.value);
                   },
-                  disabled: b
+                  disabled: m
                 })
               )
             ),
-            o.a.createElement(StatCalculator, {
-              base: x(l).base_stats,
-              nature: i,
-              disabled: b,
-              level: k
+            o.a.createElement(O, {
+              base: k(s).base_stats,
+              nature: t,
+              disabled: m,
+              level: w
             }),
-            o.a.createElement(Moveset, { pokemon: x(l).name })
+            o.a.createElement(G, { pokemon: k(s).name })
           ),
           o.a.createElement(o.a.Fragment, null, e.children)
         );
       }
-      function Button(e) {
-        var t = Object(n.a)(Object(n.a)({}, v), e.style);
+      function j(e) {
+        var t = Object(n.a)(Object(n.a)({}, w), e.style);
         return o.a.createElement(
           "button",
           Object.assign({}, e, { style: t, "data-active": e.active }),
@@ -71111,73 +71014,15 @@
           e.text
         );
       }
-      (Card.defaultProps = {
+      (q.defaultProps = {
         className: "pokecard",
         gdex: 57,
         level: 50,
         nature: "Quirky"
       }),
-        (Button.defaultProps = { active: "true" });
-      var L = function SvgIcon(e) {
-        var t = e.children,
-          a = (e.classes, e.className),
-          i = (e.color, e.component),
-          s = void 0 === i ? "svg" : i,
-          r = (e.fontSize, e.htmlColor),
-          n = e.titleAccess,
-          l = e.viewBox,
-          c = void 0 === l ? "0 0 24 24" : l,
-          h = e.width,
-          g = void 0 === h ? 24 : h,
-          p = e.height,
-          d = void 0 === p ? 24 : p,
-          m = e.size,
-          y = Object(u.a)(e, [
-            "children",
-            "classes",
-            "className",
-            "color",
-            "component",
-            "fontSize",
-            "htmlColor",
-            "titleAccess",
-            "viewBox",
-            "width",
-            "height",
-            "size"
-          ]);
-        return o.a.createElement(
-          s,
-          Object.assign(
-            {
-              className: a,
-              focusable: "false",
-              viewBox: c,
-              color: r,
-              "aria-hidden": n ? null : "true",
-              role: n ? "img" : "presentation",
-              width: m || g,
-              height: m || d
-            },
-            y
-          ),
-          t,
-          n ? o.a.createElement("title", null, n) : null
-        );
-      };
-      a(15);
-      var E = function SearchIcon(e) {
-        return o.a.createElement(
-          L,
-          e,
-          o.a.createElement("path", {
-            d:
-              "M10 18c1.846 0 3.543-.635 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396C17.365 13.543 18 11.846 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
-          })
-        );
-      };
-      function Searchlist(e) {
-        e.item;
+        (j.defaultProps = { active: "true" });
+      a(24);
+      function Q(e) {
         var t = e.onChildClick,
           a = o.a.useState([]),
           i = Object(c.a)(a, 2),
@@ -71185,17 +71030,17 @@
           r = i[1],
           l = o.a.useState([]),
           h = Object(c.a)(l, 2),
-          g = h[0],
-          u = h[1],
-          p = function handleChange(e) {
-            u(e.target.value),
+          u = h[0],
+          g = h[1],
+          p = function(e) {
+            g(e.target.value),
               r(
-                (function searchPokemon(e) {
+                (function(e) {
                   var t = [];
                   if ("" === e) return t;
-                  for (var a = 0; a < m.length; a++) {
-                    0 === m[a][2].toLowerCase().indexOf(e.toLowerCase()) &&
-                      t.push(m[a]);
+                  for (var a = 0; a < _.length; a++) {
+                    0 === _[a][2].toLowerCase().indexOf(e.toLowerCase()) &&
+                      t.push(_[a]);
                   }
                   return t;
                 })(e.target.value)
@@ -71203,33 +71048,26 @@
           };
         return o.a.createElement(
           "div",
-          { className: "Search", id: "searchlist" },
+          { id: "searchlist" },
           o.a.createElement(
-            "div",
-            { style: { display: "flex", alignItems: "center" } },
-            o.a.createElement(
-              "span",
-              {
-                style: {
-                  display: "flex",
-                  alignItems: "center",
-                  margin: "auto",
-                  marginRight: ".25rem"
-                }
-              },
-              o.a.createElement(E, { fill: "#fff", size: "20" })
-            ),
+            H,
+            { alignItems: "center", wrap: "nowrap" },
+            o.a.createElement(m, {
+              preset: "search",
+              size: "20",
+              fill: "#aaa"
+            }),
             o.a.createElement("input", {
               type: "search",
               id: "search",
               autoCorrect: "off",
               autoComplete: "off",
               spellCheck: "false",
-              onChange: function onChange(e) {
+              onChange: function(e) {
                 return p(e);
               },
-              style: b.input,
-              value: g,
+              style: P.input,
+              value: u,
               placeholder: "Search..."
             })
           ),
@@ -71237,7 +71075,7 @@
             "div",
             {
               style: Object(n.a)(
-                Object(n.a)({}, b.list),
+                Object(n.a)({}, P.list),
                 {},
                 { height: "".concat(25 * s.length, "px") }
               ),
@@ -71245,25 +71083,36 @@
             },
             s.map(function(e) {
               return o.a.createElement(
-                "div",
+                H,
                 {
                   key: e[2],
-                  style: b.item,
+                  style: P.item,
+                  wrap: "no-wrap",
+                  preset: "spaceBetween",
                   title: e[3].join("/"),
-                  onClick: function onClick() {
-                    return (function sendData(e) {
-                      u(""),
+                  onClick: function() {
+                    return (function(e) {
+                      g(""),
                         r([]),
                         t({ gdex: e[0], ndex: e[1], name: e[2], types: e[3] });
                     })(e);
                   }
                 },
-                o.a.createElement("span", { before: "#" + e[0] }, e[2]),
                 o.a.createElement(
                   "span",
-                  { className: "types small" },
-                  e[3].map(function(e) {
-                    return o.a.createElement(Type, { key: e, type: e });
+                  null,
+                  o.a.createElement(
+                    "span",
+                    { className: "pokemon-id" },
+                    "#" + e[0]
+                  ),
+                  o.a.createElement("span", { className: "pokemon-name" }, e[2])
+                ),
+                o.a.createElement(
+                  "span",
+                  { className: "small" },
+                  e[3].map(function(t) {
+                    return o.a.createElement(M, { key: e[0] + t, type: t });
                   })
                 )
               );
@@ -71271,20 +71120,20 @@
           )
         );
       }
-      Searchlist.defaultProps = { search: "" };
-      a(16), a(17);
-      var N = function App(e) {
+      Q.defaultProps = { search: "" };
+      a(25), a(26);
+      var Y = function(e) {
         var t = o.a.useState(e.store),
           a = Object(c.a)(t, 2),
           i = a[0],
           s = a[1],
-          r = function handleDelete(e) {
+          r = function(e) {
+            var t;
             s(
-              (function removeFromArray(e) {
-                return i.filter(function(t) {
-                  return t.id !== e;
-                });
-              })(e.target.parentElement.id)
+              ((t = e.target.parentElement.id),
+              i.filter(function(e) {
+                return e.id !== t;
+              }))
             );
           };
         return o.a.createElement(
@@ -71297,11 +71146,11 @@
               "div",
               { className: "container" },
               o.a.createElement("h1", { className: "margin-0" }, "PokeCards"),
-              o.a.createElement(Searchlist, {
-                onChildClick: function handleAdd(e) {
+              o.a.createElement(Q, {
+                onChildClick: function(e) {
                   var t =
                     (e && e.id) ||
-                    (function randomStrId() {
+                    (function() {
                       var e =
                         arguments.length > 0 && void 0 !== arguments[0]
                           ? arguments[0]
@@ -71327,11 +71176,11 @@
               i &&
                 i.map(function(e, t) {
                   return o.a.createElement(
-                    Card,
+                    q,
                     Object.assign({}, e, { key: e.id + t }),
-                    o.a.createElement(Button, {
+                    o.a.createElement(j, {
                       className: "delete",
-                      onClick: function onClick(e) {
+                      onClick: function(e) {
                         return r(e);
                       },
                       text: "X"
@@ -71342,10 +71191,10 @@
           )
         );
       };
-      N.defaultProps = { store: [] };
-      var z = N;
-      r.a.render(o.a.createElement(z, null), document.getElementById("root"));
+      Y.defaultProps = { store: [] };
+      var J = Y;
+      r.a.render(o.a.createElement(J, null), document.getElementById("root"));
     }
-  ],
-  [[9, 1, 2]]
+  },
+  [[17, 1, 2]]
 ]);
